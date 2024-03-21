@@ -8,6 +8,10 @@ const handleDone = (e) => {
   e.target.parentNode.remove();
 };
 
+const handleRemove = (e) => {
+  e.target.parentNode.remove();
+};
+
 const addTodo = (newTodo, todoState) => {
   const div = document.createElement("div");
   const button = document.createElement("button");
@@ -18,6 +22,7 @@ const addTodo = (newTodo, todoState) => {
     button.addEventListener("click", handleDone);
   } else {
     button.innerText = "삭제";
+    button.addEventListener("click", handleRemove);
   }
 
   div.innerText = newTodo;
