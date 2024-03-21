@@ -1,17 +1,29 @@
 const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todo = document.getElementById("todo-todo");
+const done = document.getElementById("done-todo");
 
-const addTodo = (newTodo) => {
+const handleDone = (e) => {
+  addTodo(e.target.parentNode.innerText.slice(0, -2), done);
+  e.target.parentNode.remove();
+};
+
+const addTodo = (newTodo, todoState) => {
   const div = document.createElement("div");
   const button = document.createElement("button");
   button.setAttribute("type", "button");
-  button.innerText = "완료";
+
+  if (todoState == todo) {
+    button.innerText = "완료";
+    button.addEventListener("click", handleDone);
+  } else {
+    button.innerText = "삭제";
+  }
 
   div.innerText = newTodo;
   div.appendChild(button);
 
-  todo.appendChild(div);
+  todoState.appendChild(div);
 };
 
 todoForm.addEventListener("submit", (e) => {
@@ -19,5 +31,5 @@ todoForm.addEventListener("submit", (e) => {
   const newTodo = todoInput.value;
   todoInput.value = "";
 
-  addTodo(newTodo);
+  addTodo(newTodo, todo);
 });
