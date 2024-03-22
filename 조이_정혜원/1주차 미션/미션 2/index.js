@@ -17,7 +17,7 @@ const addTodo = (newTodo, todoState) => {
   const button = document.createElement("button");
   button.setAttribute("type", "button");
 
-  if (todoState == todo) {
+  if (todoState === todo) {
     button.innerText = "완료";
     button.addEventListener("click", handleDone);
   } else {
