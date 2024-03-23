@@ -177,23 +177,33 @@ membershipForm.addEventListener("submit", function (event) {
     passwordValidCheck = 1;
   }
 
+  // 모두 성공시 모달창 생성
+  if (
+    nameCheck + emailCheck + ageCheck + passwordCheck + passwordValidCheck ===
+    5
+  ) {
+    console.log("hello");
+    let modalCloseButton = document.querySelector("#modalContent .close");
+    let modalContainerElement = document.getElementById("modalContainer");
+    let bodyElement = document.getElementById("body");
+    let contentElement = document.getElementById("content");
+    
+
+    bodyElement.classList.add("disappear");
+    // contentElement.classList.add("disappear");
+    membershipForm.classList.add("disappear");
+    
+    modalContainerElement.classList.remove("hide");
+    modalContainerElement.classList.add("highlight");
+
+    modalCloseButton.addEventListener("click", function (event) {
+      modalContainerElement.classList.add("hide");
+      modalContainerElement.classList.remove("highlight");
+      bodyElement.classList.remove("disappear");
+      // contentElement.classList.remove("disappear");
+      membershipForm.classList.remove("disappear");
+    });
+
+    
+  }
 });
-
-// 모두 성공시 모달창 생성 - 개발중...
-if (
-  nameCheck + emailCheck + ageCheck + passwordCheck + passwordValidCheck ===
-  5
-) {
-  console.log("hello");
-  let modalCloseButton = document.querySelector("#modalContent .close");
-  let modalContainerElement = document.getElementById("modalContainer");
-  let contentElement = document.getElementById("content");
-
-  contentElement.classList.add("disappear");
-  modalContainerElement.remove("hide");
-
-  modalCloseButton.addEventListener("click", function (event) {
-    modalContainerElement.add("hide");
-  });
-
-}
