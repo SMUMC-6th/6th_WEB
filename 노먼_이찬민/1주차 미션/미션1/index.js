@@ -187,8 +187,9 @@ if (
   console.log("hello");
   let modalCloseButton = document.querySelector("#modalContent .close");
   let modalContainerElement = document.getElementById("modalContainer");
-  // let contentElement = document.getElementById("body");
+  let contentElement = document.getElementById("content");
 
+  contentElement.classList.add("disappear");
   modalContainerElement.remove("hide");
 
   modalCloseButton.addEventListener("click", function (event) {
