@@ -1,14 +1,13 @@
 body {
   background-color: rgb(214, 240, 250);
-}
-
-main {
   margin: 0 20% 0 20%;
 }
 
+
 h1 {
   display: block;
-  margin: 5% 20% 0 13%;
+  /* margin: 5% 20% 0 10%; */
+  margin-left: 11%;
   width: 80%;
   height: 10%;
   text-align: center;
@@ -19,7 +18,8 @@ h1 {
 
 #todoInput {
   margin-top: 20px;
-  width: 100%;
+  margin-left: 100px;
+  width: 80%;
   height: 30px;
 }
 
@@ -29,19 +29,40 @@ h1 {
 
 #flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #flex .item {
+  list-style: none;
   align-items: start;
   margin: 5px 0 0 0;
-  padding: 0 17% 0 17%;
+  padding: 0 12% 0 12%;
+}
+
+#flex .item li{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(148, 181, 182);
+  margin-bottom: 10px;
+}
+
+#flex .item span{
+  font-weight: bold;
+}
+
+#flex .item button{
+  display: block;
+  background-color: rgb(101, 160, 162) ;
+  margin-left: 30px;
 }
 
 #flex p {
-  display: inline-block;
-  width: 100%;
+  display:inline-block;
+  margin-left: 30px;
+  margin-bottom: 40px; 
+  /* width: 100%; */
   border-bottom: 2px solid rgb(148, 181, 182);
-  margin: 0;
   font-weight: bold;
 }
