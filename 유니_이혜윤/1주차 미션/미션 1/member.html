@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>회원 가입</title>
+    <link rel="stylesheet" href="member.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="loginBox">
+        <h2>회원가입</h2>
+        <hr>
+        <div class="inputBox">
+
+          <fieldset>
+            <label for="name">이름</label><br>
+            <input type="text" id="username" name="name" required><br>
+          </fieldset>
+          <div class="successName hide">멋진 이름이네요!</div>
+          <div class="failureName hide">필수 입력 항목입니다!</div>
+
+          <fieldset>
+            <label for="useremail">이메일</label><br>
+            <input type="email" id="useremail" name="useremail" required><br>
+          </fieldset>
+          <div class="successEmail hide">올바른 이메일 형식입니다!</div>
+          <div class="failureEmail hide">올바른 이메일 형식이 아닙니다!</div>
+
+          <fieldset>
+            <label for="age">나이</label><br>
+            <input type="number" id="age" name="age" required><br>
+          </fieldset>
+          <div class="successAge hide">올바른 나이 형식입니다!</div>
+          <div class="failureAge hide">나이를 입력해주세요!</div>
+
+          <fieldset>
+            <label for="password">비밀번호</label><br>
+            <input type="password" id="password" name="password" required><br>
+          </fieldset>
+          <div class="successPassword hide">올바른 비밀번호입니다!</div>
+          <div class="failurePassword hide">비밀번호는 최소 4자리 이상이어야 합니다.</div>
+          <div class="failurePassword-2 hide">비밀번호는 최대 12자리까지 가능합니다.</div>
+
+          <fieldset>
+            <label for="checkpassword">비밀번호 확인</label><br>
+            <input type="password" id="checkpassword" name="checkpassword" required><br>
+          </fieldset>
+          <div class="matchPassword hide">비밀번호가 일치합니다.</div>
+          <div class="mismatchPassword hide">비밀번호가 일치하지 않습니다.</div>
+
+          <button class="required-message" type="submit">가입하기</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="member.js"></script>
+  </body>
+</html>
