@@ -1,13 +1,13 @@
-const number = document.querySelector('#number') // 클래스인 경우는 .클래스명
-const increase = document.getElementById('increase')
-const decrease = document.querySelector('#decrease')
+const number = document.getElementById("number");
+const increase = document.getElementById("increase");
+const decrease = document.getElementById("decrease");
 
 increase.onclick = () => {
-    const newNumber = parseInt(number.innerText, 10);
-    number.innerText = newNumber + 1;
+  const current = parseInt(number.innerText, 10);
+  number.innerText = current + 1;
 };
 
 decrease.onclick = () => {
-    const newNumber = parseInt(number.innerText, 10);
-    number.innerText = newNumber - 1;
-}
+  const current = parseInt(number.innerText, 10);
+  number.innerText = current - 1;
+};
