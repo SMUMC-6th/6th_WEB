@@ -1,0 +1,66 @@
+/* 기본스타일링 제거 */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    /* font-size: 16px; */
+  }
+/*배경 영역*/
+body {
+  background-color: powderblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+/*회원가입 틀 영역*/
+main {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 38rem;
+  height: auto;
+  padding: 30px;
+  background-color: aliceblue;
+  border-radius: 5px; 
+}
+/*로고 영역*/
+.login_logo {
+  
+  width: 170px;
+  margin: 12px auto 30px;
+}
+/*입력칸 틀 영역*/
+fieldset {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+  
+  
+}
+
+/*입력칸 영역*/
+input {
+  border: 1px solid aliceblue;
+  width: 15rem;
+}
+
+/*회원가입 버튼*/
+button {
+  border: 1px solid gray;
+  background-color: gray;
+  color: white;
+  border-radius: 5px; 
+  cursor: pointer;
+  width: 16.3rem;
+  height: 3rem;
+}
+.hide {
+    display: none;
+    }
