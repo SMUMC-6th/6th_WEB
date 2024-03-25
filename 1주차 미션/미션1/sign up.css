@@ -22,17 +22,18 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 38rem;
-  height: auto;
+  width: 38rem; /*기본 16px->608px(38배)*/
+  height: 500px;
   padding: 30px;
   background-color: aliceblue;
   border-radius: 5px; 
 }
 /*로고 영역*/
-.login_logo {
+h2 {
   
   width: 170px;
-  margin: 12px auto 30px;
+  margin: 12px auto 20px; /*12px위 auto양쪽 자동조정 30px아래*/
+  
 }
 /*입력칸 틀 영역*/
 fieldset {
@@ -40,15 +41,20 @@ fieldset {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5px;
+  margin: 20px;
   
   
 }
+hr {
+  border: 2px solid white;
+  width: 380px;
 
+}
 /*입력칸 영역*/
 input {
   border: 1px solid aliceblue;
   width: 15rem;
+  background-color: aliceblue;
 }
 
 /*회원가입 버튼*/
@@ -60,6 +66,7 @@ button {
   cursor: pointer;
   width: 16.3rem;
   height: 3rem;
+  margin-top: 40px;
 }
 .hide {
     display: none;

@@ -9,46 +9,40 @@
   </head>
   <body>
   <main>
-    <div class="login_logo">회원가입</div>
+    <h2>회원가입</h2>
+    <hr />
 
     <fieldset>
-        <input type="text" id="username" placeholder="이름" />
-      </fieldset>
-  
+      <input type="text" id="username" placeholder="이름" />
       <div class="success-message hide">멋진이름이네요!</div>
       <div class="failure-message hide">필수 입력 항목입니다!</div>   
-
+    </fieldset>
     <fieldset>
       <input type="text" id="mail" placeholder="이메일" />
+      <div class="success-message hide">올바른 이메일 형식입니다!</div>
+      <div class="failure-message hide">올바른 이메일 형식이 아닙니다!</div>
     </fieldset>
-
-    <div class="success-message hide">올바른 이메일 형식입니다!</div>
-    <div class="failure-message hide">올바른 이메일 형식이 아닙니다!</div>
-
-    <fieldset>
-        <input type="text" id="age" placeholder="나이" />
-      </fieldset>
-  
+    <fieldset> 
+      <input type="text" id="age" placeholder="나이" />
       <div class="success-message hide">올바른 나이 형식입니다!</div>
       <div class="failure-message hide">나이를 입력해주세요!</div>
-      
+    </fieldset> 
     <fieldset>
       <input type="password" id="password" placeholder="비밀번호" />
+      <div class="success-message hide">올바른  비밀번호입니다!</div>
+      <div class="strongPassword-message hide">비밀번호는 최소 4자리 이상입니다.</div>
     </fieldset>
-
-    <div class="success-message hide">올바른  비밀번호입니다!</div>
-    <div class="strongPassword-message hide">비밀번호는 최소 4자리 이상입니다.</div>
-
     <fieldset>
       <input type="password" id="password-retype" placeholder="비밀번호 확인" />
+      <div class="success-message hide">비밀번호가 일치합니다!</div>
+      <div class="mismatch-message hide">비밀번호가 일치하지 않습니다</div>
     </fieldset>
-
-    <div class="success-message hide">비밀번호가 일치합니다!</div>
-    <div class="mismatch-message hide">비밀번호가 일치하지 않습니다</div>
-
-    <fieldset class="signup">
+    
+    <div class="signup">
       <button>가입하기</button>
-    </fieldset>
+    </div>
+    
+  
   </main>
  </body>
 </html>

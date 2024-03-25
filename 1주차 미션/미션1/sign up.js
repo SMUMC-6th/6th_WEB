@@ -6,7 +6,7 @@ let elSuccessMessage = document.querySelector('.success-message'); // div.succes
 let elFailureMessage = document.querySelector('.failure-message'); // div.failure-message.hide
 
 
-// 1. 비밀번호 입력창 정보 가져오기
+// 1. 비밀번호 입력창 정보 가져오기 
 let elInputPassword = document.querySelector('#password'); // input#password
 // 2. 비밀번호 확인 입력창 정보 가져오기
 let elInputPasswordRetype = document.querySelector('#password-retype'); // input#password-retype
@@ -20,7 +20,8 @@ function isMatch (password1, password2) {
   return password1 === password2;
 }
 //비밀번호와 비밀번호 확인이 일치할 경우 true, 아니면 false를 리턴한다.
-
+//elInputUsername이 키보드로 입력이 됐을 때 이벤트 핸들러 안에 있는 내용이 실행된다.
+//onkeyup : 키보드가 눌렸다 떼어졌을 때를 의미
 elInputUsername.onkeyup = function () {
     // 값을 입력한 경우
     if (elInputUsername.value.length !== 0) {
