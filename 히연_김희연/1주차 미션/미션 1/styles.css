@@ -1,7 +1,7 @@
 body {
   background-color: #b3d3dd;
 
-  min-height: 100vh;
+  min-height: 100%;
   overflow: hidden;
 
   display: flex;
@@ -15,7 +15,8 @@ form {
 
   width: 650px;
   height: 450px;
-  padding: 60px 0;
+  padding: 50px 0;
+  margin: 60px;
 
   display: grid;
   place-items: center;
