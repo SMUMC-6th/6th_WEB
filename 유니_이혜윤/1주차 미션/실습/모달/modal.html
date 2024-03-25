@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>모달 만들기</title>
+    <link rel="stylesheet" href="./style.css">
+    <!--
+      href : 외부 css 파일을 불러올 때 사용 (link, a 태그)
+      src : 외부 js 파일을 불러올 때 사용 (script, img 태그)
+    -->
+  </head>
+
+  <body>
+    <h1>안녕하세요!</h1>
+    <p>내용내용내용</p>
+    <button id="open">버튼 열기</button>
+
+    <div class="modalContentBox" style="display: none;">
+      <div class="modalContent">
+        <div class="modalTitle">안녕하세요</div>
+        <p>모달 내용은 어쩌고 저쩌고..</p>
+        <div class="modalCloseButton">
+         <button id="close">닫기</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="modal.js"></script>
+  </body>
+</html>

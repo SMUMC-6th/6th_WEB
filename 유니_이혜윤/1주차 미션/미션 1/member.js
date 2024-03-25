@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('.loginBox');
+  let valid = false;
   
   form.addEventListener('submit', function(event) {  // submit시에 호출될 함수 받아
       event.preventDefault(); // 폼의 제출을 방지
+      valid = true;
       
       // 입력 값
       const inputUsername = document.getElementById('inputUsername');
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
           document.querySelector('.failureEmail').classList.add('hide');
       } else {
           document.querySelector('.failureEmail').classList.remove('hide');
+          valid = false;
       }
       
       // 나이
@@ -34,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
           document.querySelector('.failureAge').classList.remove('hide');
           document.querySelector('.successAge').classList.add('hide');
-          if(Number(inputAge.value) < 19) {  // 왜 안되지..
-            document.querySelector('limitAge').classList.remove('hide');
+          if(Number(inputAge.value) < 19 && inputAge.value === parseInt(inputAge.value, 10).toString()) {
+            document.querySelector('.limitAge').classList.remove('hide');  // 오류
         }else {
             document.querySelector('.limitAge').classList.add('hide');
         }
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
           document.querySelectorAll('.failurePassword, .failurePassword-2').forEach(el => el.classList.add('hide')); // failurePassword, failurePassword-2 클래스 모든 요소 숨겨줌
       } else {
           document.querySelector('.successPassword').classList.add('hide');
+          valid = false;
           if(inputPassword.value.length < 4) {
               document.querySelector('.failurePassword').classList.remove('hide');
           } else if(inputPassword.value.length > 12) {
@@ -63,6 +67,21 @@ document.addEventListener('DOMContentLoaded', function() {
           document.querySelector('.mismatchPassword').classList.remove('hide');
           document.querySelector('.matchPassword').classList.add('hide');
       }
-  });
-  
+
+});
+
+    const submitButton = document.getElementById("submitButton");
+    submitButton.addEventListener('click', function() { // click하면 함수실행
+        const modal = document.querySelector(".modalContentBox");
+        if(valid) { // 유효성 검사를 통과하면 모달 표시
+            modal.style.display = "flex"; // css 
+        }
+    });
+
+    const close = document.getElementById("close");
+    close.onclick = () => {
+        const modal = document.querySelector(".modalContentBox");
+        modal.style.display = "none";
+    };
+
 });
