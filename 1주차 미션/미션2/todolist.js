@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.key === 'Enter') {
             const item = document.createElement('div'); // div
 
-        const checkBox = document.createElement('input') // 완료
+        const checkBox = document.createElement('input') // 
         checkBox.setAttribute('type','checkbox')
 
 
