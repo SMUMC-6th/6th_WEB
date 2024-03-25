@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 25px;
+  height: 100vh;
+  width: 100vh;
+}
+
+.navbar {
+  display: flex;
+
+  width: 100%;
+  height: 80px;
+}
+
+.header {
+  background-color: #0f1629;
+  width: 25%;
+
+  display: grid;
+  place-items: center;
+}
+
+.menu {
+  background-color: #ef3d4d;
+  width: 75%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: grid;
+  width: 100%;
+  height: 800px;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "a a a a"
+    "a a a a"
+    "b b c d"
+    "b b c e";
+}
+
+.hero {
+  background-color: #4c86c6;
+  width: 100%;
+  grid-area: a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  background-color: #24344b;
+  width: 100%;
+  grid-area: b;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.none {
+  background-color: white;
+  width: 100%;
+  grid-area: c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  background-color: #c1e4e6;
+  width: 100%;
+  grid-area: d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.extra {
+  background-color: #4dbd97;
+  grid-area: e;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.banner {
+  width: 100%;
+  height: 90px;
+  background-color: #ffd169;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
