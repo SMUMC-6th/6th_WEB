@@ -95,9 +95,9 @@ const validatePassword = (password) => {
     textPwd.innerText = "올바른 비밀번호입니다.";
     return true;
   } else {
-    if (password.length < 4) {
+    if (password.length <= 4) {
       textPwd.innerText = "비밀번호는 최소 4자리 이상이어야 합니다.";
-    } else if (password.length > 12) {
+    } else if (password.length >= 12) {
       textPwd.innerText = "비밀번호는 최대 12자리까지 가능합니다.";
     } else {
       textPwd.innerText =
