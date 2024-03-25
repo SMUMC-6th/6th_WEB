@@ -14,42 +14,44 @@
         <div class="inputBox">
 
           <fieldset>
-            <label for="name">이름</label><br>
-            <input type="text" id="username" name="name" required><br>
+            <label for="inputUsername">이름</label><br>
+            <input type="text" id="inputUsername" name="name"><br>
+            <div class="successMessage hide font">멋진 이름이네요!</div>
+            <div class="failureMessage hide font">필수 입력 항목입니다!</div>
           </fieldset>
-          <div class="successName hide">멋진 이름이네요!</div>
-          <div class="failureName hide">필수 입력 항목입니다!</div>
+          
 
           <fieldset>
-            <label for="useremail">이메일</label><br>
-            <input type="email" id="useremail" name="useremail" required><br>
+            <label for="inputEmail">이메일</label><br>
+            <input type="email" id="inputEmail" name="useremail"><br>
+            <div class="successEmail hide font">올바른 이메일 형식입니다!</div>
+            <div class="failureEmail hide font">올바른 이메일 형식이 아닙니다!</div>
           </fieldset>
-          <div class="successEmail hide">올바른 이메일 형식입니다!</div>
-          <div class="failureEmail hide">올바른 이메일 형식이 아닙니다!</div>
 
           <fieldset>
-            <label for="age">나이</label><br>
-            <input type="number" id="age" name="age" required><br>
+            <label for="inputAge">나이</label><br>
+            <input type="number" id="inputAge" name="age"><br>
+            <div class="successAge hide font">올바른 나이 형식입니다!</div>
+            <div class="failureAge hide font">나이를 입력해주세요!</div>
+            <div class="limitAge hide font">19세 이상만 가입이 가능합니다.</div>
           </fieldset>
-          <div class="successAge hide">올바른 나이 형식입니다!</div>
-          <div class="failureAge hide">나이를 입력해주세요!</div>
 
           <fieldset>
-            <label for="password">비밀번호</label><br>
-            <input type="password" id="password" name="password" required><br>
+            <label for="inputPassword">비밀번호</label><br>
+            <input type="password" id="inputPassword" name="password"><br>
+            <div class="successPassword hide font">올바른 비밀번호입니다!</div>
+            <div class="failurePassword hide font">비밀번호는 최소 4자리 이상이어야 합니다.</div>
+            <div class="failurePassword-2 hide font">비밀번호는 최대 12자리까지 가능합니다.</div>
           </fieldset>
-          <div class="successPassword hide">올바른 비밀번호입니다!</div>
-          <div class="failurePassword hide">비밀번호는 최소 4자리 이상이어야 합니다.</div>
-          <div class="failurePassword-2 hide">비밀번호는 최대 12자리까지 가능합니다.</div>
 
           <fieldset>
-            <label for="checkpassword">비밀번호 확인</label><br>
-            <input type="password" id="checkpassword" name="checkpassword" required><br>
+            <label for="inputPasswordRetype">비밀번호 확인</label><br>
+            <input type="password" id="inputPasswordRetype" name="checkpassword"><br>
+            <div class="matchPassword hide font">비밀번호가 일치합니다.</div>
+            <div class="mismatchPassword hide font">비밀번호가 일치하지 않습니다.</div>
           </fieldset>
-          <div class="matchPassword hide">비밀번호가 일치합니다.</div>
-          <div class="mismatchPassword hide">비밀번호가 일치하지 않습니다.</div>
 
-          <button class="required-message" type="submit">가입하기</button>
+          <button id="submitButton" type="submit">가입하기</button>
         </div>
       </form>
     </div>
