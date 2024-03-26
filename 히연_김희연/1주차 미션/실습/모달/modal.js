@@ -1,12 +1,9 @@
-const openBtn = document.querySelector('.open');
-const closeBtn = document.querySelector('.close');
-const modal = document.querySelector('.modal');
-const modalWrapper = document.querySelector('.modal-wrapper');
-
-openBtn.onclick = () => {
-  modalWrapper.style.display = 'flex';
+const open = document.getElementById("open");
+const close = document.getElementById("close");
+const modal = document.querySelector(".modal-wrapper");
+open.onclick = () => {
+  modal.style.display = "flex";
 };
-
-closeBtn.onclick = () => {
-  modalWrapper.style.display = 'none';
+close.onclick = () => {
+  modal.style.display = "none";
 };
