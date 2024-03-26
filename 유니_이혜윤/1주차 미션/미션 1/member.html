@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>회원 가입</title>
+    <title>미션1 - 회원 가입</title>
     <link rel="stylesheet" href="member.css">
   </head>
 
@@ -15,9 +15,9 @@
 
           <fieldset>
             <label for="inputUsername">이름</label><br>
-            <input type="text" id="inputUsername" name="name"><br>
+            <input type="text" id="inputUsername" name="name" autofocus><br>
             <div class="successMessage hide font">멋진 이름이네요!</div>
-            <div class="failureMessage hide font">필수 입력 항목입니다!</div>
+            <div class="failureMessage hide font2">필수 입력 항목입니다!</div>
           </fieldset>
           
 
@@ -25,30 +25,31 @@
             <label for="inputEmail">이메일</label><br>
             <input type="email" id="inputEmail" name="useremail"><br>
             <div class="successEmail hide font">올바른 이메일 형식입니다!</div>
-            <div class="failureEmail hide font">올바른 이메일 형식이 아닙니다!</div>
+            <div class="failureEmail hide font2">올바른 이메일 형식이 아닙니다!</div>
           </fieldset>
 
           <fieldset>
             <label for="inputAge">나이</label><br>
             <input type="number" id="inputAge" name="age"><br>
             <div class="successAge hide font">올바른 나이 형식입니다!</div>
-            <div class="failureAge hide font">나이를 입력해주세요!</div>
-            <div class="limitAge hide font">19세 이상만 가입이 가능합니다.</div>
+            <div class="failureAge hide font2">나이를 입력해주세요!</div>
+            <div class="limitAge hide font2">19세 이상만 가입이 가능합니다.</div>
           </fieldset>
 
           <fieldset>
             <label for="inputPassword">비밀번호</label><br>
             <input type="password" id="inputPassword" name="password"><br>
             <div class="successPassword hide font">올바른 비밀번호입니다!</div>
-            <div class="failurePassword hide font">비밀번호는 최소 4자리 이상이어야 합니다.</div>
-            <div class="failurePassword-2 hide font">비밀번호는 최대 12자리까지 가능합니다.</div>
+            <div class="failurePassword hide font2">비밀번호는 최소 4자리 이상이어야 합니다.</div>
+            <div class="failurePassword-2 hide font2">비밀번호는 최대 12자리까지 가능합니다.</div>
+            <div class="failurePassword-3 hide font2">영어, 숫자, 특수문자를 모두 조합해야합니다.</div>
           </fieldset>
 
           <fieldset>
             <label for="inputPasswordRetype">비밀번호 확인</label><br>
             <input type="password" id="inputPasswordRetype" name="checkpassword"><br>
             <div class="matchPassword hide font">비밀번호가 일치합니다.</div>
-            <div class="mismatchPassword hide font">비밀번호가 일치하지 않습니다.</div>
+            <div class="mismatchPassword hide font2">비밀번호가 일치하지 않습니다.</div>
           </fieldset>
 
           <button id="submitButton" type="submit">가입하기</button>

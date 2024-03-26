@@ -44,7 +44,7 @@ fieldset{
 
 .inputBox label {
   font-size: 15px;
-  margin : 0 auto 5px auto;
+  margin : 0 auto;
   color: #000000;
 }
 
@@ -64,24 +64,24 @@ fieldset{
   border: 2px solid #2b6eff;
 }
 
-.input[type="text"],
-.input[type="email"],
-.input[type="number"],
-.input[type="password"] {
-  width: 100%;
-  padding: 10px;
-}
+
 
 .hide {
   display: none;
 }
 
-.font{
+.font, .font2 {
   font-size: 12px;
-  color: red;
   background-color: none;
   padding: 1px;
-  margin-bottom: 15px;
+}
+
+.font {
+  color: green;
+}
+
+.font2 {
+  color: red;
 }
 
 button {
