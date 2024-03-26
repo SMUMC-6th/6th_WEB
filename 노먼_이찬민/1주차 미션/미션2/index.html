@@ -14,16 +14,24 @@
         <input
           type="text"
           id="todoInput"
+          autofocus = "true"
           placeholder="스터디 계획을 작성해보세요!"
         />
       </form>
+      <div id="labelFlex">
+        <p>해야 할 일</p>
+        <p>해낸 일</p>
+      </div>
       <div id="flex">
-        <ul id="todoList" class="item">
-          <p>해야 할 일</p>
-        </ul>
-        <ul id="completeList" class="item">
-          <p>해낸 일</p>
-        </ul>
+        <div id="todoContainer">
+          <ul id="todoList" class="item">
+            
+          </ul>
+        </div>
+        <div id="completeContainer">
+          <ul id="completeList" class="item">
+          </ul>
+        </div>
       </div>
     </main>
     <footer>

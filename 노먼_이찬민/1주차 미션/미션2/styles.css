@@ -3,6 +3,10 @@ body {
   margin: 0 20% 0 20%;
 }
 
+button:hover{
+  transform: scale(0.9);
+  opacity: 0.9;
+}
 
 h1 {
   display: block;
@@ -17,8 +21,9 @@ h1 {
 }
 
 #todoInput {
+  
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 90px;
   width: 80%;
   height: 30px;
 }
@@ -27,12 +32,71 @@ h1 {
   font-style: italic;
 }
 
-#flex {
+#labelFlex{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 600px;
+  height: 30px;
+}
+
+#labelFlex p {
+  margin-left: 200px;
+  display:block;
+  margin-bottom: 40px; 
+  /* width: 100%; */
+  border-bottom: 2px solid rgb(148, 181, 182);
+  font-weight: bold;
+}
+
+#flex {
+  width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+#todoContainer {
+  width: 300px;
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#todoContainer::-webkit-scrollbar{
+  width: 7px;
+}
+#todoContainer::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #657493;
+}
+#todoContainer::-webkit-scrollbar-track{
+  height: 400px;
+  background-color: rgb(214, 240, 250);
+}
+
+#completeContainer {
+  width: 300px;
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#completeContainer::-webkit-scrollbar{
+  width: 7px;
+}
+#completeContainer::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #657493;
+}
+#completeContainer::-webkit-scrollbar-track{
+  background-color: rgb(214, 240, 250);
 }
 
 #flex .item {
+  width: 100%;
   list-style: none;
   align-items: start;
   margin: 5px 0 0 0;
@@ -41,7 +105,6 @@ h1 {
 
 #flex .item li{
   display: flex;
-  justify-content: space-between;
   width: 200px;
   padding-bottom: 10px;
   border-bottom: 2px solid rgb(148, 181, 182);
@@ -49,20 +112,20 @@ h1 {
 }
 
 #flex .item span{
+  width: 80%;
+  justify-content: space-between;
+  white-space : nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: bold;
 }
 
 #flex .item button{
+  width: 25%;
+  height: 50%;
   display: block;
   background-color: rgb(101, 160, 162) ;
   margin-left: 30px;
 }
 
-#flex p {
-  display:inline-block;
-  margin-left: 30px;
-  margin-bottom: 40px; 
-  /* width: 100%; */
-  border-bottom: 2px solid rgb(148, 181, 182);
-  font-weight: bold;
-}
+
