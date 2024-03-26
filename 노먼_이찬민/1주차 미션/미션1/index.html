@@ -3,66 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <title>HTML + CSS</title>
-    <link rel="stylesheet" href="styles.css?after" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body id="body">
     <div id="content">
-      <form action="/" method="GET" id="membership">
+      <form id="membership">
         <h1>회원가입</h1>
         <div id="name">
           <label for="userName">이름</label>
           <input type="text" id="userName" />
-          <div class="successMessage hide">멋진 이름이네요!</div>
-          <div class="failMessage hide fail">필수 입력 항목입니다.</div>
+          <div class="nameMessage"></div>
         </div>
 
         <div id="email">
           <label for="userEmail">이메일</label>
           <input type="text" id="userEmail" />
-          <div class="successMessage hide">올바른 이메일 형식입니다!</div>
-          <div class="failMessage hide fail">
-            올바른 이메일 형식이 아닙니다.
-          </div>
+          <div class="emailMessage"></div>
         </div>
 
         <div id="age">
           <label for="userAge">나이</label>
           <input type="text" id="userAge" />
-          <div class="successMessage hide">올바른 나이 형식입니다!</div>
-          <div class="numFailMessage fail hide">
-            나이는 숫자 형식이어야 합니다.
-          </div>
-          <div class="minusFailMessage fail hide">
-            나이는 음수가 될 수 없습니다.
-          </div>
-          <div class="fractionFailMessage fail hide">
-            나이는 소수가 될 수 없습니다.
-          </div>
-          <div class="minFailMessage fail hide">
-            미성년자는 가입할 수 없습니다.
-          </div>
+          <div class="ageMessage"></div>
         </div>
 
         <div id="password">
           <label for="userPassword">비밀번호</label>
           <input type="password" id="userPassword" />
-          <div class="successMessage hide">올바른 비밀번호입니다!</div>
-          <div class="minFailMessage hide fail">
-            비밀번호는 최소 4자리 이상이어야 합니다.
-          </div>
-          <div class="maxFailMessage hide fail">
-            비밀번호는 최대 12자리까지 가능합니다.
-          </div>
-          <div class="contentFailMessage hide fail">
-            비밀번호는 영어,숫자,특수문자가 모두 포함되어야 합니다.
-          </div>
+          <div class="passwordMessage"></div>
         </div>
 
         <div id="passwordValid">
           <label for="userPasswordValid">비밀번호 확인</label>
           <input type="password" id="userPasswordValid" />
-          <div class="successMessage hide">비밀번호가 일치합니다.</div>
-          <div class="failMessage hide fail">비밀번호가 일치하지 않습니다.</div>
+          <div class="passwordValidMessage"></div>
         </div>
 
         <button>가입하기</button>
