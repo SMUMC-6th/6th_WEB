@@ -3,6 +3,8 @@ const todoInput = document.getElementById("todo-input");
 const todo = document.getElementById("todo-todo");
 const done = document.getElementById("done-todo");
 
+const test = document.getElementById("todo");
+
 const handleDone = (e) => {
   addTodo(e.target.parentNode.innerText.slice(0, -2), done);
   e.target.parentNode.remove();
@@ -13,6 +15,8 @@ const handleRemove = (e) => {
 };
 
 const addTodo = (newTodo, todoState) => {
+  const tododiv = document.createElement("div");
+  tododiv.setAttribute("class", "todo-div");
   const div = document.createElement("div");
   const button = document.createElement("button");
   button.setAttribute("type", "button");
@@ -26,9 +30,10 @@ const addTodo = (newTodo, todoState) => {
   }
 
   div.innerText = newTodo;
-  div.appendChild(button);
+  tododiv.append(div, button);
+  todoState.appendChild(tododiv);
 
-  todoState.appendChild(div);
+  tododiv.scrollIntoView({ behavior: "smooth", block: "center" }); // tododiv요소(추가한요소)가 보이도록 스크롤 이동
 };
 
 todoForm.addEventListener("submit", (e) => {

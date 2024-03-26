@@ -12,7 +12,7 @@ body {
 
 .container > h1 {
   text-align: center;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
 }
 
 .container > hr {
@@ -34,13 +34,15 @@ body {
   align-items: center;
 }
 
-input {
-  font-style: italic;
-
+#todo-form > input {
   width: 500px;
   height: 30px;
 
   margin: 15px;
+}
+
+#todo-form > input::placeholder {
+  font-style: italic;
 }
 
 .todo {
@@ -54,7 +56,7 @@ input {
   flex-direction: column;
   align-items: center;
 
-  width: 150px;
+  width: 200px;
 }
 
 #todo-title,
@@ -66,18 +68,33 @@ input {
   margin-bottom: 50px;
 }
 
-#todo-todo div,
-#done-todo div {
+#todo-todo,
+#done-todo {
+  height: 300px;
+  overflow: auto; /* 컨텐츠 량에 따라 스크롤바를 추가 (height 넘어가면 스크롤바 생김) */
+}
+
+#todo-todo .todo-div,
+#done-todo .todo-div {
   font-weight: bold;
   border-bottom: 2px solid #d1d1d1;
 
   display: flex;
   justify-content: space-between;
 
-  width: 150px;
+  width: 170px;
+  height: 20px;
 
   padding-bottom: 10px;
   margin-bottom: 20px;
+}
+
+.todo-div > div {
+  width: 110px;
+
+  white-space: nowrap; /* 줄바꿈 하지 않게 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 글자가 width 넘길경우 생략부호로 표시 */
 }
 
 button {
@@ -86,4 +103,9 @@ button {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #bbc9d1;
+  transform: scale(0.9);
 }
