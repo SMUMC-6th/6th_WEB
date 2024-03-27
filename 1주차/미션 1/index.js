@@ -6,8 +6,8 @@ let pwCheck = false
 let pwCheckCheck = false
 
 function nameFunction(){
-    var name = document.getElementById("name").value
-    var nameError = document.getElementById("nameError")
+    let name = document.getElementById("name").value
+    let nameError = document.getElementById("nameError")
     if (name.trim() === "") {
       nameError.classList.remove("success")
       nameError.classList.add('error')
@@ -24,8 +24,8 @@ function nameFunction(){
 }
 
 function ageFunction(){
-  var age = document.getElementById("age").value
-  var ageError = document.getElementById("ageError")
+  let age = document.getElementById("age").value
+  let ageError = document.getElementById("ageError")
 
   if (age.trim() === "") {
     ageError.classList.remove("success")
@@ -69,13 +69,13 @@ function ageFunction(){
     ageCheck = true
   }
   console.log("나이 검증: check =", ageCheck)
-  updateBtnColor()
+  updateBtnColor();
 }
 
 function emailadressFunction() {
-  var emailadress = document.getElementById("emailadress").value
-  var emailadressError = document.getElementById("emailadressError")
-  var valid_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
+  let emailadress = document.getElementById("emailadress").value
+  let emailadressError = document.getElementById("emailadressError")
+  let valid_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
 
   if (!valid_email.test(emailadress)) {
     passwordError.classList.remove("success")
@@ -94,12 +94,13 @@ function emailadressFunction() {
 }
 
 function pwFunction() {
-  var password = document.getElementById("password").value;
-  var passwordError = document.getElementById("passwordError");
-
-  var text = /[a-zA-Z]/.test(password);
-  var num = /\d/.test(password);
-  var special = /[ `!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]/.test(password);
+  let password = document.getElementById("password").value;
+  let passwordError = document.getElementById("passwordError");
+  updateBtnColor()
+  
+  let text = /[a-zA-Z]/.test(password);
+  let num = /\d/.test(password);
+  let special = /[ `!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?]/.test(password);
 
   if (password.length < 4) {
     passwordError.classList.remove("success");
@@ -123,15 +124,15 @@ function pwFunction() {
     pwCheck = true;
   }
   console.log("비밀번호 검증: check =", pwCheck);
-  updateBtnColor();
+  updateBtnColor()
 }
 
 
 
 function pwcheckFunction() {
-  var password = document.getElementById("password").value;
-  var passwordcheck = document.getElementById("passwordcheck").value;
-  var passwordcheckError = document.getElementById("passwordcheckError")
+  let password = document.getElementById("password").value;
+  let passwordcheck = document.getElementById("passwordcheck").value;
+  let passwordcheckError = document.getElementById("passwordcheckError")
 
   if (passwordcheck.trim() === "" || password !== passwordcheck) {
     passwordError.classList.remove("success");
@@ -151,10 +152,11 @@ function pwcheckFunction() {
 
 function updateBtnColor(){
   const submitBtn= document.getElementById('submitbox')
-  if((nameCheck&&ageCheck&&emailadressCheck&&pwCheck&&pwCheckCheck)==true)
-  submitBtn.classList.add('submitbox_success')
+  if((nameCheck&&ageCheck&&emailadressCheck&&pwCheck&&pwCheckCheck)==true){
+    submitBtn.classList.add('submitbox_success')
+  }
   else{
-  submitBtn.classList.remove('submitbox_success')
+    submitBtn.classList.remove('submitbox_success')
   }
 }
 
@@ -182,3 +184,27 @@ function modalClose(){
   document.querySelector('.modal').style.display = 'none'
   document.querySelector('.modalbody').style.display = 'none'
 }
+
+//event prevent dafault
+//form action에서 #으로 처리
+//trim도 공백 사이에 ''를 표시해주면 좋다.
+//cascading
+//disabled 속성으로 요청을 무조건 막기
+//display flex 
+//display:flex;
+//flex-direction:row;
+//justify-content
+//align-items : 반대축
+//* {
+//  margin : 0;
+//  box-sizing : border-box;
+//}
+///white-space: nowrap
+//text-overflow: ellipsis
+//input.focus()
+//item.scrollintoview 라는게 있다.
+//setattribute 를 알아보기
+//textcontent와 innerHtml의 차이 확인
+//cloneNode 깊은 복사와 얕은 복사의 차이를 알기
+//깊은 복사는 다 복사한다
+//
