@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height:100vh;
+    font-size: 25px;
+}
+.box {
+    display: flex;
+    width:100%;
+    height:10%;
+}
+
+.HEADER {
+	width : 20%;
+    background-color: navy;
+    color: white;
+    display: grid;
+    place-items: center;
+}
+.MENU{
+	width : 80%;
+    background-color:rgb(222, 86, 86);
+    color: white;
+    display: grid;
+    place-items: center;
+}
+.box2 {
+    display: grid;
+    width:100%;
+    height:80%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "a a a a"
+    "a a a a"
+    "b b . d"
+    "b b . e";
+
+}
+.HERO{
+    background-color:rgb(110, 155, 214);
+    color: white;
+    width:100%;
+    grid-area: a;
+
+    display: grid;
+    place-items: center;
+  
+}
+.MAIN{
+    background-color:rgb(25, 53, 136);
+    color: white;
+    width:100%;
+    grid-area: b;
+    display: grid;
+    place-items: center;
+}
+.IMAGE{
+    background-color:rgb(175, 226, 236);
+    color: white;
+    width:100%;
+    grid-area: d;
+    display: grid;
+    place-items: center;
+}
+.EXTRA{
+    background-color:rgb(71, 192, 117);
+    color: white;
+    width:100%;
+    grid-area: e;
+    display: grid;
+    place-items: center;
+}
+.BANNER{
+    display: flex;
+    height : 10%;
+	width : 100%;
+    background-color:rgb(218, 222, 86);
+    color: white;
+    display: grid;
+    place-items: center;
+}

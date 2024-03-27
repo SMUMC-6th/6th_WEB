@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /*colum은 0과 버튼을 세로로 위치하게 함*/
+    gap: 3px;
+    
+}
+
+#counter_dis {
+    font-size: 3rem;
+}
+#increase:active, #increase:focus{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.5);
+}
+#decrease:active, #dencrease:focus{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 255, 0.5);
+}
+
+
+    
