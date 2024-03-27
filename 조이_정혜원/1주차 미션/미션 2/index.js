@@ -6,7 +6,7 @@ const done = document.getElementById("done-todo");
 const test = document.getElementById("todo");
 
 const handleDone = (e) => {
-  addTodo(e.target.parentNode.innerText.slice(0, -2), done);
+  addTodo(e.target.previousSibling.innerText, done);
   e.target.parentNode.remove();
 };
 
