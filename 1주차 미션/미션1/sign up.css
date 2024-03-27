@@ -1,11 +1,9 @@
 /* 기본스타일링 제거 */
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-    /* font-size: 16px; */
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 /*배경 영역*/
 body {
   background-color: powderblue;
@@ -15,59 +13,106 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
+
 }
-/*회원가입 틀 영역*/
-main {
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 38rem; /*기본 16px->608px(38배)*/
-  height: 500px;
-  padding: 30px;
-  background-color: aliceblue;
-  border-radius: 5px; 
-}
+
+
 /*로고 영역*/
 h2 {
-  
   width: 170px;
   margin: 12px auto 20px; /*12px위 auto양쪽 자동조정 30px아래*/
-  
 }
-/*입력칸 틀 영역*/
-fieldset {
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px;
-  
-  
-}
+
 hr {
   border: 2px solid white;
   width: 380px;
-
 }
-/*입력칸 영역*/
-input {
-  border: 1px solid aliceblue;
-  width: 15rem;
+
+label {
+  font-size: 13px;
+
+  display: grid;
+}
+form {
   background-color: aliceblue;
+  border-radius: 5px;
+
+  width: 500px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 45px 0;
 }
 
-/*회원가입 버튼*/
-button {
-  border: 1px solid gray;
+input {
+  background-color: aliceblue;
+  border: 2px solid white;
+  border-radius: 5px;
+
+  width: 260px;
+  height: 20px;
+}
+
+form p {
+  font-size: 9px;
+  color: red;
+
+  display: none;
+
+  margin-top: 1px;
+}
+
+#signup-btn {
   background-color: gray;
+  border: 1px solid gray;
   color: white;
-  border-radius: 5px; 
   cursor: pointer;
+
   width: 16.3rem;
   height: 3rem;
   margin-top: 40px;
+  
 }
-.hide {
-    display: none;
-    }
+
+/* modal */
+#modal-close-btn {
+  cursor: pointer;
+}
+
+#modal-open-btn {
+  cursor: pointer;
+}
+
+.modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.04);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  place-items: center;
+}
+
+.modal {
+  background-color: white;
+  width: 370px;
+  border-radius: 5px;
+  padding: 18px;
+}
+
+.modal-content {
+  display: grid;
+  place-items: center;
+}
+
+.modal-content > h3 {
+  text-align: center;
+}
+
+.modal-close {
+  text-align: right;
+}
