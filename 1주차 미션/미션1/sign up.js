@@ -46,7 +46,7 @@ const signUp = () => {
         else textName.innerText = "문자열만 입력해주세요!";
       }
     }
-  
+
   //이메일
  function checkEmail() {
     const email = document.getElementById("email-input").value.trim();
@@ -83,24 +83,23 @@ const signUp = () => {
 
     if (!ageValid.test(age)) {
        // 나이가 입력되지 않은 경우
-      if (age === "") textAge.innerText = "나이를 입력해주세요!";
-      else typeof ageInput.value.trim() !== 'string';
-      {
+      if (age === '') {textAge.innerText = "나이를 입력해주세요!";
+      } else typeof ageInput.value.trim() !== 'string';{
         textAge.innerText = '나이는 숫자형식이어야 합니다!';
       }
-    } else {
-      if (age < 0) {
-        textAge.innerText = '나이는 음수가 될 수 없습니다.';
-      } else if (age % 1 !== 0) {
-        textAge.innerText = '나이는 소수가 될 수 없습니다.';
-      } else if (Number(age) < 19) {
-        textAge.innerText = '미성년자는 가입할 수 없습니다.';
       } else {
-        textAge.style.color = 'green';
-        textAge.innerText = '올바른 나이 형식입니다!';
-        completeCnt++;
+        if (age < 0) {
+          textAge.innerText = '나이는 음수가 될 수 없습니다.';
+        } else if (age % 1 !== 0) {
+          textAge.innerText = '나이는 소수가 될 수 없습니다.';
+        } else if (Number(age) < 19) {
+          textAge.innerText = '미성년자는 가입할 수 없습니다.';
+        } else {
+          textAge.style.color = 'green';
+          textAge.innerText = '올바른 나이 형식입니다!';
+          completeCnt++;
+        }
       }
-    }
   }
 
   function checkPwd() {
