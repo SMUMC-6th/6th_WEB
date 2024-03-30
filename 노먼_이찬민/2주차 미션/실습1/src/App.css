@@ -1,0 +1,92 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(234, 250, 255);
+}
+
+h1{
+  display: block;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding-bottom: 50px;
+  /* margin-bottom: 30px; */
+  font-size: 40px;
+  border-bottom: 1.5px solid rgb(191, 201, 205);
+}
+
+input{
+  display: block;
+  width: 30%;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px 20px;
+  outline: 0;
+  border: 1.5px solid rgb(191, 201, 205);
+  border-radius: 5px;
+}
+
+input::placeholder{
+  font-style: italic;
+  font-weight: 550;
+}
+
+.label{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px; 
+  width: 50%;
+  height: 40px;
+}
+
+.label p{
+  display: inline;
+  height: 25px; 
+  font-weight: 700;
+  padding-bottom: 0;
+  border-bottom: 2px solid rgb(191, 201, 205);
+}
+
+.listContainer{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: -50px;
+}
+
+.todoList{
+  width: 30%;
+}
+
+.completedList{
+  width: 30%;
+}
+
+.listItem{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px; 
+  width: 250px;
+  height: 30px;
+  border-bottom: 2px solid rgb(191, 201, 205);
+}
+
+.listItem span{
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listItem button{
+  width: 18%;
+  margin-bottom: 5px;
+}
