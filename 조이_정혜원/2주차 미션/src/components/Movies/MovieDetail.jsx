@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import * as MD from "./MovieDetail.style";
 
 const MovieDetail = ({ isHover, movie }) => {
@@ -16,3 +17,11 @@ const MovieDetail = ({ isHover, movie }) => {
 };
 
 export default MovieDetail;
+
+MovieDetail.propTypes = {
+  isHover: PropTypes.bool.isRequired,
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    overview: PropTypes.string,
+  }),
+};
