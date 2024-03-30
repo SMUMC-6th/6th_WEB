@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./App.css";
 
 // state는 컴포넌트의 내부 값 변경에 사용.
@@ -8,6 +8,7 @@ function App() {
   // state를 이용한 각 list 변수 관리
   const [todoList, setTodoList] = useState([]);
   const [completeList, setCompleteList] = useState([]);
+  const inputRef = useRef(null); // ref 생성
 
   // 입력 끝나면 콜백함수
   function addTodoItem(event) {
@@ -24,6 +25,8 @@ function App() {
     setTodoList(newTodoList); // 객체 state를 set할때 3단계 : 새로운 객체 newTodoList를 set하기
     console.log(newTodoList);
     event.target.elements[0].value = "";
+    // event.target.elements[0].focus();
+    inputRef.current.focus(); // ref로 포커스 이동하기
   }
 
   // 완료 버튼 누를때 콜백함수
@@ -51,7 +54,7 @@ function App() {
   function TodoForm(props) {
     return (
       <form onSubmit={addTodoItem}>
-        <input type="text" placeholder={props.placeholder} />
+        <input ref={inputRef} type="text" placeholder={props.placeholder} />
       </form>
     );
   }
