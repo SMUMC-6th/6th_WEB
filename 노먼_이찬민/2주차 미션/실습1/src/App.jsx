@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 import "./App.css";
 
@@ -10,24 +10,29 @@ function App() {
   const [completeList, setCompleteList] = useState([]);
   const inputRef = useRef(null); // ref 생성
 
-  // 입력 끝나면 콜백함수
-  function addTodoItem(event) {
-    event.preventDefault();
-    const text = event.target.elements[0].value; // form의 이벤트 객체라서
-    const newTodoList = [...todoList]; // 객체 state를 set할때 1단계 : 받아오기
-    newTodoList.push({
-      // 객체 state를 set할때 2단계 : id, text 등의 변수가 담긴 객체를 받아온 배열에 push하기
-      id: todoList.length,
-      text: text,
-      buttonArea: "완료",
-      areaFunc: addCompleteItem,
-    });
-    setTodoList(newTodoList); // 객체 state를 set할때 3단계 : 새로운 객체 newTodoList를 set하기
-    console.log(newTodoList);
-    event.target.elements[0].value = "";
-    // event.target.elements[0].focus();
-    inputRef.current.focus(); // ref로 포커스 이동하기
-  }
+// 입력 끝나면 콜백함수
+function addTodoItem(event) {
+  event.preventDefault();
+  const text = event.target.elements[0].value; // form의 이벤트 객체라서
+  const newTodoList = [...todoList]; // 객체 state를 set할때 1단계 : 받아오기
+  newTodoList.push({
+    // 객체 state를 set할때 2단계 : id, text 등의 변수가 담긴 객체를 받아온 배열에 push하기
+    id: todoList.length,
+    text: text,
+    buttonArea: "완료",
+    areaFunc: addCompleteItem,
+  });
+  setTodoList(newTodoList); // 객체 state를 set할때 3단계 : 새로운 객체 newTodoList를 set하기
+  console.log(newTodoList);
+  event.target.elements[0].value = "";
+  // event.target.elements[0].focus();
+}
+
+  useEffect(() => {
+    inputRef.current.focus();// ref로 포커스 이동하기
+  }, [addTodoItem]);
+
+  
 
   // 완료 버튼 누를때 콜백함수
   function addCompleteItem(text) {

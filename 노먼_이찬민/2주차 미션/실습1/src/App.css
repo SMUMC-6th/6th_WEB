@@ -67,7 +67,8 @@ input::placeholder{
   height: 60%;
   display: flex;
   flex-direction: row;
-  margin-left: 300px;
+  justify-content: center;
+  /* margin-left: 200px; */
 }
 
 .todoList{
@@ -89,22 +90,22 @@ input::placeholder{
   background-color: rgba(255, 255, 255, 0.7); /* 스크롤 바 호버 시 색상 */
 }
 
-.completedList{
+.completeList{
   width: 30%;
   height: 400px;
   overflow-y: auto;
 }
 
-.completedList::-webkit-scrollbar {
+.completeList::-webkit-scrollbar {
   width: 8px; /* 스크롤 바의 너비 */
 }
 
-.completedList::-webkit-scrollbar-thumb {
+.completeList::-webkit-scrollbar-thumb {
   background-color: rgba(21, 194, 177, 0.5); /* 스크롤 바 색상 */
   border-radius: 4px; /* 스크롤 바의 모서리 반경 */
 }
 
-.completedList::-webkit-scrollbar-thumb:hover {
+.completeList::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.7); /* 스크롤 바 호버 시 색상 */
 }
 
