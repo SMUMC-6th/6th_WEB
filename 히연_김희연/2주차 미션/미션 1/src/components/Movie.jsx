@@ -19,9 +19,9 @@ export default function Movie({ title, poster_path, vote_average, overview }) {
       {isHover && (
         <div className="movie-wrapper">
           <div className="movie-box">
-            <br />
+       
             <h4 className="movie-title">{title}</h4>
-            <br />
+        
             <div className="movie-explain">{overview}</div>
           </div>
         </div>
