@@ -1,6 +1,5 @@
 import { useState } from "react";
 import MovieDetail from "./MovieDetail";
-import PropTypes from "prop-types";
 
 import * as M from "./Movie.style";
 
@@ -29,12 +28,3 @@ const Movie = ({ movie }) => {
 };
 
 export default Movie;
-
-Movie.propTypes = {
-  movie: PropTypes.shape({
-    title: PropTypes.string,
-    overview: PropTypes.string,
-    poster_path: PropTypes.string,
-    vote_average: PropTypes.number,
-  }),
-};
