@@ -2,10 +2,13 @@ import { useState } from "react";
 import MovieDetail from "./MovieDetail";
 
 import * as M from "./Movie.style";
+import NoImg from "../../assets/noImg.png";
 
 const Movie = ({ movie }) => {
   const { title, poster_path, vote_average } = movie;
   const [isHover, setIsHover] = useState(false);
+
+  const PosterURL = import.meta.env.VITE_POSTER_URL + `${poster_path}`;
 
   return (
     <M.Container
@@ -13,10 +16,7 @@ const Movie = ({ movie }) => {
       onMouseLeave={() => setIsHover(false)}
     >
       <M.Wrapper>
-        <img
-          src={`https://image.tmdb.org/t/p/original/${poster_path}`}
-          alt={title}
-        />
+        <img src={poster_path ? PosterURL : NoImg} alt={title} />
         <M.Box>
           <p>{title}</p>
           <p>{vote_average}</p>
