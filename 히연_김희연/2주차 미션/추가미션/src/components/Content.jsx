@@ -6,7 +6,7 @@ import Extra from "./Extra";
 
 export default function content() {
   return (
-    <div className="Content">
+    <div className="">
       <Hero />
       <Main />
       <Image />

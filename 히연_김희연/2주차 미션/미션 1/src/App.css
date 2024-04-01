@@ -44,10 +44,6 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.movie-container:hover {
-  display: block;
-}
-
 .movie-container img {
   max-width: 100%;
 }
