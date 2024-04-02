@@ -1,0 +1,15 @@
+import * as S from './Icons.style'
+
+// icons 태그에 전달된 func라는 이름의 객체props을 {함수}로 사용 + color
+// 사실상 이 컴포넌트의 자식 컴포넌트인 스타일 컴포넌트로 props를 그대로 한 번 더 넘겨줌 (거기서 접근하려고)
+const Icons = ({func, isPressed}) => {
+
+  return (
+    <S.IconsContainer>
+      <S.MessageIcon></S.MessageIcon>
+      <S.HeartIcon onClick={func} isPressed={isPressed}></S.HeartIcon>
+    </S.IconsContainer>
+  )
+}
+
+export default Icons
