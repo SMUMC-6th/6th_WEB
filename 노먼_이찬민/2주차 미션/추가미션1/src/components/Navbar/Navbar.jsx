@@ -2,6 +2,7 @@
 import * as S from './Navbar.style.js' 
 import PropTypes from 'prop-types';
 
+// 객체로 받아질 func를 그대로 받아들이기 위해 js 표현식 {}를 사용하여 함수형태로 받음
 const Navbar= ({func})=>{
 
   return(
