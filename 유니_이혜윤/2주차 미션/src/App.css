@@ -45,7 +45,7 @@
   max-height: 300px;
   overflow-y: auto; 
   -ms-overflow-style: none;  /* scrollbar 없애줌 */
-  opacity: 0.8;
+  opacity: 0.8 !important;
 }
 
 .content {
