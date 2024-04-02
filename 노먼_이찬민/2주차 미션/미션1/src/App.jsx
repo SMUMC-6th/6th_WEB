@@ -5,6 +5,7 @@ import { movies } from './components/movies.jsx';
 import MovieItem from "./components/movieItem.jsx";
 
 // state는 컴포넌트의 내부 값 변경에 사용.
+// 구조분해 할당형식으로 movies 데이터 받아들이기 
 
 function App() {
   // 영화 목록을 8개씩 분할하여 배열의 배열로 저장
