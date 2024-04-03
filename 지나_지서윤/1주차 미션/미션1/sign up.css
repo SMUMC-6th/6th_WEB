@@ -1,0 +1,118 @@
+/* 기본스타일링 제거 */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/*배경 영역*/
+body {
+  background-color: powderblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+/*로고 영역*/
+h2 {
+  width: 170px;
+  margin: 12px auto 20px; /*12px위 auto양쪽 자동조정 30px아래*/
+}
+
+hr {
+  border: 2px solid white;
+  width: 380px;
+}
+
+label {
+  font-size: 13px;
+
+  display: grid;
+}
+form {
+  background-color: aliceblue;
+  border-radius: 5px;
+
+  width: 500px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 45px 0;
+}
+
+input {
+  background-color: aliceblue;
+  border: 2px solid white;
+  border-radius: 5px;
+
+  width: 260px;
+  height: 20px;
+}
+
+form p {
+  font-size: 9px;
+  color: red;
+
+  display: none;
+
+  margin-top: 1px;
+}
+
+#signup-btn {
+  background-color: gray;
+  border: 1px solid gray;
+  color: white;
+  cursor: pointer;
+
+  width: 16.3rem;
+  height: 3rem;
+  margin-top: 40px;
+  
+}
+
+/* modal */
+#modal-close-btn {
+  cursor: pointer;
+}
+
+#modal-open-btn {
+  cursor: pointer;
+}
+
+.modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.04);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  place-items: center;
+}
+
+.modal {
+  background-color: white;
+  width: 370px;
+  border-radius: 5px;
+  padding: 18px;
+}
+
+.modal-content {
+  display: grid;
+  place-items: center;
+}
+
+.modal-content > h3 {
+  text-align: center;
+}
+
+.modal-close {
+  text-align: right;
+}
