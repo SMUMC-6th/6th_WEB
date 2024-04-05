@@ -20,6 +20,7 @@ const Button = (func) =>{
       <S.Button>클릭!</S.Button>
       <S.Button>클릭!</S.Button>
     </S.ButtonContainer>
+
   )
 }
 

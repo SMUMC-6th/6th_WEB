@@ -4,8 +4,8 @@ const Footer = () => {
 
   return (
     <S.Container>
-      <S.Logo></S.Logo>
-      <S.CopyRight>UMC-6th Norman</S.CopyRight>
+      <S.Logo>⚙️ option</S.Logo>
+      <S.CopyRight>✉️ UMC-6th dlcksals87@gmail.com </S.CopyRight>
     </S.Container>
   )
 }

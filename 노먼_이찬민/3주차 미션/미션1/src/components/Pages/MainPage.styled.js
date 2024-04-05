@@ -30,9 +30,10 @@ const BottomWrapper = styled.div`
 `
 
 const SearchLabel = styled.div`
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: bolder;
   color: aliceblue;
+  margin-bottom: 20px;
 `
 
 const SearchInput = styled.input`

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom'; // 라우터의 링크 구현을 위해 import
 
 const Container = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const Caption = styled.div`
 `
 
 const PageLinkContainer = styled.div`
-  width: 50%;
+  width: 40%;
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -35,7 +36,19 @@ const PageLink = styled.div`
   width: 100%;
   font-size : 14px;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
+
 `
 
-export { Container, Caption, PageLinkContainer, PageLink }
+const Links = styled(Link)`
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+`
+
+
+export { Container, Caption, PageLinkContainer, PageLink, Links }

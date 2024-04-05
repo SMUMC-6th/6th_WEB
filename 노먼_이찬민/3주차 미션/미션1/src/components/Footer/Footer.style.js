@@ -10,6 +10,10 @@ const Container = styled.div`
 
 const Logo = styled.div`
   width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color : white;
 `
 
 const CopyRight = styled.div`

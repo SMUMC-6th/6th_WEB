@@ -17,6 +17,7 @@ function App() {
     <div className='wrapper'>
       {(isOpen)&&<Modal/>}
       {/* <Modal func={handleClick}/>  */}
+      
       <Button func={handleClick}/>
     </div>
   )

@@ -24,7 +24,7 @@ const Image = styled.div`
 const TitleVote = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap:10px;
   color: ivory;
@@ -33,18 +33,22 @@ const TitleVote = styled.div`
 `
 
 const Span = styled.span`
-  font-size: 14px;
+  font-size: 15px;
   width: 70%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   /* margin: 50px 0 40px 0; */
   /* margin-left: 10px; */
 `
 
-const Paragrape = styled.p`
-  width: 20%;
-  margin: auto;
+const Paragraph = styled.p`
+  font-size: 14px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 `
 
-export { Item, Image, TitleVote, Span, Paragrape };
+export { Item, Image, TitleVote, Span, Paragraph };

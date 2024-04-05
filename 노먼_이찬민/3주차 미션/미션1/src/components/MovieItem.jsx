@@ -5,12 +5,13 @@ import * as S from './MovieItem.style'
 function MovieItem(props){
   const imageUrl = props.poster ? `https://image.tmdb.org/t/p/w500/${props.poster}` : '';
 
+  // 평점은 2자리수까지만 표시하기, 너무많으니까 눈아픔
   return(
     <S.Item>
       <S.Image src={imageUrl}></S.Image>
       <S.TitleVote>
         <S.Span>{props.title}</S.Span>
-        <S.Paragrape>{props.voteAverage}</S.Paragrape>
+        <S.Paragraph>⭐{props.voteAverage.toFixed(2)}</S.Paragraph> 
       </S.TitleVote>
     </S.Item>
   );

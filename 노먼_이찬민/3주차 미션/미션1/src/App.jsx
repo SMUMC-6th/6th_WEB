@@ -18,7 +18,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
-          <Route path="/NowPlayingPage" element={<NowPlayingPage/>}/>
+          <Route path="/NowPlayingPage" element={<NowPlayingPage category={"now_playing"}/>}/>
           <Route path="/PopularPage/" element={<PopularPage/>}/>
           <Route path="/TopRatedPage/" element={<TopRatedPage/>}/>
           <Route path="/UpcommingPage/" element={<UpComingPage/>}/>

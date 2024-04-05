@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import * as S from './UpComingPage.style';
+import * as S from './Pages.styled';
 import MovieItem from '../MovieItem';
 
 
-const UpComingPage = () => {
+const UpComingPage = (props) => {
   const [movieItems, setMovieItems] = useState([]);
 
   useEffect(() => {
