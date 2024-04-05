@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
-import { moviesData } from "../../api/movies";
 import Movie from "./Movie";
+import movieAxios from "../../api/axios";
 
 import { Container } from "./Movies.style";
 
-const Movies = () => {
+const Movies = ({ requestURL }) => {
   const [movies, setMovies] = useState([]);
 
-  const fetchMovieData = () => {
-    const res = moviesData;
-    setMovies(res.results);
+  const fetchMovieData = async () => {
+    const res = await movieAxios.get(requestURL);
+    setMovies(res.data.results);
   };
 
   useEffect(() => {
     fetchMovieData();
-  }, []); /* 일단 고정된 데이터라 의존성 배열 지정 x */
+
+    // TODO: return
+  }, [requestURL]);
 
   return (
     <Container>
