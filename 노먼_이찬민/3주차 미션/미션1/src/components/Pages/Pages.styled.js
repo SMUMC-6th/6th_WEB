@@ -30,5 +30,6 @@ const Spinner = styled.div`
   animation: ${spin} 2s linear infinite; // 애니메이션 적용
 `;
 
+
 export {Container, Spinner} 
 
