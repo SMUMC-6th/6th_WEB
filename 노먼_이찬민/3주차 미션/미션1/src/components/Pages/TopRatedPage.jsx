@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import * as S from './Pages.styled';
 import MovieItem from '../MovieItem';
 
-const NowPlayingPage = () => {
+const TopRatedPage = () => {
   const [movieItems, setMovieItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // 초기값을 true로 설정
 
@@ -21,7 +21,9 @@ const NowPlayingPage = () => {
         const movies = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options);
         const data = await movies.json();
         const movieList = data.results.map(item => ({
+          // id를 key로 정해서 uniqueness 를 지켜줌. -> 나중에 Link로 id전달해줄 때 key 속성을 전달하면 됨.
           key: item.id,
+          overview: item.overview,
           poster: item.poster_path,
           title: item.title,
           voteAverage: item.vote_average
@@ -43,7 +45,9 @@ const NowPlayingPage = () => {
       {(isLoading) && (<S.Spinner></S.Spinner>)}
       {movieItems.map(movie => (
         // movie 매개변수로 movieItems를 받아옴과 동시에 순회하며 새로운 배열 생성하기, key는 영화의 id로 설정한다
-        <MovieItem key={movie.key} 
+        <MovieItem key={movie.key}
+        id={movie.key}
+        overview={movie.overview}
         poster={movie.poster} 
         title={movie.title} 
         voteAverage={movie.voteAverage} />
@@ -54,4 +58,4 @@ const NowPlayingPage = () => {
   );
 };
 
-export default NowPlayingPage;
+export default TopRatedPage;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {Link} from 'react-router-dom';
 
 const Item = styled.div`
   display: flex;
@@ -13,10 +13,12 @@ const Item = styled.div`
   /* row-gap: 10px; */
 `
 
-const Image = styled.div`
-  background: url(${(props) => props.src});
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
+const LLink = styled(Link)`
   width: 100%;
   height: 80%;
 `
@@ -51,4 +53,4 @@ const Paragraph = styled.p`
 
 `
 
-export { Item, Image, TitleVote, Span, Paragraph };
+export { Item, Image, LLink, TitleVote, Span, Paragraph };

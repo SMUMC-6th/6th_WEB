@@ -9,6 +9,7 @@ import PopularPage from "./components/Pages/PopularPage";
 import TopRatedPage from "./components/Pages/TopRatedPage";
 import UpComingPage from "./components/Pages/UpComingpage";
 import NowPlayingPage from "./components/Pages/NowPlayingPage";
+import DetailPage from "./components/Pages/DetailPage";
 
 
 function App() {
@@ -18,10 +19,11 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
-          <Route path="/NowPlayingPage" element={<NowPlayingPage category={"now_playing"}/>}/>
+          <Route path="/NowPlayingPage/" element={<NowPlayingPage/>}/>
           <Route path="/PopularPage/" element={<PopularPage/>}/>
           <Route path="/TopRatedPage/" element={<TopRatedPage/>}/>
           <Route path="/UpcommingPage/" element={<UpComingPage/>}/>
+          <Route path="/DetailPage/" element={<DetailPage/>}/> 
         </Routes>
         <Footer/>
       </BrowserRouter>

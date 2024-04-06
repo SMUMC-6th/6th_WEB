@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 import * as S from './Pages.styled';
 import MovieItem from '../MovieItem';
 
-
-const UpComingPage = (props) => {
+const UpComingPage = () => {
   const [movieItems, setMovieItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // 초기값을 true로 설정
 
   useEffect(() => {
-    // API 요청 시 옵션 설정
     const options = {
       method: 'GET',
       headers: {
@@ -16,41 +15,47 @@ const UpComingPage = (props) => {
       }
     };
 
-    // API 요청 - async await를 사용해서 오류 방지
     async function getMovies() {
+      setIsLoading(true); // 로딩 시작
       try {
         const movies = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options);
-        const data = await movies.json(); // JSON 응답 파일을 자바스크립트 객체로 변환하기
-        // console.log(data);
-        setMovieItems(data.results);
-        // console.log(movieItems);
+        const data = await movies.json();
+        const movieList = data.results.map(item => ({
+          // id를 key로 정해서 uniqueness 를 지켜줌. -> 나중에 Link로 id전달해줄 때 key 속성을 전달하면 됨.
+          key: item.id,
+          overview: item.overview,
+          poster: item.poster_path,
+          title: item.title,
+          voteAverage: item.vote_average
+        }));
+        setMovieItems(movieList);
+        setIsLoading(false); // 로딩 종료
+        
       } catch (error) {
         console.error(error);
-      }
+      } 
     }
 
     getMovies();
-  },[])
+  }, []);
 
-  // useEffect(() => {
-  //   console.log(movieItems);
-  //   console.log(movieItems[3].id, movieItems[3].title, movieItems[3].vote_average);
-  // }, [movieItems]);
-
-
-  // movie 매개변수로 movieItems를 받아옴과 동시에 순회하며 새로운 배열 생성하기, key는 영화의 id로 설정한다
   return (
+    // 로딩 스피너를 구현하긴 했는데, 너무 빨라서 안보임 ㅋㅋㅋㅋㅋㅋ
     <S.Container>
-      {movieItems.map((movie) => (
-        <MovieItem 
-        key={movie.id} 
-        poster={movie.poster_path} 
+      {(isLoading) && (<S.Spinner></S.Spinner>)}
+      {movieItems.map(movie => (
+        // movie 매개변수로 movieItems를 받아옴과 동시에 순회하며 새로운 배열 생성하기, key는 영화의 id로 설정한다
+        <MovieItem key={movie.key}
+        id={movie.key}
+        overview={movie.overview}
+        poster={movie.poster} 
         title={movie.title} 
-        voteAverage={movie.vote_average}
-        />
+        voteAverage={movie.voteAverage} />
       ))}
     </S.Container>
-  )
-}
+    
+    
+  );
+};
 
-export default UpComingPage
+export default UpComingPage;

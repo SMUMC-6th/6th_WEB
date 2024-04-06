@@ -5,7 +5,7 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; // 반응성 추가
   /* background-color: navy; */
   justify-content: center;
   align-items: center;
@@ -25,8 +25,8 @@ const Spinner = styled.div`
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-left-color: #333;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   animation: ${spin} 2s linear infinite; // 애니메이션 적용
 `;
 
