@@ -11,9 +11,13 @@ const Movies = ({ requestURL }) => {
 
   const fetchMovieData = async () => {
     setLoading(true);
-    const res = await movieAxios.get(requestURL);
-    setMovies(res.data.results);
-    setLoading(false);
+    try {
+      const res = await movieAxios.get(requestURL);
+      setMovies(res.data.results);
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
