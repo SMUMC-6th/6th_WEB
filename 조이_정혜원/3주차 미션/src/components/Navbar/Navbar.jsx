@@ -12,8 +12,8 @@ const Navbar = () => {
         <span>회원가입</span>
         <span onClick={() => nav("/popular")}>Popular</span>
         <span onClick={() => nav("/now")}>Now Playing</span>
-        <span onClick={() => nav("/topRated")}>Top Rated</span>
-        <span onClick={() => nav("/upComing")}>UpComing</span>
+        <span onClick={() => nav("/top-rated")}>Top Rated</span>
+        <span onClick={() => nav("/up-coming")}>UpComing</span>
       </N.NavContainer>
     </N.Container>
   );

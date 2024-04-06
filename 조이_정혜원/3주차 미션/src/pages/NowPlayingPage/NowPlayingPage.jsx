@@ -4,15 +4,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 import * as MP from "../MainPage/MainPage.style";
-import * as NP from "./NowPlayingPage.style";
 
 const NowPlayingPage = () => {
   return (
     <MP.Container>
       <Navbar />
-      <NP.MovieContainer>
-        <Movies requestURL={requests.nowPlaying} />
-      </NP.MovieContainer>
+      <Movies requestURL={requests.nowPlaying} />
       <Footer />
     </MP.Container>
   );

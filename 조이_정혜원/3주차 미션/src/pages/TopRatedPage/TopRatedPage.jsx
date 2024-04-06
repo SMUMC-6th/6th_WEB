@@ -9,9 +9,7 @@ const TopRatedPage = () => {
   return (
     <MP.Container>
       <Navbar />
-      <MP.Wrapper>
-        <Movies requestURL={requests.topRated} /> <Footer />
-      </MP.Wrapper>
+      <Movies requestURL={requests.topRated} /> <Footer />
     </MP.Container>
   );
 };

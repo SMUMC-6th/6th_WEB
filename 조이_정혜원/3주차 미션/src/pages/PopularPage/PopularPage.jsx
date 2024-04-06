@@ -8,9 +8,7 @@ const PopularPage = () => {
   return (
     <MP.Container>
       <Navbar />
-      <MP.Wrapper>
-        <Movies requestURL={requests.popular} />
-      </MP.Wrapper>
+      <Movies requestURL={requests.popular} />
       <Footer />
     </MP.Container>
   );

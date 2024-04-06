@@ -7,7 +7,7 @@ const Container = styled.div`
 
 const MovieContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 
   margin: 20px;
 

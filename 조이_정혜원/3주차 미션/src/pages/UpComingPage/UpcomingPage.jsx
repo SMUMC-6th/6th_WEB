@@ -9,9 +9,7 @@ const UpcomingPage = () => {
   return (
     <MP.Container>
       <Navbar />
-      <MP.Wrapper>
-        <Movies requestURL={requests.upComing} />
-      </MP.Wrapper>
+      <Movies requestURL={requests.upComing} />
       <Footer />
     </MP.Container>
   );

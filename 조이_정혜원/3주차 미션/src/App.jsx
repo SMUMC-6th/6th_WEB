@@ -11,8 +11,8 @@ function App() {
       <Route path="/" element={<MainPage />} />
       <Route path="/popular" element={<PopularPage />} />
       <Route path="/now" element={<NowPlayingPage />} />
-      <Route path="/topRated" element={<TopRatedPage />} />
-      <Route path="/upComing" element={<UpcomingPage />} />
+      <Route path="/top-rated" element={<TopRatedPage />} />
+      <Route path="/up-coming" element={<UpcomingPage />} />
     </Routes>
   );
 }
