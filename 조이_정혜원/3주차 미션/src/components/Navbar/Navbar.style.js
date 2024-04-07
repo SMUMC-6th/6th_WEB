@@ -10,7 +10,6 @@ const Container = styled.div`
 
   background-color: rgb(9, 11, 19, 0.85);
 
-  color: rgb(242, 245, 255, 0.8);
   font-weight: 500;
 
   display: flex;
@@ -19,31 +18,30 @@ const Container = styled.div`
 
   padding: 20px;
 
-  div {
-    color: rgb(242, 245, 255);
+  img {
+    width: 4%;
+    margin-bottom: 2px;
 
     &:hover {
       cursor: pointer;
-    }
-  }
-
-  span {
-    padding: 0 13px;
-    letter-spacing: 3px;
-    font-size: 13px;
-
-    &:hover {
-      color: rgb(250, 233, 100, 0.95);
-      cursor: pointer;
-      transform: scale(1.1);
     }
   }
 `;
 
 const NavContainer = styled.div`
   display: flex;
-  div {
-    padding: 0 10px;
+
+  span {
+    padding: 0 13px;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: rgb(242, 245, 255, 0.8);
+
+    &:hover {
+      color: rgb(250, 233, 100, 0.95);
+      cursor: pointer;
+      transform: scale(1.1);
+    }
   }
 `;
 
