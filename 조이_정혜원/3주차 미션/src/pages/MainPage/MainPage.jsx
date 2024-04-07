@@ -1,5 +1,3 @@
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
 import * as MP from "./MainPage.style";
 import serchImg from "../../assets/search.png";
@@ -7,7 +5,6 @@ import serchImg from "../../assets/search.png";
 const MainPage = () => {
   return (
     <MP.Container>
-      <Navbar />
       <MP.Wrapper>
         <Banner />
         <MP.FindBox>
@@ -18,7 +15,6 @@ const MainPage = () => {
           </div>
         </MP.FindBox>
       </MP.Wrapper>
-      <Footer />
     </MP.Container>
   );
 };
