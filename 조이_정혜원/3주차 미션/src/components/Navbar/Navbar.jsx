@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as N from "./Navbar.style";
 import Logo from "../../assets/logo.png";
 
@@ -10,11 +10,11 @@ const Navbar = () => {
     <N.Container>
       <img src={Logo} onClick={() => nav("/")} />
       <N.NavContainer>
-        <span>회원가입</span>
-        <span onClick={() => nav("/popular")}>Popular</span>
-        <span onClick={() => nav("/now")}>Now Playing</span>
-        <span onClick={() => nav("/top-rated")}>Top Rated</span>
-        <span onClick={() => nav("/up-coming")}>UpComing</span>
+        <Link to="/">회원가입</Link>
+        <Link to="/popular">Popular</Link>
+        <Link to="/now">Now Playing</Link>
+        <Link to="top-rated">Top Rated</Link>
+        <Link to="up-coming">UpComing</Link>
       </N.NavContainer>
     </N.Container>
   );

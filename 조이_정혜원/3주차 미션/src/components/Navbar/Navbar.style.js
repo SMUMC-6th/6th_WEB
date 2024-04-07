@@ -31,7 +31,8 @@ const Container = styled.div`
 const NavContainer = styled.div`
   display: flex;
 
-  span {
+  a {
+    text-decoration: none;
     letter-spacing: 3px;
     font-size: 13px;
     color: rgb(242, 245, 255, 0.8);
