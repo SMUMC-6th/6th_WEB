@@ -1,7 +1,12 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-  margin: 10px 7px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px 0;
+
   position: relative;
 
   &:hover {
