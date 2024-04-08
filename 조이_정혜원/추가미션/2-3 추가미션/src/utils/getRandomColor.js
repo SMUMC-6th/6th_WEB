@@ -1,9 +1,9 @@
 export const getRandomColor = () => {
-  let randomColor = "";
+  let randomColor = "#";
   for (let i = 0; i < 6; i++) {
     randomColor += Math.floor(Math.random() * 10);
   }
-  return "#" + randomColor;
+  return randomColor;
 };
 
 // Math.floor 소수점값이 존재할 때 소수값을 버림
