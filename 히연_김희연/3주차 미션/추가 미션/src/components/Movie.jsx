@@ -14,7 +14,7 @@ export default function Movie({ title, poster_path, vote_average, overview }) {
       <S.MovieImage src={IMG_BASE_URL + poster_path} alt="영화포스터" />
       <S.MovieInfo>
         <h4>{title}</h4>
-        <span>{vote_average}</span>
+        <span>⭐️{vote_average}</span>
       </S.MovieInfo>
       {isHover && (
         <S.MovieWrapper>
