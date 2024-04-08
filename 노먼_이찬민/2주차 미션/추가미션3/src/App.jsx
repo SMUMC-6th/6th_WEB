@@ -8,17 +8,19 @@ import Modal from './components/Modal/Modal';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const handleClick = (() => {
-    setIsOpen(!isOpen);
+  const handleOpen = (() => {
+    setIsOpen(true);
+  });
+
+  const handleClose = (() => {
+    setIsOpen(false);
   });
 
   // modal에 주는 함수는 닫기버튼에 달거고, 버튼에 주는 함수는 여는 버튼(첫버튼)에 줄거임
   return(
     <div className='wrapper'>
-      {(isOpen)&&<Modal/>}
-      {/* <Modal func={handleClick}/>  */}
-      
-      <Button func={handleClick}/>
+      {(isOpen)&&<Modal onClick={handleClose}/>}
+      <Button func={handleOpen}/>
     </div>
   )
 }
