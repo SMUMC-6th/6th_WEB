@@ -7,16 +7,17 @@ import * as M from "./Movies.style";
 
 const Movies = ({ requestURL }) => {
   const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // 보통 처음에는 false 데이터 받을 때 true로 변경
 
   const fetchMovieData = async () => {
     setLoading(true);
     try {
       const res = await movieAxios.get(requestURL);
       setMovies(res.data.results);
-      setLoading(false);
     } catch (e) {
       console.log(e);
+    } finally {
+      setLoading(false);
     }
   };
 
