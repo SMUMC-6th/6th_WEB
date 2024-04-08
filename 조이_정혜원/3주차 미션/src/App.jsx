@@ -1,4 +1,4 @@
-import AppLayout from "./Layout/AppLayout";
+import AppLayout from "./layout/AppLayout";
 import MainPage from "./pages/MainPage/MainPage";
 import PopularPage from "./pages/PopularPage/PopularPage";
 import NowPlayingPage from "./pages/NowPlayingPage/NowPlayingPage";

@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import Spinner from "../../assets/spinner.gif";
+import { Container } from "./Loading.style";
 
 const Loading = () => {
   return (
@@ -10,14 +10,3 @@ const Loading = () => {
 };
 
 export default Loading;
-
-const Container = styled.div`
-  height: 750px;
-  background-color: aliceblues;
-
-  display: grid;
-  place-items: center;
-  img {
-    width: 3%;
-  }
-`;
