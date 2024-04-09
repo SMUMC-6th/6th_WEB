@@ -25,17 +25,16 @@ const TodoItem = ({ todo }) => {
   return (
     <S.Container>
       {isEdit ? (
-        <S.UpdateWrapper
-          onSubmit={(e) => e.preventDefault()}
-          onKeyPress={handleEnter}
-        >
-          <input
-            defaultValue={task}
-            onChange={(e) => setUpdateText(e.target.value)}
-            autoFocus
-          />
-          <S.Icon onClick={() => handleChange()} />
-        </S.UpdateWrapper>
+        <form onSubmit={(e) => e.preventDefault()} onKeyPress={handleEnter}>
+          <S.UpdateWrapper>
+            <input
+              defaultValue={task}
+              onChange={(e) => setUpdateText(e.target.value)}
+              autoFocus
+            />
+            <S.Icon onClick={() => handleChange()} />
+          </S.UpdateWrapper>
+        </form>
       ) : (
         <p>{task}</p>
       )}

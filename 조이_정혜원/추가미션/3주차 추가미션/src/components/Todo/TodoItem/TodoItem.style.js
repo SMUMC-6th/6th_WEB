@@ -25,7 +25,7 @@ const Container = styled.div`
   }
 `;
 
-const UpdateWrapper = styled.form`
+const UpdateWrapper = styled.div`
   display: flex;
   align-items: center;
 
