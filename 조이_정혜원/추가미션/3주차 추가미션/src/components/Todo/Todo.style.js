@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { FaPlus } from "react-icons/fa";
 
 const Container = styled.div`
@@ -30,7 +30,8 @@ const InputWrapper = styled.form`
 
 const ItemWrapper = styled.div`
   height: 370px;
-  overflow-y: scroll;
+  width: 310px;
+  overflow-y: auto;
 `;
 
 const AddIcon = styled(FaPlus)`

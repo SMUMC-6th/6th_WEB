@@ -1,5 +1,5 @@
 import { FaCircle } from "react-icons/fa";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
