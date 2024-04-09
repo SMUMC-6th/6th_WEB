@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
 
 const Container = styled.div`
   width: 100%;
@@ -38,12 +39,15 @@ const FindBox = styled.div`
       outline: none;
     }
   }
+`;
 
-  img {
-    &:hover {
-      cursor: pointer;
-    }
+const searchImg = styled(FaSearch)`
+  color: #fff;
+  margin-bottom: 3px;
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
-export { Container, Wrapper, FindBox };
+export { Container, Wrapper, FindBox, searchImg };

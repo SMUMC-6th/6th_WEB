@@ -1,6 +1,5 @@
 import Banner from "../../components/Banner/Banner";
 import * as MP from "./MainPage.style";
-import serchImg from "../../assets/search.png";
 
 const MainPage = () => {
   return (
@@ -11,7 +10,7 @@ const MainPage = () => {
           <p>🎥 Find your movies 🍿</p>
           <div>
             <input type="text" placeholder=" 검색어를 입력하세요" />
-            <img src={serchImg} alt="serch" />
+            <MP.searchImg />
           </div>
         </MP.FindBox>
       </MP.Wrapper>
