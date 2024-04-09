@@ -19,7 +19,7 @@ const useFetchMovie = (requestURL) => {
       if (err.name === "AbortError") {
         alert("AbortError");
       } else {
-        console.log(e);
+        console.log(err);
       }
 
       setError(true);
