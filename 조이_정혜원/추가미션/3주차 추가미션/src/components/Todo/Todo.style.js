@@ -4,16 +4,43 @@ import { FaPlus } from "react-icons/fa";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const InputWrapper = styled.div`
-  display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const AddIcon = styled(FaPlus)`
-  height: 30px;
+const InputWrapper = styled.form`
+  display: flex;
+  align-items: center;
+
+  margin: 20px 0 20px;
+
+  input {
+    border: none;
+    border-bottom: 1px solid #9c9a9a;
+
+    width: 250px;
+    height: 30px;
+    margin-right: 2px;
+
+    &:placeholder-shown {
+      font-style: italic;
+    }
+  }
 `;
 
-export { Container, InputWrapper, AddIcon };
+const ItemWrapper = styled.div`
+  height: 370px;
+  overflow-y: scroll;
+`;
+
+const AddIcon = styled(FaPlus)`
+  height: 30px;
+  margin: 4px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+  }
+`;
+
+export { Container, InputWrapper, ItemWrapper, AddIcon };

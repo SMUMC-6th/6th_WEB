@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { FaCheck } from "react-icons/fa";
 import { TodoContext } from "../../../context/TodoContext";
+import * as S from "./TodoItem.style";
 
 const TodoItem = ({ todo }) => {
   const { id, task } = todo;
@@ -8,9 +8,13 @@ const TodoItem = ({ todo }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [updateText, setUpdateText] = useState("");
 
+  const handleEnter = (e) => {
+    if (e.key === "Enter") handleChange();
+  };
+
   const handleChange = () => {
-    if (updateText === "") {
-      alert("공백은 입력할 수 없습니다 !");
+    if (updateText.trim() === "") {
+      alert("변경을 원하지 않으시면 취소를 눌러주세용");
       return;
     }
     updateTodo(id, updateText);
@@ -19,23 +23,33 @@ const TodoItem = ({ todo }) => {
   };
 
   return (
-    <div>
+    <S.Container>
       {isEdit ? (
-        <>
+        <S.UpdateWrapper
+          onSubmit={(e) => e.preventDefault()}
+          onKeyPress={handleEnter}
+        >
           <input
             defaultValue={task}
             onChange={(e) => setUpdateText(e.target.value)}
+            autoFocus
           />
-          <FaCheck onClick={() => handleChange()} />
-        </>
+          <S.Icon onClick={() => handleChange()} />
+        </S.UpdateWrapper>
       ) : (
         <p>{task}</p>
       )}
-      <button onClick={() => setIsEdit((prev) => !prev)}>변경</button>
-      <button role="button" onClick={() => deleteTodo(id)}>
-        삭제
-      </button>
-    </div>
+      <S.ButtonBox>
+        {isEdit ? (
+          <button onClick={() => setIsEdit((prev) => !prev)}>취소</button>
+        ) : (
+          <button onClick={() => setIsEdit((prev) => !prev)}>변경</button>
+        )}
+        <button role="button" onClick={() => deleteTodo(id)}>
+          삭제
+        </button>
+      </S.ButtonBox>
+    </S.Container>
   );
 };
 

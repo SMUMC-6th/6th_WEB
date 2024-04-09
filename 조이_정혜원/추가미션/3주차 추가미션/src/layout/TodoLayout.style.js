@@ -5,13 +5,19 @@ const Container = styled.div`
   place-items: center;
   width: 100vw;
   height: 100vh;
+
+  background-color: rgb(0, 0, 0, 0.2);
 `;
 
 const Content = styled.div`
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 650px;
 
-  background-color: azure;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px 2px #a6a6a6;
+
+  background-color: #fff;
 `;
 
 const OutletWrapper = styled.div`

@@ -6,28 +6,30 @@ import { TodoContext } from "../../context/TodoContext";
 const Todo = () => {
   const { todoList, text, setText, addTodo } = useContext(TodoContext);
 
-  const enter = (e) => {
+  const handleEnter = (e) => {
     if (e.key === "Enter") addTodo();
   };
 
   return (
     <S.Container>
-      <form onSubmit={(e) => e.preventDefault()} onKeyDown={enter}>
-        <S.InputWrapper>
-          <input
-            type="text"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="새로운 할 일을 입력하세요"
-          />
-          <S.AddIcon onClick={addTodo} />
-        </S.InputWrapper>
-      </form>
-      <div>
+      <S.InputWrapper
+        onSubmit={(e) => e.preventDefault()}
+        onKeyPress={handleEnter}
+      >
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder=" 새로운 할 일을 입력하세요"
+        />
+        <S.AddIcon onClick={addTodo} />
+      </S.InputWrapper>
+
+      <S.ItemWrapper>
         {todoList.map((todo) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}
-      </div>
+      </S.ItemWrapper>
     </S.Container>
   );
 };
