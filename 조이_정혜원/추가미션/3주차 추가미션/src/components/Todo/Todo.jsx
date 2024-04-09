@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import * as S from "./Todo.style";
-import TodoItem from "./TodoItem/TodoItem";
 import { TodoContext } from "../../context/TodoContext";
+import TodoItem from "./TodoItem/TodoItem";
 
 const Todo = () => {
   const { todoList, text, setText, addTodo } = useContext(TodoContext);
