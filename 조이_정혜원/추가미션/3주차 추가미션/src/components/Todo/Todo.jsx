@@ -1,46 +1,18 @@
-import { useState } from "react";
+import { useContext } from "react";
 import * as S from "./Todo.style";
 import TodoItem from "./TodoItem/TodoItem";
+import { TodoContext } from "../../context/TodoContext";
 
 const Todo = () => {
-  const [todoList, setTodoList] = useState([]);
-  const [text, setText] = useState("");
+  const { todoList, text, setText, addTodo } = useContext(TodoContext);
 
-  const addTodo = () => {
-    if (text === "") {
-      alert("할 일을 입력하세요 !");
-      return;
-    }
-    setTodoList((prev) => [
-      ...prev,
-      {
-        id: Math.floor(Math.random() * 100 + 2),
-        task: text,
-      },
-    ]);
-    setText("");
-  };
-
-  const deleteTodo = (id) => {
-    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
-  };
-
-  const updateTodo = (id, updateText) => {
-    setTodoList((prev) =>
-      prev.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              task: updateText,
-            }
-          : todo
-      )
-    );
+  const enter = (e) => {
+    if (e.key === "Enter") addTodo();
   };
 
   return (
     <S.Container>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={(e) => e.preventDefault()} onKeyDown={enter}>
         <S.InputWrapper>
           <input
             type="text"
@@ -53,12 +25,7 @@ const Todo = () => {
       </form>
       <div>
         {todoList.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            deleteTodo={deleteTodo}
-            updateTodo={updateTodo}
-          />
+          <TodoItem key={todo.id} todo={todo} />
         ))}
       </div>
     </S.Container>

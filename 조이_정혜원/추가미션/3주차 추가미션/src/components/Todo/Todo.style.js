@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { FaRegSquarePlus } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa";
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const InputWrapper = styled.div`
   align-items: center;
 `;
 
-const AddIcon = styled(FaRegSquarePlus)`
+const AddIcon = styled(FaPlus)`
   height: 30px;
 `;
 

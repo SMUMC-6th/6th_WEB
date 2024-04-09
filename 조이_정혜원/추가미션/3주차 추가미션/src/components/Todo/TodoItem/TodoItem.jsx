@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { FaRegCheckCircle } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { FaCheck } from "react-icons/fa";
+import { TodoContext } from "../../../context/TodoContext";
 
-const TodoItem = ({ todo, deleteTodo, updateTodo }) => {
+const TodoItem = ({ todo }) => {
   const { id, task } = todo;
-
+  const { deleteTodo, updateTodo } = useContext(TodoContext);
   const [isEdit, setIsEdit] = useState(false);
   const [updateText, setUpdateText] = useState("");
 
@@ -25,7 +26,7 @@ const TodoItem = ({ todo, deleteTodo, updateTodo }) => {
             defaultValue={task}
             onChange={(e) => setUpdateText(e.target.value)}
           />
-          <FaRegCheckCircle onClick={() => handleChange()} />
+          <FaCheck onClick={() => handleChange()} />
         </>
       ) : (
         <p>{task}</p>

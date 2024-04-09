@@ -1,10 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { TodoContextProvider } from "./context/TodoContext.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+// <TodoContextProvider> 우산 만든거 쓰워줘
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <TodoContextProvider>
     <App />
-  </React.StrictMode>,
-)
+  </TodoContextProvider>
+);
