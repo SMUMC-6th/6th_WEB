@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import "./App.css"
 import Navbar from './Navbar'
 import MainPage from './pages/MainPage'
@@ -9,22 +9,35 @@ import TopRatedPage from './pages/TopRatedPage'
 import UpcomingPage from './pages/Upcoming'
 import Footer from './Footer'
 
-const router = createBrowserRouter([
-  { path: "/", element: <MainPage /> },
-  { path: "/popular", element: <PopularPage /> },
-  { path: "/nowplay", element: <NowPlayingPage /> },
-  { path: "/toprated", element: <TopRatedPage /> },
-  { path: "/upcoming", element: <UpcomingPage /> },
-]);
+const Layout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+};
 
+const router = createBrowserRouter([
+  {
+    path: "/", 
+    element: <Layout />, 
+    children: [
+      { index: true, element: <MainPage /> },
+      { path: "popular", element: <PopularPage /> },
+      { path: "nowplay", element: <NowPlayingPage /> },
+      { path: "toprated", element: <TopRatedPage /> },
+      { path: "upcoming", element: <UpcomingPage /> },
+    ]
+  },
+]);
 
 function App() {
 
   return (
     <div>
-        <Navbar />
-        <RouterProvider router={router} />
-        <Footer />
+      <RouterProvider router={router} />
     </div>
   );
 }
