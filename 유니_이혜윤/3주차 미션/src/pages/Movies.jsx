@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as MP from "./MoviePage.style"
 import { FaStar } from "react-icons/fa";
 import Loading from './Loading';
+import MovieList from './MovieList';
 
 const Movies = ({ type }) => {
   const [movies, setMovies] = useState([]);
@@ -35,13 +36,8 @@ const Movies = ({ type }) => {
       <MP.Container>
         <MP.Movielist>
           {movies.map(movie => (
-            <MP.Content key={movie.id}>
-              <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-              <MP.Info>
-                <h3>{movie.title}</h3>
-                <div><span><FaStar /></span>{movie.vote_average}</div>
-              </MP.Info>
-            </MP.Content>
+            // 아래에서 MovieList 컴포넌트를 사용하여 각 영화를 렌더링
+            <MovieList key={movie.id} movie={movie} />
           ))}
         </MP.Movielist>
       </MP.Container>
