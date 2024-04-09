@@ -5,8 +5,6 @@ const Container = styled.div`
   place-items: center;
   width: 100vw;
   height: 100vh;
-
-  background-color: rgb(0, 0, 0, 0.2);
 `;
 
 const Content = styled.div`

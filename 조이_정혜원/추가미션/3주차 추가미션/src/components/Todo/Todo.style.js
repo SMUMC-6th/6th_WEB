@@ -18,7 +18,7 @@ const InputWrapper = styled.form`
     border: none;
     border-bottom: 1px solid #9c9a9a;
 
-    width: 250px;
+    width: 230px;
     height: 30px;
     margin-right: 2px;
 

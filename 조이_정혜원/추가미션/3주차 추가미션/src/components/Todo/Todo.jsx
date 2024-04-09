@@ -7,14 +7,17 @@ const Todo = () => {
   const { todoList, text, setText, addTodo } = useContext(TodoContext);
 
   const handleEnter = (e) => {
-    if (e.key === "Enter") addTodo();
+    if (e.key === "Enter") {
+      if (e.nativeEvent.isComposing) return;
+      addTodo();
+    }
   };
 
   return (
     <S.Container>
       <S.InputWrapper
         onSubmit={(e) => e.preventDefault()}
-        onKeyPress={handleEnter}
+        onKeyDown={handleEnter}
       >
         <input
           type="text"

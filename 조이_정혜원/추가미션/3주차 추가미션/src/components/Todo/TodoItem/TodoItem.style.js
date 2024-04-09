@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
 
 const Container = styled.div`
@@ -47,7 +47,7 @@ const Icon = styled(FaCheck)`
   }
 `;
 
-const ButtonBox = styled.div`
+const ButtonWrapper = styled.div`
   button {
     width: 37px;
     height: 20px;
@@ -66,4 +66,4 @@ const ButtonBox = styled.div`
   }
 `;
 
-export { Container, UpdateWrapper, Icon, ButtonBox };
+export { Container, UpdateWrapper, Icon, ButtonWrapper };

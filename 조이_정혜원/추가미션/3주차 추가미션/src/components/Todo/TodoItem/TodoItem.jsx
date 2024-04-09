@@ -9,7 +9,10 @@ const TodoItem = ({ todo }) => {
   const [updateText, setUpdateText] = useState("");
 
   const handleEnter = (e) => {
-    if (e.key === "Enter") handleChange();
+    if (e.key === "Enter") {
+      if (e.nativeEvent.isComposing) return;
+      handleChange();
+    }
   };
 
   const handleChange = () => {
@@ -25,7 +28,7 @@ const TodoItem = ({ todo }) => {
   return (
     <S.Container>
       {isEdit ? (
-        <form onSubmit={(e) => e.preventDefault()} onKeyPress={handleEnter}>
+        <form onSubmit={(e) => e.preventDefault()} onKeyDown={handleEnter}>
           <S.UpdateWrapper>
             <input
               defaultValue={task}
@@ -38,16 +41,20 @@ const TodoItem = ({ todo }) => {
       ) : (
         <p>{task}</p>
       )}
-      <S.ButtonBox>
+      <S.ButtonWrapper>
         {isEdit ? (
-          <button onClick={() => setIsEdit((prev) => !prev)}>취소</button>
+          <button role="button" onClick={() => setIsEdit((prev) => !prev)}>
+            취소
+          </button>
         ) : (
-          <button onClick={() => setIsEdit((prev) => !prev)}>변경</button>
+          <button role="button" onClick={() => setIsEdit((prev) => !prev)}>
+            변경
+          </button>
         )}
         <button role="button" onClick={() => deleteTodo(id)}>
           삭제
         </button>
-      </S.ButtonBox>
+      </S.ButtonWrapper>
     </S.Container>
   );
 };
