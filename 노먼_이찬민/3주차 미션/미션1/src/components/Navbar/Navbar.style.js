@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom'; // 라우터의 링크 구현을 위해 import
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom"; // 라우터의 링크 구현을 위해 import
 
 const Container = styled.div`
   width: 100%;
@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   background-color: rgb(70, 70, 110);
   color: white;
-`
+`;
 
 const Caption = styled.div`
   width: 20%;
@@ -18,7 +18,7 @@ const Caption = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
-`
+`;
 
 const PageLinkContainer = styled.div`
   width: 40%;
@@ -26,7 +26,7 @@ const PageLinkContainer = styled.div`
   gap: 20px;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const PageLink = styled.div`
   display: flex;
@@ -34,11 +34,10 @@ const PageLink = styled.div`
   align-items: center;
   // 나중에 hover 이벤트 달아서 시각화하기
   width: 100%;
-  font-size : 14px;
+  font-size: 14px;
   color: white;
   font-weight: 600;
-
-`
+`;
 
 const Links = styled(Link)`
   text-decoration: none;
@@ -48,7 +47,6 @@ const Links = styled(Link)`
     cursor: pointer;
     transform: scale(1.15);
   }
-`
+`;
 
-
-export { Container, Caption, PageLinkContainer, PageLink, Links }
+export { Container, Caption, PageLinkContainer, PageLink, Links };

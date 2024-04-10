@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   background-color: rgb(90, 90, 130);
   gap: 10px;
-`
+`;
 
 const Top = styled.div`
   width: 100%;
@@ -17,14 +17,12 @@ const Top = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-`
+`;
 
 const TopImage = styled.img`
   width: 30%;
   height: 100%;
-  
-`
+`;
 
 const Bottom = styled.div`
   width: 60%;
@@ -38,8 +36,8 @@ const Bottom = styled.div`
   align-items: center;
   overflow-y: auto;
   color: white;
-  font-size: 24px;
-  font-weight : 600;
-`
+  /* font-size: 24px; */
+  font-weight: 600;
+`;
 
-export {Container, Top, TopImage, Bottom}
+export { Container, Top, TopImage, Bottom };
