@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 
 function App() {
   const [text, setText] = useState('');
-  const [todo, setTodo] = useState([{id: 1, task: '리액트를 같이 공부합시다.'}]);
+  const [todo, setTodo] = useState([]);
   const [editingId, setEditingId] = useState('');
   const [editText, setEditText] = useState('');
 
@@ -14,6 +14,11 @@ function App() {
   };
 
   const addTodo = () => {
+    if (!text.trim()) {
+      alert('할 일을 입력하세요.');
+      return;
+    }
+
     setTodo((prevTodo) => [
       ...prevTodo,
       {id: Math.floor(Math.random() * 100) + 2, task: text },
@@ -34,11 +39,11 @@ function App() {
 
   return (
     <S.FormContainer onSubmit={handleSubmit}>
-      <h1>TODO LIST</h1>
+      <h1>✏️ TODO LIST ✏️</h1>
       <S.InputBox>
         <input
           type='text'
-          value={text} placeholder='  새로운 할 일을 입력하세요'
+          value={text} placeholder='새로운 할 일을 입력하세요'
           onChange={(e) => setText(e.target.value)} />
         <button onClick={() => addTodo()} role='button'><FaPlus color="black" style={{ backgroundColor: 'white' }}  /></button>
       </S.InputBox>
@@ -75,4 +80,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

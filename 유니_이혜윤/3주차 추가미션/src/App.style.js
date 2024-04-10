@@ -11,6 +11,7 @@ const FormContainer = styled.form`
 
   h1 {
     font-weight: bold;
+    margin-bottom: 50px;
   }
   `;
 
@@ -46,10 +47,10 @@ const InputBox = styled.div`
 
 const ContentBox = styled.div`
   margin: 20px;
+  padding: 10px;
 
   width: 600px;
   height: 30px;
-  padding: 10px;
 
   div {
     border-radius: 5px;
@@ -67,6 +68,15 @@ const Content = styled.div`
   align-items: center;
   justify-content: space-between; /* 내부 요소들을 양 끝으로 정렬하고, 사이에 공간을 만듦 */
   margin-bottom: 10px;
+
+  input, p {
+    margin: auto 20px;
+  }
+
+  input {
+    text-align: left;
+    border-radius: 8px;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -74,6 +84,13 @@ const ButtonContainer = styled.div`
   justify-content: flex-end;
   gap: 10px;
   margin:10px;
+  box-shadow: none !important;
+
+  button {
+    background-color: white;
+    border: 0.5px dashed;
+    border-radius: 7px;
+  }
 `;
 
   export {FormContainer, InputBox, ContentBox, Content, ButtonContainer}
