@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-*.env
-.json
-.lock
 vite.config.js
-.cjs
+.env
+*.cjs
