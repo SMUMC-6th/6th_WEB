@@ -24,6 +24,7 @@ const TodoItem = (props) => {
         item.id === id ? { ...item, task: updatedTodo } : item
       )
     );
+    // 이것도 괜히 넣었던 게 아니구나... 인풋해제하려면 필요하네
     setEditId();
     setEditText("");
   };
@@ -41,11 +42,11 @@ const TodoItem = (props) => {
             defaultValue={editText}
             onChange={(e) => setEditText(e.target.value)}
           ></S.InputContent>
+
           <S.ModifySubmitButton
             onClick={() => onClickModifyComplete(id, editText)}
           >
-            아이콘
-            {console.log(editText, id)}
+            <FaCheck />
           </S.ModifySubmitButton>
         </S.InputContentWrapper>
       )}

@@ -9,13 +9,13 @@ function TodoList(props) {
   return (
     <S.TodoItemContainer>
       {todos.map((item) => (
-        <TodoItem
+        <S.TodoNode
           key={item.id}
           id={item.id}
           content={item.task}
           todos={todos}
           setTodos={setTodos}
-        ></TodoItem>
+        ></S.TodoNode>
       ))}
     </S.TodoItemContainer>
   );

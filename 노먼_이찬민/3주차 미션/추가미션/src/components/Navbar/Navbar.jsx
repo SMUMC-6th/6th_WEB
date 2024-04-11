@@ -6,11 +6,6 @@ function Navbar() {
       <S.HeaderContainer>
         <S.Header>TODO LIST</S.Header>
       </S.HeaderContainer>
-
-      {/* <S.InputContainer>
-        <S.InputBox></S.InputBox>
-        <S.SubmitIcon></S.SubmitIcon>
-      </S.InputContainer> */}
     </S.NavbarContainer>
   );
 }

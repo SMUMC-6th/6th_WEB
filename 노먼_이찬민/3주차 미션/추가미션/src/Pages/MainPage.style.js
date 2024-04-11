@@ -3,11 +3,12 @@ import { FaCheck, FaPlus } from "react-icons/fa";
 
 const MainPageContainer = styled.div`
   width: 90%;
-  height: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  /* overflow-y: auto; */
 `;
 
 const TodoItemContainer = styled.div`
@@ -18,7 +19,8 @@ const TodoItemContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  /* overflow-y: auto; */
 `;
 
 export { MainPageContainer, TodoItemContainer };
