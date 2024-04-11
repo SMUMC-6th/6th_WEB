@@ -1,45 +1,37 @@
 import styled from "styled-components";
-import { FaCheck } from "react-icons/fa";
 
-const TodoItemContainer = styled.li`
-  width: 90%;
-  height: 10%;
-  margin-top: 15px;
-  border-radius: 10px;
-  box-shadow: 5px;
-  background-color: aliceblue;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
-const TodoText = styled.div`
-  width: 100%;
-  height: 50%;
+const ContentWrapper = styled.div`
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
 `;
 
-const TodoInputContainer = styled.div``;
+const InputContentWrapper = styled.div``;
+const InputContent = styled.input``;
+const ModifySubmitButton = styled.button``;
 
-const TodoInuput = styled.input``;
-
-const TodoCheckIcon = styled(FaCheck)``;
-
-const TodoButtonContainer = styled.div`
-  width: 100%;
-  height: 50%;
+const ButtonContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: flex-end;
 `;
 
-const TodoButton = styled.button``;
+const Button = styled.button`
+  background-color: aliceblue;
+`;
 
 export {
-  TodoItemContainer,
-  TodoText,
-  TodoButtonContainer,
-  TodoButton,
-  TodoInputContainer,
-  TodoInuput,
-  TodoCheckIcon,
+  Container,
+  ContentWrapper,
+  InputContentWrapper,
+  InputContent,
+  ModifySubmitButton,
+  ButtonContainer,
+  Button,
 };
