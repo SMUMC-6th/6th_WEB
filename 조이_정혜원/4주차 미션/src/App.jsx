@@ -6,6 +6,7 @@ import TopRatedPage from "./pages/TopRatedPage/TopRatedPage";
 import UpcomingPage from "./pages/UpComingPage/UpcomingPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MovieDetailPage from "./pages/MovieDetailPage/MovieDetailPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
         element: <MovieDetailPage />,
       },
     ],
+    errorElement: <NotFoundPage />,
   },
 ]);
 
