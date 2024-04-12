@@ -17,7 +17,8 @@ const Input = styled.input`
   height: 80%;
 `;
 const SubmitButton = styled.button`
-  width: 8%;
+  margin-top: 4px;
+  width: 7%;
   height: 80%;
   border: none;
   background-color: lavender;
