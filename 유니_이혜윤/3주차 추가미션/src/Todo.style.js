@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 const FormContainer = styled.form`
+  width: 100%;
+  height: calc(100vh - 20px - 50px);
   background-color: white;
-  padding: 20px;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  margin-top: -200px;
 
   h1 {
     font-weight: bold;
@@ -24,7 +26,7 @@ const InputBox = styled.div`
   width: 600px;
   height: 30px;
   padding: 10px;
-  margin: 0;
+  margin: 0 auto;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
 
@@ -46,7 +48,7 @@ const InputBox = styled.div`
 `;
 
 const ContentBox = styled.div`
-  margin: 20px;
+  margin: 20px auto;
   padding: 10px;
 
   width: 600px;
