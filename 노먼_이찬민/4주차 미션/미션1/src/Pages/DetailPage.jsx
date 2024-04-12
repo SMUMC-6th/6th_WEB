@@ -19,6 +19,7 @@ function DetailPage() {
       </S.Top>
       <S.Bottom>
         <div>{receivedData.title}</div>
+        <div>{"⭐".repeat(Math.floor(receivedData.voteAverage))}</div>
         {overviewEmptyCheck ? (
           <div>{receivedData.overview}</div>
         ) : (

@@ -35,7 +35,7 @@ const PageLink = styled.div`
   // 나중에 hover 이벤트 달아서 시각화하기
   width: 100%;
   font-size: 14px;
-  color: white;
+  color: ${(props) => props.color};
   font-weight: 600;
 `;
 

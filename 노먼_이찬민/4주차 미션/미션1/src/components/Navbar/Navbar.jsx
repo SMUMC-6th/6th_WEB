@@ -8,6 +8,7 @@ const Navbar = () => {
   // const [isHover, setIsHover] = useState(false); -> 그냥 css 모듈 import하고 스타일 컴포넌트 내부에서 처리함
   const navigate = useNavigate();
   const [isClicked, setIsClicked] = useState(false);
+  const [isClickedCategory, setIsClickedCategory] = useState("");
 
   return (
     <S.Container>
@@ -17,27 +18,65 @@ const Navbar = () => {
       <S.PageLinkContainer>
         <S.Links to="/">
           {!isClicked && (
-            <S.PageLink onClick={() => setIsClicked(true)}>로그인</S.PageLink>
+            <S.PageLink
+              onClick={() => setIsClicked(true)}
+              color="rgb(255,255,100)"
+            >
+              로그인
+            </S.PageLink>
           )}
         </S.Links>
         <S.Links to="/">
           {isClicked && (
-            <S.PageLink onClick={() => setIsClicked(false)}>
+            <S.PageLink
+              onClick={() => setIsClicked(false)}
+              color="rgb(255,255,100)"
+            >
               로그아웃
             </S.PageLink>
           )}
         </S.Links>
         <S.Links to="/popular">
-          <S.PageLink>Popular</S.PageLink>
+          <S.PageLink
+            onClick={() => setIsClickedCategory("popular")}
+            color={
+              isClickedCategory === "popular" ? "rgb(255, 255, 100)" : "white"
+            }
+          >
+            Popular
+          </S.PageLink>
         </S.Links>
         <S.Links to="/nowPlaying">
-          <S.PageLink>Now Playing</S.PageLink>
+          <S.PageLink
+            onClick={() => setIsClickedCategory("nowPlaying")}
+            color={
+              isClickedCategory === "nowPlaying"
+                ? "rgb(255, 255, 100)"
+                : "white"
+            }
+          >
+            Now Playing
+          </S.PageLink>
         </S.Links>
         <S.Links to="/topRated">
-          <S.PageLink>Top Rated</S.PageLink>
+          <S.PageLink
+            onClick={() => setIsClickedCategory("topRated")}
+            color={
+              isClickedCategory === "topRated" ? "rgb(255, 255, 100)" : "white"
+            }
+          >
+            Top Rated
+          </S.PageLink>
         </S.Links>
         <S.Links to="/upcoming">
-          <S.PageLink>Upcoming</S.PageLink>
+          <S.PageLink
+            onClick={() => setIsClickedCategory("upcoming")}
+            color={
+              isClickedCategory === "upcoming" ? "rgb(255, 255, 100)" : "white"
+            }
+          >
+            Upcoming
+          </S.PageLink>
         </S.Links>
       </S.PageLinkContainer>
     </S.Container>

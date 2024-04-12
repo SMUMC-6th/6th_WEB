@@ -13,6 +13,7 @@ function MovieItem(props) {
     poster: imageUrl,
     title: props.title,
     overview: props.overview,
+    voteAverage: props.voteAverage,
   };
   // 영어제목 가져와서 URL 뒤에 붙임
   const movieEngTitle = getMovieEngTitle(props.id).movieEngTitle;

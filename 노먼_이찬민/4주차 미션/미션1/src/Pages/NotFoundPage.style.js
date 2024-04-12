@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  height: 85%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,8 +16,8 @@ const Header = styled.div`
 `;
 
 const Button = styled.button`
-  width: 30%;
-  height: 10%;
+  width: 100%;
+  height: 200%;
 `;
 
 export { Container, Header, Button };

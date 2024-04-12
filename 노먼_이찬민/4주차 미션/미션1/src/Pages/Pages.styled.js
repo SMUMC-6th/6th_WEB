@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   width: 100%;
@@ -11,7 +11,7 @@ const Container = styled.div`
   align-items: center;
   overflow-y: scroll;
   background-color: rgb(90, 90, 130);
-`
+`;
 
 // 키 프레임 정의
 const spin = keyframes`
@@ -30,6 +30,4 @@ const Spinner = styled.div`
   animation: ${spin} 2s linear infinite; // 애니메이션 적용
 `;
 
-
-export {Container, Spinner} 
-
+export { Container, Spinner };
