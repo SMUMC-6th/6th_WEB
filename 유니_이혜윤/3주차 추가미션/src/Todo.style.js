@@ -9,7 +9,6 @@ const FormContainer = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  margin-top: -200px;
 
   h1 {
     font-weight: bold;
@@ -48,51 +47,69 @@ const InputBox = styled.div`
 `;
 
 const ContentBox = styled.div`
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 10px;
 
   width: 600px;
-  height: 30px;
+  height: 500px;
 
   div {
     border-radius: 5px;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
-    margin-bottom: 15px; /* 각 todo item 하단의 여백 추가 */
-    display: flex;
-    align-items: center; /* 버튼과 입력 필드를 세로 중앙 정렬 */
     gap: 10px; /* 요소 사이의 간격 추가 */
 }
 `;
 
 const Content = styled.div`
+  height: 70px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  justify-content: space-between; /* 내부 요소들을 양 끝으로 정렬하고, 사이에 공간을 만듦 */
-  margin-bottom: 10px;
+  flex-direction: column;
+  margin: 20px;
 
   input, p {
-    margin: auto 20px;
+    margin: 0 10px;
   }
 
   input {
     text-align: left;
     border-radius: 8px;
   }
+
+  p {
+    text-align: left;
+    margin: 10px 0 0 10px;
+  }
+`;
+
+const ModifyBox = styled.div`
+  display: flex;
+  margin-top: 8px;
+  box-shadow: none !important;
+
+  input {
+    width: 480px;
+  }
+
+  button {
+    background-color: white;
+    border: none;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
-  margin:10px;
   box-shadow: none !important;
+  margin: 0 10px 0 0;
 
   button {
     background-color: white;
-    border: 0.5px dashed;
+    border: 0.7px dashed;
     border-radius: 7px;
+  }
+  button:hover {
+    // transform: scale(0.95);
   }
 `;
 
-  export {FormContainer, InputBox, ContentBox, Content, ButtonContainer}
+  export {FormContainer, InputBox, ContentBox, Content, ModifyBox, ButtonContainer}

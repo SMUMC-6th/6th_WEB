@@ -26,9 +26,9 @@ const StyledLink = styled(Link)`
 const Footer = () => {
   return (
     <FooterContainer>
-      <StyledLink to="/week3">3주차</StyledLink>
-      <StyledLink to="/week4">4주차</StyledLink>
-      <StyledLink to="/week5">5주차</StyledLink>
+      <StyledLink to="/week3">Todo</StyledLink>
+      <StyledLink to="/week4">😎</StyledLink>
+      <StyledLink to="/week5">👍</StyledLink>
     </FooterContainer>
   )
 }

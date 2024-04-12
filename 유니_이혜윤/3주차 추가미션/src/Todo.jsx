@@ -52,25 +52,23 @@ function Todo() {
         {todo.map((item) => (
           <S.Content key={item.id}>
             {editingId === item.id ? (
-              <input defaultValue={item.task}
-              onChange={(e) => setEditText(e.target.value)}
-              onKeyPress={(e) => {  // 수정하고 엔터누르면 수정완료 처리
-                if (e.key === 'Enter') {
-                  updateTodo(item.id, editText);
-                }
-              }}
-              />
+              <S.ModifyBox>
+                <input defaultValue={item.task} 
+                onChange={(e) => setEditText(e.target.value)}
+                onKeyPress={(e) => {  // 수정하고 엔터누르면 수정완료 처리
+                  if (e.key === 'Enter') {
+                    updateTodo(item.id, editText);
+                  }
+                }}
+                />
+                <button onClick={() => updateTodo(item.id, editText)}><FaCheck /></button>
+              </S.ModifyBox>
             ) : (
               <p>{item.task}</p>
             )}
 
             <S.ButtonContainer>
-              {editingId === item.id ? (
-                <button onClick={() => updateTodo(editingId, editText)}><FaCheck /></button>
-              ) : (
-                <button onClick={() => setEditingId(item.id)}>변경</button>
-              )}
-
+              <button onClick={() => setEditingId(item.id)}>변경</button>
               <button onClick={() => deleteTodo(item.id)}>삭제</button>
             </S.ButtonContainer>
           </S.Content>
