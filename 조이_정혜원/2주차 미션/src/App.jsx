@@ -1,17 +1,20 @@
-import Movies from "./components/Movies/Movies";
-import { styled } from "styled-components";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage/MainPage";
+import PopularPage from "./pages/PopularPage/PopularPage";
+import NowPlayingPage from "./pages/NowPlayingPage/NowPlayingPage";
+import TopRatedPage from "./pages/TopRatedPage/TopRatedPage";
+import UpcomingPage from "./pages/UpComingPage/UpcomingPage";
 
 function App() {
   return (
-    <Container>
-      <Movies />
-    </Container>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/popular" element={<PopularPage />} />
+      <Route path="/now" element={<NowPlayingPage />} />
+      <Route path="/topRated" element={<TopRatedPage />} />
+      <Route path="/upComing" element={<UpcomingPage />} />
+    </Routes>
   );
 }
 
 export default App;
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-`;
