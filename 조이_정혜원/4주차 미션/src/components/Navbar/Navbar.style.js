@@ -31,8 +31,19 @@ const Container = styled.div`
 const NavContainer = styled.div`
   display: flex;
 
-  a,
   div {
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: rgb(250, 233, 100, 0.95);
+    padding-right: 22px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  a {
     text-decoration: none;
     letter-spacing: 3px;
     font-size: 13px;
@@ -44,6 +55,10 @@ const NavContainer = styled.div`
       color: rgb(250, 233, 100, 0.95);
       cursor: pointer;
       transform: scale(1.1);
+    }
+
+    &.active {
+      color: rgb(250, 233, 100, 0.95);
     }
   }
 `;
