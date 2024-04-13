@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import MovieDetail from "./MovieDetail";
 
 import * as M from "./Movie.style";
-import NoImg from "../../assets/noImg.png";
+import NoImg from "../../assets/noImg.webp";
 
 const Movie = ({ movie }) => {
   const nav = useNavigate();

@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import NoImg from "../../assets/noImg.png";
+import NoImg from "../../assets/noImg.webp";
 import * as S from "./MovieDetailPage.style";
 
 const MovieDetailPage = () => {
