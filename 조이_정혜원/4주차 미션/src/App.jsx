@@ -1,12 +1,14 @@
 import AppLayout from "./layout/AppLayout";
-import MainPage from "./pages/MainPage/MainPage";
-import PopularPage from "./pages/PopularPage/PopularPage";
-import NowPlayingPage from "./pages/NowPlayingPage/NowPlayingPage";
-import TopRatedPage from "./pages/TopRatedPage/TopRatedPage";
-import UpcomingPage from "./pages/UpComingPage/UpcomingPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MovieDetailPage from "./pages/MovieDetailPage/MovieDetailPage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import {
+  MainPage,
+  PopularPage,
+  NowPlayingPage,
+  TopRatedPage,
+  UpcomingPage,
+  MovieDetailPage,
+  NotFoundPage,
+} from "./pages";
 
 const router = createBrowserRouter([
   {
