@@ -19,6 +19,7 @@ span{
 
 .row{
   display: flex;
+  /* flex-wrap: wrap; */
   justify-content: center;
   margin-top: 15px;
   /* border: 2px solid rgb(255, 255, 255); */

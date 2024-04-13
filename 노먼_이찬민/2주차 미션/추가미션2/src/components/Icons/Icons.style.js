@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { MdOutlineMessage } from "react-icons/md";
-import { IoIosHeart } from "react-icons/io";
+import { GoHeart , GoHeartFill} from "react-icons/go";
+
 
 const IconsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  width: 80%;
   /* height: 20%; */
 `;
 
@@ -14,15 +16,20 @@ const MessageIcon = styled(MdOutlineMessage)`
   justify-content: center;
   align-items: center;
   width: 25%;
-  height: 85%;
+  height: 60%;
   /* margin-bottom: -5px; */
 `; 
 
-const HeartIcon = styled(IoIosHeart)`
-  border: 2px solid black;
-  fill: ${(props) => props.isPressed? 'red' : 'rgb(255, 157, 190);'};
+const FilledHeartIcon = styled(GoHeartFill)`
+  fill: red;
   width: 25%;
-  height: 85%;
+  height: 60%;
 `;
 
-export { IconsContainer, MessageIcon, HeartIcon};
+const NonFilledHeartIcon = styled(GoHeart)`
+  color: black;
+  width: 25%;
+  height: 60%;
+`
+
+export { IconsContainer, MessageIcon, FilledHeartIcon, NonFilledHeartIcon};

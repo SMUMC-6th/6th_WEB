@@ -17,26 +17,28 @@ const ModalContainer = styled.div`
 `
 
 const ModalContent = styled.div`
-  font-size: 30px;
-  font-weight: bolder;
-  width: 50%;
-  height: 50%;
-  top: 25%;
-  left: 25%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  grid-area: main;
   border-radius: 10px;
+  background-color: rgb(192, 192, 192);
   border: 2px solid rgb(192, 192, 192);
 `
+
+const TextWrapper = styled.p`
+  font-size: 30px;
+  font-weight: bolder;
+`
+
 
 const ModalCloseButton = styled.button`
   grid-area: button;
   background-color: aliceblue;
   border-radius: 4px;
-  width: 10%;
-  height: 5%;
+  width: 30%;
+  height: 20%;
 `
 
-export { ModalContainer , ModalContent, ModalCloseButton };
+export { ModalContainer , ModalContent, TextWrapper, ModalCloseButton };
