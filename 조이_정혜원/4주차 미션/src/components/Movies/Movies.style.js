@@ -4,7 +4,7 @@ const Container = styled.div`
   display: grid;
   place-items: center;
 
-  padding: 60px 0 40px;
+  padding: 50px 0 40px;
 `;
 
 const MovieContainer = styled.div`

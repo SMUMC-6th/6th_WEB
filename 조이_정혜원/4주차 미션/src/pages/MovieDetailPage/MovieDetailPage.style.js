@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 
 const Conatiner = styled.div`
   position: relative;
@@ -12,7 +12,7 @@ const Conatiner = styled.div`
 
   img {
     width: 200px;
-    margin: 10px;
+    box-shadow: 1px 0px 38px 12px rgba(0, 0, 0, 0.47);
   }
 
   &::after {
@@ -24,7 +24,8 @@ const Conatiner = styled.div`
     background-size: cover;
     background-position: center;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.15;
+    filter: blur(2px);
 
     width: 100%;
     height: 100%;
@@ -35,7 +36,24 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 500px;
+  width: 350px;
+
+  margin-left: 30px;
+
+  h3 {
+    font-size: 23px;
+    margin-bottom: 23px;
+    text-shadow: 0 0 11px rgba(255, 255, 255, 0.6);
+  }
+
+  h4 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    word-break: keep-all;
+    font-size: 13px;
+  }
 `;
 
 export { Conatiner, Content };

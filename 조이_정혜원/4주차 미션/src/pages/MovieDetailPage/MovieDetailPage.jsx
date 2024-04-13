@@ -6,6 +6,7 @@ const MovieDetailPage = () => {
   const location = useLocation();
 
   const { backdrop_path, poster_path, title, vote_average, overview, release_date } = location.state;
+
   const PosterURL = import.meta.env.VITE_POSTER_URL + `${poster_path}`;
   const backgroudImg = import.meta.env.VITE_POSTER_URL + `${backdrop_path}`;
 

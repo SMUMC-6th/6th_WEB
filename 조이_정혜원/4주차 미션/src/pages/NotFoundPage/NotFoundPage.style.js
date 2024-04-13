@@ -2,10 +2,10 @@ import { styled, keyframes } from "styled-components";
 import { AiFillAlert } from "react-icons/ai";
 
 const changeColor = keyframes`
-    0% {
+   from {
         color : white;
     }
-    100% {
+    to {
        color: red;
     }
 `;
@@ -22,6 +22,7 @@ const Container = styled.div`
   h1 {
     letter-spacing: 3px;
     margin: 10px 0;
+    text-shadow: 0 0 11px rgba(255, 255, 255, 0.6);
   }
 
   p {
@@ -38,6 +39,7 @@ const Container = styled.div`
     &:hover {
       cursor: pointer;
       color: white;
+      text-shadow: 0 0 11px rgba(255, 255, 255, 0.6);
     }
   }
 `;

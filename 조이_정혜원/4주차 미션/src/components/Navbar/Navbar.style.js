@@ -40,6 +40,7 @@ const NavContainer = styled.div`
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
+      text-shadow: 0 0 5px rgba(250, 233, 100, 0.6);
     }
   }
 
@@ -55,6 +56,7 @@ const NavContainer = styled.div`
       color: rgb(250, 233, 100, 0.95);
       cursor: pointer;
       transform: scale(1.1);
+      text-shadow: 0 0 5px rgba(250, 233, 100, 0.6);
     }
 
     &.active {
