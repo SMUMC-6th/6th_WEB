@@ -9,7 +9,7 @@ import TopRatedPage from "./pages/TopRated/TopRatedPage";
 import NowPlayingPage from "./pages/NowPlaying/NowPlayingPage";
 import UpComingPage from "./pages/UpComing/UpComingPage";
 import MovieDetailPage from "./pages/MovieDetail/MovieDetailPage";
-import NotFound from "./components/NotFound/NotFound";
+import NotFound from "./pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -40,10 +40,6 @@ const router = createBrowserRouter([
       {
         path: "/movie/:movieName",
         element: <MovieDetailPage />,
-      },
-      {
-        path: "*",
-        element: <NotFound />,
       },
     ],
   },
