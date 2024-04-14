@@ -77,8 +77,8 @@ export {
   image,
 };
 
-/*위에서 MovieBackground은 이미지를 표시하는 요소로
+/* 위에서 MovieBackground은 이미지를 표시하는 요소로
 해당 이미지를 부모 요소에 상대적으로 위치시키기 위해 position: relative;를 사용. 
 반면에 DetailContainer는 절대적으로 페이지의 중앙에 배치되어야 하기 때문에 position: absolute;를 사용하고,
 부모 요소 중 가장 가까운 상위 요소인 container에 대해 위치를 조정하기 위해 
-transform: translate(-50%, -50%);를 사용하여 가운데로 이동*/
+transform: translate(-50%, -50%);를 사용하여 가운데로 이동 */
