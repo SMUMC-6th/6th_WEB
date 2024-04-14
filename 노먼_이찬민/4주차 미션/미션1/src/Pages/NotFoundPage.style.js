@@ -13,11 +13,16 @@ const Container = styled.div`
 const Header = styled.div`
   height: 10%;
   margin-bottom: 5%;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
 `;
 
 const Button = styled.button`
   width: 100%;
   height: 200%;
+  border-radius: 10px;
+  border: 1px solid rgb(90, 90, 130);
 `;
 
 export { Container, Header, Button };
