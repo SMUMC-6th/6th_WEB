@@ -24,9 +24,6 @@ dist-ssr
 *.sw?
 
 *.env
-jsconfig.json
-*.lock
-vite.config.js
-*.cjs
+yarn.lock
 
 
