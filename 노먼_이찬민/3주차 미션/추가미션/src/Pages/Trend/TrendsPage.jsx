@@ -9,15 +9,17 @@ export default function TrendsPage() {
   const [page, setPage] = useState(1);
   const [take, setTake] = useState(10);
   const { PostItem, total } = getPosts(page, take);
+  const [prevIsDisabled, setPrevIsDisabled] = useState(true);
+  const [nextIsDisabled, setNextIsDisabled] = useState(false);
+  const totalPageNumber = total / 10;
 
   // PostItem(getHook으로 가져온 정보)가 변할때마다(받아질때마다) useEffect로 감지하고 trendsTodo만들기
   useEffect(() => {
     setTrendsTodo(PostItem);
+    setPrevIsDisabled(page === 1);
+    setNextIsDisabled(page === totalPageNumber);
+    console.log(prevIsDisabled, nextIsDisabled);
   }, [PostItem]);
-  // console.log(PostItem, total);
-  // const [totalPageNumber, setTotalPageNumber] = useState(0 + total / take); // take = 10
-  const totalPageNumber = total / 10;
-  // console.log(page, totalPageNumber, take);
 
   const buttons = [...new Array(totalPageNumber + 1).keys()].slice(1);
   const buttonsList = buttons.map((item) => (
@@ -44,6 +46,7 @@ export default function TrendsPage() {
             console.log(page);
             setTrendsTodo(getPosts(page).PostItem);
           }}
+          disabled={prevIsDisabled}
         >
           뒤로
         </S.pagenationPrevButton>
@@ -54,6 +57,7 @@ export default function TrendsPage() {
             console.log(page);
             setTrendsTodo(getPosts(page).PostItem);
           }}
+          disabled={nextIsDisabled}
         >
           앞으로
         </S.pagenationNextButton>
