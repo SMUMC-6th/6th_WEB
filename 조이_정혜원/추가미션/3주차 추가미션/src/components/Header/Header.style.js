@@ -1,4 +1,5 @@
 import { FaCircle } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -41,4 +42,16 @@ const IconCircle = styled(FaCircle)`
   margin: 2px;
 `;
 
-export { Container, Icon, IconCircle };
+const Profile = styled(CgProfile)`
+  position: absolute;
+  top: 42px;
+  right: 40px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+    color: gray;
+  }
+`;
+
+export { Container, Icon, IconCircle, Profile };
