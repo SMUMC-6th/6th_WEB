@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import * as MP from "./MoviePage.style"
 import Loading from './Loading';
 import MovieList from './MovieList';
+import axios from 'axios';
 
 const Movies = ({ type }) => {
   const [movies, setMovies] = useState([]);
@@ -9,24 +10,32 @@ const Movies = ({ type }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: import.meta.env.VITE_TOKEN, // 환경 변수에서 토큰 가져오기
-      },
+
+    const fetchMovies = async () => {
+      try {
+        const url = `https://api.themoviedb.org/3/movie/${type}?language=ko&page=2`;
+
+        const response = await axios.get(url, {  // axios.get 사용
+          headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`, // 환경 변수에서 토큰 가져오기
+          },
+        });
+
+        if (!response.data) {
+          throw new Error('No data received');
+        }
+
+        setMovies(response.data.results);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setIsLoading(false);
+      }
     };
 
-    // URL에 type을 동적으로 삽입
-    const url = `https://api.themoviedb.org/3/movie/${type}?language=ko&page=2`;
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        setMovies(data.results);
-        setIsLoading(false);
-      });
-  }, [type]); // 의존성 배열에 type 추가
+    fetchMovies();
+  }, [type]);
 
   if (isLoading) {
     return <Loading />;

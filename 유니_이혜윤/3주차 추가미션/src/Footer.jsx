@@ -7,10 +7,8 @@ const FooterContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
   bottom: 0; left: 0;
   background-color: #181935;
-  }
 `;
 
 const StyledLink = styled(Link)`
@@ -26,8 +24,8 @@ const StyledLink = styled(Link)`
 const Footer = () => {
   return (
     <FooterContainer>
-      <StyledLink to="/week3">Todo</StyledLink>
-      <StyledLink to="/week4">😎</StyledLink>
+      <StyledLink to="/">Todo</StyledLink>
+      <StyledLink to="/trends">Trends</StyledLink>
       <StyledLink to="/week5">👍</StyledLink>
     </FooterContainer>
   )

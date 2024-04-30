@@ -1,4 +1,4 @@
-import Spinner from './Spin.gif';
+import Spinner from '../assets/Spin.gif';
 import styled from "styled-components";
 
 

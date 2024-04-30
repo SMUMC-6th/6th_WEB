@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Header from './Header'
 import Todo from './Todo.jsx'
-import Misson from './misson.jsx'
+import Trends from './trends.jsx'
 import Footer from './Footer'
 
 const Layout = () => {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <Layout />, 
     children: [
       { index: true, element: <Todo /> },
-      { path: "misson_5", element: <Misson /> },
+      { path: "trends", element: <Trends /> },
     ]
   },
 ]);
