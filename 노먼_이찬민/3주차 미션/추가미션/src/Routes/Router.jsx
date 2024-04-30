@@ -1,6 +1,7 @@
 import AppLayout from "../Layout/AppLayout";
 import { createBrowserRouter } from "react-router-dom";
 import MainPage from "../Pages/MainPage";
+import TrendsPage from "../Pages/Trend/TrendsPage";
 
 const Router = [
   {
@@ -11,6 +12,11 @@ const Router = [
         index: true,
         element: <MainPage />,
         label: "main",
+      },
+      {
+        path: "/trends",
+        element: <TrendsPage />,
+        label: "trends",
       },
     ],
   },

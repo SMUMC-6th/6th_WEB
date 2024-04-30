@@ -9,7 +9,7 @@ import Footer from "../components/Footer/Footer";
 
 function MainPage() {
   // todos로 할 일 관리, formText로는 인풋창 관리
-  const [todos, setTodos] = useState([{ id: 1, task: "react" }]);
+  const [todos, setTodos] = useState([{ id: 1, content: "react" }]);
   const [formText, setFormText] = useState("");
 
   // 객체 배열 상태를 가지고 map 순회로 필요한 정보들을 -> 원하는 컴포넌트 형태들의 배열로 변환하기

@@ -3,6 +3,7 @@ import { FaCheck } from "react-icons/fa";
 
 const TodoItemContainer = styled.div`
   width: 90%;
+  height: 100%; // 추가함
   border-radius: 10px;
   display: flex;
   flex-direction: column;

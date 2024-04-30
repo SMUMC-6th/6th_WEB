@@ -4,7 +4,7 @@ function Footer() {
   return (
     <S.FooterContainer>
       <S.FooterContent>TODO</S.FooterContent>
-      <S.FooterContent>다음 미션은</S.FooterContent>
+      <S.Links to="/trends">trends</S.Links>
       <S.FooterContent>뭘까요?</S.FooterContent>
     </S.FooterContainer>
   );

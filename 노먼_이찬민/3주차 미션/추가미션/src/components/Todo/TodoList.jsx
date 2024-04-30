@@ -12,7 +12,7 @@ function TodoList(props) {
         <TodoItem
           key={item.id}
           id={item.id}
-          content={item.task}
+          content={item.content}
           todos={todos}
           setTodos={setTodos}
         ></TodoItem>
