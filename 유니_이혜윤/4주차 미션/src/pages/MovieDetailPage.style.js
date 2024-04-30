@@ -10,16 +10,30 @@ const Container = styled.div`
   gap: 80px; 
 `;
 
+export const BackgroundImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* 배경 이미지의 투명도 */
+`;
+
 const ImageContainer = styled.div`
   flex: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin-left: 100px;
-  }
+  z-index: 1;
+`;
+
+const MainImage = styled.img`
+  width: 100%;
+  max-width: 400px;
+  margin-left: 100px;
 `;
 
 const DetailContainer = styled.div`
@@ -37,8 +51,8 @@ const DetailContainer = styled.div`
   p {
     width: 80%;
     font-size: 16px;
-    color: #666;
+    color: ;
   }
 `;
 
-export {Container, ImageContainer, DetailContainer}
+export {Container, ImageContainer, MainImage, DetailContainer}

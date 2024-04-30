@@ -19,13 +19,14 @@ function MovieDetail() {
   };
 
   return (
-    <MD.Container backgroundImage={movie.poster_path}>
+    <MD.Container>
+      <MD.BackgroundImage src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
       <MD.ImageContainer>
-        <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+        <MD.MainImage src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
       </MD.ImageContainer>
       <MD.DetailContainer>
         <h1>{movie.title}</h1>
-        <h4>평점 {renderStars(movie.vote_average)}</h4> {/* 평점 별로 해야되는데ㅔ에ㅜㅠ */}
+        <h4>평점 {renderStars(movie.vote_average)}</h4>
         <h4>개봉일 {movie.release_date}</h4>
         <h4>줄거리</h4>
         <p>{movie.overview ? movie.overview : "상세 줄거리 정보가 없습니다.😓"}</p>
