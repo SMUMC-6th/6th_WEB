@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import * as S from "./PostData.style";
 import trendsAxios from "../../api/axios";
 
@@ -17,10 +16,11 @@ const PostData = () => {
   // btn = btn.map((_, idx) => idx + 1);
 
   const url = `/posts?page=${currentPage}&order__createdAt=ASC&take=${take}`;
+  const controller = new AbortController();
 
   const fetchData = async () => {
     try {
-      const res = await trendsAxios(url);
+      const res = await trendsAxios(url, { signal: controller.signal });
       setData(res.data.data);
       setTotalPosts(res.data.total);
     } catch (e) {
@@ -30,6 +30,10 @@ const PostData = () => {
 
   useEffect(() => {
     fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, [currentPage]);
 
   return (
