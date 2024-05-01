@@ -14,6 +14,7 @@ const [editingId, setEditingId] = useState('');
 const [editText, setEditText] = useState('');
 
   //렌더링 방지
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };

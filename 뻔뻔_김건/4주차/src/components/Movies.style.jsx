@@ -1,12 +1,32 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+
+const breakpoints = {
+  mobile: "576px",
+  tablet: "768px",
+  desktop: "992px",
+  largeDesktop: "1200px",
+};
+
+const respondTo = Object.keys(breakpoints).reduce((accumulator, label) => {
+  accumulator[label] = (...args) => css`
+    @media (min-width: ${breakpoints[label]}) {
+      ${css(...args)};
+    }
+  `;
+  return accumulator;
+}, {});
 
 export const AppContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   place-items: center;
-  background-color: #000027;
-  overflow-x: auto;
+  background-color: #36517a;
+  padding: 20px;
+
+  ${respondTo.tablet`
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  `}
 `;
 
 export const MovieContainer = styled.div`
@@ -24,6 +44,10 @@ export const MovieContainer = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+
+  ${respondTo.tablet`
+    width: 300px;
+  `}
 `;
 
 export const Hoverbox = styled.div`
@@ -66,6 +90,10 @@ export const MovieInfo = styled.div`
   span {
     color: white;
   }
+
+  ${respondTo.tablet`
+    padding: 20px;
+  `}
 `;
 
 export const RootWarp = styled.div`
@@ -82,6 +110,10 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${respondTo.tablet`
+    height: 80px;
+  `}
 `;
 
 export const LogoBox = styled.div`
@@ -155,8 +187,8 @@ export const Banner = styled.div`
 `;
 
 export const DetailContext = styled.div`
-  margin: 60px;
-
+  margin: 100px;
+  color: white;
   h1 {
     font-size: 55px;
   }
@@ -179,11 +211,8 @@ export const DetailImg = styled.img`
 export const DetailContainer = styled.div`
   display: flex;
   flex-direction: row;
+  height:100vh;
   background-color: #0E0F37;
-  margin: 1%;
-  width: 98%;
-  height: 95%;
-  border-radius: 10px;
 `;
 
 export const NotfoundContainer = styled.div`
