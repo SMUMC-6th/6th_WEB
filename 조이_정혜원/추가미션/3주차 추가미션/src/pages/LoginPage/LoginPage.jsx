@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import base64 from "base-64";
 import { emailValid } from "../../utils/regex";
-
 import * as S from "./LoginPage.style";
 import trendsAxios from "../../api/axios";
 
@@ -10,9 +9,20 @@ const LoginPage = () => {
   const nav = useNavigate();
 
   const [login, setLogin] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  const [userInputs, setUserInputs] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { email, password } = userInputs;
+
   const [validEmail, setValidEmail] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInputs({ ...userInputs, [name]: value });
+  };
 
   const handleSubmit = async () => {
     const auth = base64.encode(`${email}:${password}`);
@@ -26,8 +36,7 @@ const LoginPage = () => {
       const res = await trendsAxios.post("/auth/login/email", {}, options); // body 없을 떄 빈 객체 필요!!
       console.log(res.data);
 
-      setEmail("");
-      setPassword("");
+      setUserInputs({ email: "", password: "" });
 
       setLogin(true);
     } catch (error) {
@@ -51,18 +60,20 @@ const LoginPage = () => {
             <h4>MEMBER LOGIN</h4>
             <S.InputWrapper onSubmit={(e) => e.preventDefault()}>
               <input
+                name="email"
                 type="text"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleChange}
                 placeholder=" email"
               />
               <S.ErrorMsg $valid={validEmail}>
                 이메일 형식에 맞게 작성해주세요
               </S.ErrorMsg>
               <input
+                name="password"
                 type="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handleChange}
                 placeholder=" password"
               />
               <button onClick={handleSubmit} disabled={!validEmail}>

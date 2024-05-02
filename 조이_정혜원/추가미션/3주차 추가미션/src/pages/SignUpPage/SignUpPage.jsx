@@ -6,20 +6,24 @@ import trendsAxios from "../../api/axios";
 
 const SignUpPage = () => {
   const nav = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [nickname, setNickname] = useState("");
+
+  const [userInputs, setUserInputs] = useState({
+    email: "",
+    password: "",
+    nickname: "",
+  });
+  const { email, password, nickname } = userInputs;
+
   const [validEmail, setValidEmail] = useState(false);
 
-  const data = {
-    email: email,
-    password: password,
-    nickname: nickname,
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInputs({ ...userInputs, [name]: value });
   };
 
   const handleSubmit = async () => {
     try {
-      const res = await trendsAxios.post("/auth/register/email", data);
+      const res = await trendsAxios.post("/auth/register/email", userInputs);
       console.log(res);
 
       nav("/login", { replace: true });
@@ -38,27 +42,32 @@ const SignUpPage = () => {
       <h4>JOIN MEMBER</h4>
       <S.InputForm onSubmit={(e) => e.preventDefault()}>
         <input
+          name="email"
           type="text"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleChange}
           placeholder="email"
         />
         <S.ErrorMsg $valid={validEmail}>
           이메일 형식에 맞게 작성해주세요
         </S.ErrorMsg>
         <input
+          name="password"
           type="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handleChange}
           placeholder="password"
         />
         <input
+          name="nickname"
           type="text"
           value={nickname}
-          onChange={(e) => setNickname(e.target.value)}
+          onChange={handleChange}
           placeholder="nickname"
         />
-        <button onClick={handleSubmit}>회원가입</button>
+        <button onClick={handleSubmit} disabled={!validEmail}>
+          회원가입
+        </button>
       </S.InputForm>
     </S.Container>
   );
