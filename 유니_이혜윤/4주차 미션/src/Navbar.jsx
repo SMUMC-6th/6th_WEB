@@ -26,6 +26,9 @@ const Navbar = () => {
             onClick={toggleLogin}>{isLoggedIn ? '로그아웃' : '로그인'}</NavLink>
           </li>
           <li>
+            <NavLink to="/signup" style={ setActiveStyle }>회원가입</NavLink>
+          </li>
+          <li>
             <NavLink to="/popular" style={ setActiveStyle }>Popular</NavLink>
           </li>
           <li>
