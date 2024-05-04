@@ -14,7 +14,6 @@ const SignUpPage = () => {
     reset,
   } = useForm({
     resolver: yupResolver(schema),
-    mode: "onChange",
     defaultValues: {
       username: "",
       email: "",
