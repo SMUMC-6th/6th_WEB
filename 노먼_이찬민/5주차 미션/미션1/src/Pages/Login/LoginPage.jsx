@@ -12,7 +12,7 @@ export default function LoginPage() {
       </S.LoginContainer>
       <S.TrailerContainer>
         <S.TrailerLeft>아이디가 없으신가요?</S.TrailerLeft>
-        <S.TrailerToLoginPageLink>
+        <S.TrailerToLoginPageLink to="/signUp">
           회원가입 페이지로 이동하기
         </S.TrailerToLoginPageLink>
       </S.TrailerContainer>
