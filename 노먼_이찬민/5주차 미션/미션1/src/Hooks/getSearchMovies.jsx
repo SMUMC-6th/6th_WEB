@@ -16,7 +16,9 @@ export default function getSearchMovies(searchKeyword, isSubmitted) {
     async function getSearchMoviesAPI() {
       try {
         const searchResult = await fetch(
-          `https://api.themoviedb.org/3/search/movie?query=${searchKeyword}&include_adult=true&language=en-US`,
+          `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+            searchKeyword
+          )}&include_adult=true&language=ko-KR`,
           options
         );
         const searchData = await searchResult.json();
