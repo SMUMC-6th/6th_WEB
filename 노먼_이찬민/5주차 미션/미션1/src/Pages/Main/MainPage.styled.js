@@ -51,7 +51,7 @@ const searchItemsContainer = styled.div`
   justify-content: center;
   overflow-y: auto;
   background-color: ${(props) =>
-    props.isSearchSubmitted ? "rgb(70, 70, 120)" : "rgb(50, 50, 100)"};
+    props.$isSearchSubmitted ? "rgb(70, 70, 120)" : "rgb(50, 50, 100)"};
 
   &::-webkit-scrollbar {
     width: 8px; /* 스크롤 바의 너비 */

@@ -23,6 +23,12 @@ function MovieItem(props) {
     height: props.height,
   };
 
+  // 5주차 추가내용 - 영화 포스터가 없을 때 이미지 변경
+  const imageErrorHandler = (e) => {
+    e.target.src =
+      "https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg";
+  };
+
   // 영어제목 가져와서 URL 뒤에 붙임
   const movieEngTitle = getMovieEngTitle(props.id).movieEngTitle;
   const linkURL = `/movie/${movieEngTitle}`;
@@ -32,7 +38,7 @@ function MovieItem(props) {
   return (
     <S.Item width={scales.width} height={scales.height}>
       <S.LLink to={linkURL} state={{ data: myData }}>
-        <S.Image src={imageUrl} onError="this.src=''"></S.Image>
+        <S.Image src={imageUrl} onError={imageErrorHandler}></S.Image>
       </S.LLink>
       <S.TitleVote>
         <S.Span>{props.title}</S.Span>

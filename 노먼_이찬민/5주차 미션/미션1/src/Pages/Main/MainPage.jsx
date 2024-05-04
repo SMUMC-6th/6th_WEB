@@ -34,7 +34,8 @@ const MainPage = () => {
             // console.log(e.target.value, searchKeyword);
           }}
         ></S.SearchInput>
-        <S.searchItemsContainer isSearchSubmitted={isSearchSubmitted}>
+        {/* state와 같은 이름으로 스타일 컴포넌트 커스텀 속성을 사용할때는 앞에 $를 붙여서 사용하는것으로 해결한다 */}
+        <S.searchItemsContainer $isSearchSubmitted={isSearchSubmitted}>
           {searchResultItems.length &&
             searchItems.map((movie) => (
               <MovieItem
