@@ -44,7 +44,7 @@ const SignUpPage = () => {
         {errors && <S.ErrorMsg>{errors?.password?.message}</S.ErrorMsg>}
         <input {...register("passwordConfirm")} type="password" placeholder="비밀번호 확인" />
         {errors && <S.ErrorMsg>{errors?.passwordConfirm?.message}</S.ErrorMsg>}
-        <S.Button type="submit" disabled={!isValid}>
+        <S.Button type="submit" disabled={Object.keys(errors).length !== 0}>
           submit
         </S.Button>
       </S.SignUpForm>
