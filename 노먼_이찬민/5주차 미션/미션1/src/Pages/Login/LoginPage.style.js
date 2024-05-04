@@ -11,29 +11,41 @@ const Container = styled.div`
   padding-top: 5%;
   background-color: rgb(90, 90, 130);
 `;
-const FormContainer = styled.form`
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-const FormButton = styled.button`
-  width: 30%;
-  height: 12%;
-  border-radius: 50px;
-`;
 
-const Header = styled.div`
+const Headers = styled.div`
   font-size: 22px;
   font-weight: 650;
   color: azure;
   margin-bottom: 3%;
 `;
 
+const LoginContainer = styled.form`
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const InputBox = styled.input`
+  width: 28.5%;
+  padding: 10px;
+  border-radius: 50px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const LoginButton = styled.button`
+  width: 30%;
+  height: 30%;
+  border-radius: 50px;
+  margin-top: 30px;
+`;
+
 const TrailerContainer = styled.div`
   display: flex;
+  width: 100%;
   height: 20%;
   flex-direction: row;
   justify-content: center;
@@ -56,9 +68,10 @@ const TrailerToLoginPageLink = styled(Link)`
 
 export {
   Container,
-  FormContainer,
-  FormButton,
-  Header,
+  Headers,
+  LoginContainer,
+  InputBox,
+  LoginButton,
   TrailerContainer,
   TrailerLeft,
   TrailerToLoginPageLink,

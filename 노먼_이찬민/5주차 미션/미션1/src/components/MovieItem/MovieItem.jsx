@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./MovieItem.style";
 import { Link } from "react-router-dom";
 import { getMovieEngTitle } from "../../Hooks/getMovieEngTitle";
+import noImage from "../../assets/No-Image.png";
 
 // 각 page mount마다 실행되면서 prop를 통해 정보를 받아옴
 function MovieItem(props) {
@@ -15,6 +16,13 @@ function MovieItem(props) {
     overview: props.overview,
     voteAverage: props.voteAverage,
   };
+
+  // 5주차 추가내용 - MainPage의 검색 결과용 scale을 props으로 받아서 스타일 컴포넌트 따로 관리
+  const scales = {
+    width: props.width,
+    height: props.height,
+  };
+
   // 영어제목 가져와서 URL 뒤에 붙임
   const movieEngTitle = getMovieEngTitle(props.id).movieEngTitle;
   const linkURL = `/movie/${movieEngTitle}`;
@@ -22,12 +30,9 @@ function MovieItem(props) {
   // 평점은 2자리수까지만 표시하기, 너무많으니까 눈아픔
   // 포스터에 링크 달아보기! -> myData에 필요 정보를 담아놓고 Link props state로 전달하기
   return (
-    <S.Item>
+    <S.Item width={scales.width} height={scales.height}>
       <S.LLink to={linkURL} state={{ data: myData }}>
-        <S.Image
-          src={imageUrl}
-          alt="https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fkr%2Fsearch%2Fimages%3Fk%3Dno%2Bimage%2Bavailable&psig=AOvVaw0tf_ZhAi0gsfHn47T6q3JZ&ust=1712494173192000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIihn4nQrYUDFQAAAAAdAAAAABAE"
-        ></S.Image>
+        <S.Image src={imageUrl} onError="this.src=''"></S.Image>
       </S.LLink>
       <S.TitleVote>
         <S.Span>{props.title}</S.Span>

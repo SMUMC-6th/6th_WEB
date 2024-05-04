@@ -8,6 +8,7 @@ import UpComingPage from "../Pages/UpComingpage";
 import DetailPage from "../Pages/Detail/DetailPage";
 import NotFoundPage from "../Pages/NotFound/NotFoundPage";
 import SignUpPage from "../Pages/SignUp/SignUpPage";
+import LoginPage from "../Pages/Login/LoginPage";
 
 const Router = [
   {
@@ -50,12 +51,17 @@ const Router = [
         label: "signup",
       },
       {
+        path: "/login",
+        element: <LoginPage />,
+        label: "login",
+      },
+      {
         path: "/*",
         element: <NotFoundPage />,
         label: "notFound",
       },
     ],
-    // errorElement
+    errorElement: <NotFoundPage />,
   },
 ];
 
