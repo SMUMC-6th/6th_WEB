@@ -10,7 +10,7 @@ const SignUpPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
   } = useForm({
     resolver: yupResolver(schema),

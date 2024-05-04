@@ -10,11 +10,11 @@ const schema = yup.object({
     .trim(),
   age: yup
     .number()
+    .required("나이를 입력해주세요 !")
     .typeError("나이는 숫자로 입력해주세요 !")
-    .min(19, "우리 영화 사이트는 19살 이상만 가입이 가능합니다.")
-    .positive("나이는 음수가 될 수 없습니다.")
     .integer("나이는 소수가 될 수 없습니다.")
-    .required("나이를 입력해주세요 !"),
+    .test("is-positive", "나이는 음수가 될 수 없습니다.", (value) => value >= 0)
+    .min(19, "우리 영화 사이트는 19살 이상만 가입이 가능합니다."),
   password: yup
     .string()
     .required("비밀번호를 입력해주세요 !")
