@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 51.7vw;
+  font-size: 30px;
+  font-weight:450;
+}
+
+.top{
+  display: flex;
+  height: 10%;
+}
+
+.top .header{
+  display: flex;
+  color: white;
+  justify-content: center;
+  width: 20%;
+  background-color:black;
+}
+
+.top .menu{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  background-color: rgb(154, 51, 51);
+}
+
+.second{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: skyblue;
+  height: 40%;
+}
+
+.third{
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  height: 40%;
+}
+
+.third .main{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+}
+
+.thirdSub{
+  width: 50%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  /* 그리드 영역을 설정하는 방법 */
+  grid-template-areas: ". upside" ". downside";
+}
+
+.thirdSub .image{
+  /* 그리드 영역에 해당 클래스 요소를 할당하는 방법 */
+  grid-area: upside;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: silver;
+}
+
+.thirdSub .extra{
+  grid-area: downside;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+.bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  background-color: blanchedalmond;
+}
+
