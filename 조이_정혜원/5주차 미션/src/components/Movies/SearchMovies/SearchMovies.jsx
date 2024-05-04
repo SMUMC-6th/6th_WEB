@@ -1,46 +1,11 @@
-import { useEffect, useState } from "react";
 import * as S from "./SearchMovies.style";
-import { SearchAxios } from "../../../api/axios";
 import Movie from "../Movie";
 import Loading from "../../Loading/Loading";
 import SearchError from "../../Error/SearchError/SearchError";
+import useFetchSearchMovie from "../../../hooks/useFetchSearchMovie";
 
 const SearchMovies = ({ search }) => {
-  const [searchResults, setSearchResults] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  const controller = new AbortController();
-
-  const fetchSearchMovies = async () => {
-    setLoading(true);
-    setError(false);
-
-    try {
-      const res = await SearchAxios(
-        {
-          params: {
-            query: search,
-          },
-        },
-        { signal: controller.signal },
-      );
-      setSearchResults(res.data.results);
-    } catch (err) {
-      console.log(err);
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchSearchMovies();
-
-    return () => {
-      controller.abort();
-    };
-  }, [search]);
+  const { loading, error, searchResults } = useFetchSearchMovie(search);
 
   if (loading) {
     return (
