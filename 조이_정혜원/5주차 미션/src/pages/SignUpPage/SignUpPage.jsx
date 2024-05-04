@@ -18,7 +18,7 @@ const SignUpPage = () => {
     defaultValues: {
       username: "",
       email: "",
-      age: "",
+      age: null,
       password: "",
       passwordConfirm: "",
     },
