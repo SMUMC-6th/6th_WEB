@@ -1,1 +1,8 @@
+node_modules
+yarn.lock
+
 .DS_Store
+.env
+
+DS_Store
+env
