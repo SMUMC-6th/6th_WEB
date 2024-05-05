@@ -4,7 +4,7 @@ import * as MP from "./MainPage.style";
 import SearchMovies from "../../components/Movies/SearchMovies/SearchMovies";
 
 const MainPage = () => {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
 
   return (
     <MP.Container>
