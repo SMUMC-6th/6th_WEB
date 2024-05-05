@@ -7,7 +7,6 @@ const TopRatedPage = () => {
   const { movieItems, isLoading } = getMovies("top_rated");
 
   return (
-    // 로딩 스피너를 구현하긴 했는데, 너무 빨라서 안보임 ㅋㅋㅋㅋㅋㅋ
     <S.Container>
       {isLoading && <S.Spinner></S.Spinner>}
       {movieItems.map((movie) => (

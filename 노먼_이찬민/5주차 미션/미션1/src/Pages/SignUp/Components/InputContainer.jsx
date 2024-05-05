@@ -13,6 +13,7 @@ export default function InputContainer(props) {
   } = props;
 
   const [errorMessage, setErrorMessage] = useState("");
+  // input value 객체 상태로 관리 ( 각 컴포넌트 별 입력값 제어)
   const [inputValue, setInputValue] = useState({
     names: "",
     email: "",
