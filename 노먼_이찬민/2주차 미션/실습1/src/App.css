@@ -1,0 +1,134 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(234, 250, 255);
+}
+
+button:hover{
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+
+h1{
+  display: block;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding-bottom: 50px;
+  /* margin-bottom: 30px; */
+  font-size: 40px;
+  border-bottom: 1.5px solid rgb(191, 201, 205);
+}
+
+input{
+  display: block;
+  width: 30%;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px 20px;
+  outline: 0;
+  border: 1.5px solid rgb(191, 201, 205);
+  border-radius: 5px;
+}
+
+input:focus{
+  outline: none;
+  border: 1.5px solid rgb(173, 218, 236);
+  box-shadow: 0 0 10px rgb(191, 201, 205);
+}
+
+input::placeholder{
+  font-style: italic;
+  font-weight: 550;
+}
+
+.label{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px; 
+  width: 50%;
+  height: 40px;
+}
+
+.label p{
+  display: inline;
+  height: 25px; 
+  font-weight: 700;
+  padding-bottom: 0;
+  border-bottom: 2px solid rgb(191, 201, 205);
+}
+
+.listContainer{
+  width: 100%;
+  height: 60%;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  /* margin-left: 200px; */
+}
+
+.todoList{
+  width: 30%;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.todoList::-webkit-scrollbar {
+  width: 8px; /* 스크롤 바의 너비 */
+}
+
+.todoList::-webkit-scrollbar-thumb {
+  background-color: rgba(21, 194, 177, 0.5); /* 스크롤 바 색상 */
+  border-radius: 4px; /* 스크롤 바의 모서리 반경 */
+}
+
+.todoList::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* 스크롤 바 호버 시 색상 */
+}
+
+.completeList{
+  width: 30%;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.completeList::-webkit-scrollbar {
+  width: 8px; /* 스크롤 바의 너비 */
+}
+
+.completeList::-webkit-scrollbar-thumb {
+  background-color: rgba(21, 194, 177, 0.5); /* 스크롤 바 색상 */
+  border-radius: 4px; /* 스크롤 바의 모서리 반경 */
+}
+
+.completeList::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* 스크롤 바 호버 시 색상 */
+}
+
+.listItem{
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px; 
+  width: 230px;
+  height: 30px;
+  border-bottom: 2px solid rgb(191, 201, 205);
+}
+
+.listItem span{
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listItem button{
+  width: 20%;
+  margin-bottom: 5px;
+}
