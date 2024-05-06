@@ -45,7 +45,7 @@ const Info = styled.div `
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10%;
+  height: 15%;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.5); /* 배경 투명도 */
   color: white;

@@ -39,6 +39,10 @@ const MainBottom = styled.div`
   height: 70%;
   background-color: #202144;
   font-size: 30px;
+`;
+
+const Search = styled.div`
+  display: flex;
 
   input {
     width: 280px;
@@ -46,9 +50,16 @@ const MainBottom = styled.div`
     margin: 20px 10px;
     font-size: 16px;
     border-radius: 25px;
-    outline: none;
+    border: none;
+  }
+
+  button {
+    background-color: #202144;
+    border: none;
+
+    cursor: pointer;
   }
 `;
 
 
-export {MainContainer, MainTop, MainBottom, popUp}
+export {MainContainer, MainTop, MainBottom, Search, popUp}

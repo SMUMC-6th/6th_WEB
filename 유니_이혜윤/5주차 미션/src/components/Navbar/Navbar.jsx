@@ -22,7 +22,7 @@ const Navbar = () => {
         </N.HeaderLeft>
         <N.HeaderRight>
           <li>
-            <NavLink to="" style={ setActiveStyle }
+            <NavLink to="/login" style={ setActiveStyle }
             onClick={toggleLogin}>{isLoggedIn ? '로그아웃' : '로그인'}</NavLink>
           </li>
           <li>

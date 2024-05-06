@@ -4,11 +4,9 @@ import Loading from '../Loading/Loading';
 import MovieList from './MovieList';
 import axios from 'axios';
 
-const Movies = (type) => {
+const Movies = ({ type }) => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  console.log(type);
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,7 +25,7 @@ const Movies = (type) => {
         if (!response.data) {
           throw new Error('No data received');
         }
-        
+
         setMovies(response.data.results);
         setIsLoading(false);
       } catch (error) {

@@ -31,7 +31,7 @@ const HeaderRight = styled.ul`
 
   & > li {
     margin-right: 10px;
-    padding: 20px;
+    padding: 10px;
   }
 
   li:hover {

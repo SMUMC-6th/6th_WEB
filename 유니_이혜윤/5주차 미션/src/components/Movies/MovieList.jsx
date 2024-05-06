@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import * as MP from "./MoviePage.style"
 import { FaStar } from "react-icons/fa";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function MovieList(movie) {
+function MovieList({movie}) {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 

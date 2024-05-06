@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import MainPage from './pages/MainPage/MainPage'
 import SignUpPage from './pages/SignUpPage/SignUpPage'
+import LoginPage from './pages/LoginPage/LoginPage'
 import PopularPage from './pages/PopularPage/PopularPage'
 import NowPlayingPage from './pages/NowPlayingPage/NowPlayingPage'
 import TopRatedPage from './pages/TopRatedPage/TopRatedPage'
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <MainPage /> },
       { path: "signup", element: <SignUpPage /> },
+      { path: "login", element: <LoginPage /> },
       { path: "popular", element: <PopularPage /> },
       { path: "nowplay", element: <NowPlayingPage /> },
       { path: "toprated", element: <TopRatedPage /> },

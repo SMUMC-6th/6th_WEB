@@ -19,7 +19,7 @@ export const BackgroundImage = styled.div`
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: center;
-  opacity: 0.2; /* 배경 이미지의 투명도 */
+  opacity: 0.4; /* 배경 이미지의 투명도 */
 `;
 
 const ImageContainer = styled.div`
