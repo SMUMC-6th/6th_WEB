@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import "./App.css"
-import Navbar from './Navbar'
-import MainPage from './pages/MainPage'
-import SignUp from './pages/SignUpPage'
-import PopularPage from './pages/PopularPage'
-import NowPlayingPage from './pages/NowPlayingPage'
-import TopRatedPage from './pages/TopRatedPage'
-import UpcomingPage from './pages/Upcoming'
-import MovieDetail from './pages/MovieDetailPage'
-import Footer from './Footer'
-import NotFound from './NotFound'
+import Navbar from './components/Navbar/Navbar'
+import MainPage from './pages/MainPage/MainPage'
+import SignUpPage from './pages/SignUpPage/SignUpPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+import PopularPage from './pages/PopularPage/PopularPage'
+import NowPlayingPage from './pages/NowPlayingPage/NowPlayingPage'
+import TopRatedPage from './pages/TopRatedPage/TopRatedPage'
+import UpcomingPage from './pages/Upcoming/UpcomingPage'
+import MovieDetail from './pages/MovieDetailPage/MovieDetailPage'
+import Footer from './components/Footer/Footer'
+import NotFound from './pages/NowPlayingPage/NowPlayingPage'
 
 const Layout = () => {
   return (
@@ -27,7 +27,8 @@ const router = createBrowserRouter([
     element: <Layout />, 
     children: [
       { index: true, element: <MainPage /> },
-      { path: "signup", element: <SignUp /> },
+      { path: "signup", element: <SignUpPage /> },
+      { path: "login", element: <LoginPage /> },
       { path: "popular", element: <PopularPage /> },
       { path: "nowplay", element: <NowPlayingPage /> },
       { path: "toprated", element: <TopRatedPage /> },
