@@ -1,34 +1,20 @@
 import { useParams } from "react-router-dom";
 import NoImg from "../../assets/noImg.webp";
 import * as S from "./MovieDetailPage.style";
-import { useEffect, useState } from "react";
-import { movieAxios } from "../../api/axios";
 import Credits from "../../components/Movies/Credits/Credits";
+import useFetchMovie from "../../hooks/useFetchMovie";
 
 const MovieDetailPage = () => {
   // const location = useLocation();
   // const { backdrop_path, poster_path, title, vote_average, overview, release_date } = location.state;
 
   const { id } = useParams();
-  const [movie, setMovie] = useState([]);
 
-  const { backdrop_path, poster_path, title, vote_average, overview, release_date } = movie;
+  const { movieData } = useFetchMovie(id);
+  const { backdrop_path, poster_path, title, vote_average, overview, release_date } = movieData;
 
   const PosterURL = import.meta.env.VITE_POSTER_URL + `${poster_path}`;
   const backgroudImg = import.meta.env.VITE_POSTER_URL + `${backdrop_path}`;
-
-  const fetchDetail = async () => {
-    try {
-      const res = await movieAxios(`${id}`);
-      setMovie(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchDetail();
-  }, [id]);
 
   return (
     <>

@@ -5,6 +5,7 @@ const useFetchMovie = (requestURL) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false); // 보통 처음에는 false 데이터 받을 때 true로 변경
   const [error, setError] = useState(false);
+  const [movieData, setMovieData] = useState([]);
 
   const controller = new AbortController();
 
@@ -14,6 +15,7 @@ const useFetchMovie = (requestURL) => {
 
     try {
       const res = await movieAxios(requestURL, { signal: controller.signal });
+      setMovieData(res.data);
       setMovies(res.data.results);
     } catch (err) {
       if (err.name === "AbortError") {
@@ -36,7 +38,7 @@ const useFetchMovie = (requestURL) => {
     };
   }, [requestURL]);
 
-  return { movies, loading, error };
+  return { movies, loading, error, movieData };
 };
 
 export default useFetchMovie;
