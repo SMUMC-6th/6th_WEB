@@ -36,7 +36,7 @@ const SearchMovies = ({ search }) => {
     return (
       <S.Container>
         {searchResults.map((movie) => (
-          <S.Wrapper>
+          <S.Wrapper key={movie.id}>
             <Movie movie={movie} />
           </S.Wrapper>
         ))}
