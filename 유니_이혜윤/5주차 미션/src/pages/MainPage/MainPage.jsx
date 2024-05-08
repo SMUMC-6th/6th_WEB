@@ -1,82 +1,37 @@
 import * as M from "./MainPage.style"
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import SearchMovie from "../../components/SearchMovie/SearchMovie"
+import { useState } from "react";
 
-const MainPage = ({ type }) => {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredMovies, setFilteredMovies] = useState([]);
+const MainPage = () => {
+  const [search, setSearch] = useState('');
+  const [showResults, setShowResults] = useState(false);
 
-  useEffect(() => {
-    setIsLoading(true);
+  const handleSearch = () => {
+    setShowResults(true);
+  };
 
-    const fetchMovies = async () => {
-      try {
-        const url = `https://api.themoviedb.org/3/movie/${type}?language=ko&page=2`;
-
-        const response = await axios.get(url, {  // axios.get 사용
-          headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`, // 환경 변수에서 토큰 가져오기
-          },
-        });
-
-        if (!response.data) {
-          throw new Error('No data received');
-        }
-
-        setMovies(response.data.results);
-        setFilteredMovies(response.data.results);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setIsLoading(false);
-      }
-    };
-
-    fetchMovies();
-  }, [type]);
-
-  // 검색어가 변경될 때마다 실행되는 useEffect
-  useEffect(() => {
-    if (searchTerm === '') {
-      setFilteredMovies(movies);
-    }
-    else {
-      const filtered = movies.filter(movie =>
-        movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredMovies(filtered);
-    }
-  }, [searchTerm, movies]);
-
-  // 검색어를 업데이트
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+    setSearch(inputValue);
+    setShowResults(inputValue !== '');
   };
 
   return (
     <M.MainContainer>
       <M.MainTop><p>🎬환영합니다</p></M.MainTop>
+
       <M.MainBottom>
         Find your movies !<br />
         <M.Search>
-          <input type="text" onChange={handleSearchChange} value={searchTerm}></input>
-          <button >🔍</button>
+          <input type="text" value={search} onChange={handleInputChange} placeholder="검색어를 입력하세요" />
+          <button onClick={handleSearch}>🔍</button>
         </M.Search>
+        {showResults && (
+          <M.SearchBox>
+            <SearchMovie search={search} />
+          </M.SearchBox>
+        )}
       </M.MainBottom>
-      
-      {/* 영화 목록 표시 */}
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        filteredMovies.map(movie => (
-          <div key={movie.id}>
-            {movie.title}
-          </div>
-        ))
-      )}
     </M.MainContainer>
   )
 }
