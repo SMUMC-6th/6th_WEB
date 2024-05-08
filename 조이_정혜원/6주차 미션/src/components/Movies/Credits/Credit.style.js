@@ -9,7 +9,20 @@ const Container = styled.div`
   width: 100px;
   height: 100px;
 
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+
+    p {
+      color: rgba(126, 247, 205);
+    }
+
+    cursor: grab;
+  }
+
   p {
+    text-align: center;
     font-size: 11px;
     margin-top: 10px;
     opacity: 0.8;
@@ -19,11 +32,6 @@ const Container = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-
-    &:hover {
-      transform: scale(1.05);
-      cursor: grab;
-    }
   }
 `;
 
