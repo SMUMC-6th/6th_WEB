@@ -17,6 +17,11 @@ const Container = styled.div`
   height: 420px;
 
   margin: 10px 30px;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const NoResultContainer = styled.div`

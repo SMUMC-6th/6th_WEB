@@ -14,11 +14,11 @@ const MovieContainer = styled.div`
 
   margin: 20px;
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
 

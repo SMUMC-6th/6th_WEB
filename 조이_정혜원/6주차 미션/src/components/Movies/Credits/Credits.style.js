@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 1000px;
   height: 50%;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     width: 550px;
   }
 `;
@@ -35,7 +35,7 @@ const CreditWrapper = styled.div`
     background: rgba(249, 249, 249, 0.1);
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
