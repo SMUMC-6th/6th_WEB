@@ -28,6 +28,10 @@ const NoResultContainer = styled.div`
   display: grid;
   width: 800px;
   height: 420px;
+
+  @media screen and (max-width: 768px) {
+    width: 400px;
+  }
 `;
 
 const Wrapper = styled.div``;

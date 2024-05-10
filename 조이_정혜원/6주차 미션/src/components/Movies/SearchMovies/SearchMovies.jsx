@@ -7,6 +7,8 @@ import useFetchSearchMovie from "../../../hooks/useFetchSearchMovie";
 const SearchMovies = ({ search }) => {
   const { loading, error, searchResults } = useFetchSearchMovie(search);
 
+  if (search.trim() === "") return;
+
   if (loading) {
     return (
       <S.NoResultContainer>
@@ -23,7 +25,7 @@ const SearchMovies = ({ search }) => {
     );
   }
 
-  if (searchResults.length === 0) {
+  if (!loading && searchResults.length === 0) {
     return (
       <S.NoResultContainer>
         <S.TextBox>
@@ -32,17 +34,17 @@ const SearchMovies = ({ search }) => {
         </S.TextBox>
       </S.NoResultContainer>
     );
-  } else {
-    return (
-      <S.Container>
-        {searchResults.map((movie) => (
-          <S.Wrapper key={movie.id}>
-            <Movie movie={movie} />
-          </S.Wrapper>
-        ))}
-      </S.Container>
-    );
   }
+
+  return (
+    <S.Container>
+      {searchResults.map((movie) => (
+        <S.Wrapper key={movie.id}>
+          <Movie movie={movie} />
+        </S.Wrapper>
+      ))}
+    </S.Container>
+  );
 };
 
 export default SearchMovies;

@@ -2,9 +2,11 @@ import { useState } from "react";
 import Banner from "../../components/Banner/Banner";
 import * as MP from "./MainPage.style";
 import SearchMovies from "../../components/Movies/SearchMovies/SearchMovies";
+import useDebounce from "../../hooks/useDebounce";
 
 const MainPage = () => {
   const [search, setSearch] = useState("");
+  const debounceSearch = useDebounce(search, 500);
 
   return (
     <MP.Container>
@@ -25,7 +27,7 @@ const MainPage = () => {
           </MP.FindBox>
           {search ? (
             <MP.SearchBox>
-              <SearchMovies search={search} />
+              <SearchMovies search={debounceSearch} />
             </MP.SearchBox>
           ) : null}
         </MP.FindWrapper>

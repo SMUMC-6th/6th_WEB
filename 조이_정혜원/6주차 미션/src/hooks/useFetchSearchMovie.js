@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { SearchAxios } from "../api/axios";
-import useDebounce from "./useDebounce";
 
 const useFetchSearchMovie = (search) => {
   const [searchResults, setSearchResults] = useState([]);
@@ -8,7 +7,6 @@ const useFetchSearchMovie = (search) => {
   const [error, setError] = useState(false);
 
   const controller = new AbortController();
-  const debounceSearch = useDebounce(search, 500);
 
   const fetchSearchMovies = async (search) => {
     setLoading(true);
@@ -33,12 +31,12 @@ const useFetchSearchMovie = (search) => {
   };
 
   useEffect(() => {
-    fetchSearchMovies(debounceSearch);
+    if (search.trim() !== "") fetchSearchMovies(search);
 
     return () => {
       controller.abort();
     };
-  }, [debounceSearch]);
+  }, [search]);
 
   return { searchResults, loading, error };
 };
