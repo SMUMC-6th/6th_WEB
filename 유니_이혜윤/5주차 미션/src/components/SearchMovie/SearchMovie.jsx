@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as SM from "./SearchMovie.style"
 
@@ -7,7 +8,16 @@ const SearchMovie = ({ search }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/movie/${search.id}`, { state: { search } });  // search로 받는데 DetailPage에서 movie로 받아
+  }
+
   useEffect(() => {
+    let debounceTimer;
+    const delay = 300;
     
     const fetchData = async () => {
       if (!search) {
@@ -38,7 +48,10 @@ const SearchMovie = ({ search }) => {
       }
     };
 
-    fetchData();
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(fetchData, delay);
+
+    return () => clearTimeout(debounceTimer);
   }, [search]);
 
   return (
@@ -46,14 +59,24 @@ const SearchMovie = ({ search }) => {
       {loading && <p>Loading...</p>}
       {error && <p>{error.message}</p>}
       {searchResults.length > 0 && (
-        <SM.Content>
+        <SM.Content 
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ cursor: 'pointer' }}>
           {searchResults.map((movie) => (
-            <SM.Box key={movie.id}>
+            <SM.Box key={movie.id} onClick = {handleClick}>
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 alt={movie.title}
               />
               <h3>{movie.title}</h3>
+
+              {isHovered && (
+              <SM.Hover>
+                <h2>{movie.title}</h2>
+                <p>{movie.overview}</p>
+              </SM.Hover>
+            )}
             </SM.Box>
           ))}
         </SM.Content>
