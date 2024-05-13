@@ -13,7 +13,9 @@ export default function InputContainer(props) {
   } = props;
 
   const [errorMessage, setErrorMessage] = useState("");
+
   // input value 객체 상태로 관리 ( 각 컴포넌트 별 입력값 제어)
+  // inputValue를 props로 받아서 관리하기. + 타입, 플레이스홀더도 props로 받아서 관리
   const [inputValue, setInputValue] = useState({
     names: "",
     email: "",
@@ -21,6 +23,7 @@ export default function InputContainer(props) {
     password: "",
     passwordDouble: "",
   });
+
   const inputTypes = ["names", "email", "age", "password", "passwordDouble"];
   const placeholder = [
     "이름을 입력하세요",
@@ -29,6 +32,7 @@ export default function InputContainer(props) {
     "비밀번호를 입력하세요",
     "비밀번호 확인",
   ];
+
   const emailPattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
   const passwordPattern =
     /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*+=-])(?=.*[0-9]).{4,12}$/;
@@ -46,7 +50,7 @@ export default function InputContainer(props) {
       setErrorInputs({ ...errorInputs, names: 0 });
       setErrorMessage("");
     }
-    console.log(errorInputs.names);
+    // console.log(errorInputs.names);
   };
 
   const emailValidCheck = (email) => {
@@ -112,6 +116,7 @@ export default function InputContainer(props) {
     }
     // console.log(errorInputs);
   };
+
   // 인풋컨테이너에 들어오는 타입에 매칭시켜서 각 컴포넌트별로 onchange Listener들 중 하나만 실행해야함
   const handlerList = [
     nameValidCheck,

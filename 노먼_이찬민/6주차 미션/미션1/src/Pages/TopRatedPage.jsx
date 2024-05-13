@@ -4,7 +4,7 @@ import MovieItem from "../components/MovieItem/MovieItem";
 import { getMovies } from "../Hooks/getMovies";
 
 const TopRatedPage = () => {
-  const { movieItems, isLoading } = getMovies("top_rated");
+  const { movieItems, isLoading } = getMovies("top_rated", "ko-KR");
 
   return (
     <S.Container>

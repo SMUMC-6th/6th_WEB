@@ -13,11 +13,6 @@ const Router = [
         element: <MainPage />,
         label: "main",
       },
-      {
-        path: "/trends",
-        element: <TrendsPage />,
-        label: "trends",
-      },
     ],
   },
 ];

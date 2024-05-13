@@ -3,6 +3,10 @@ import * as S from "./SignUpPage.style";
 import InputContainer from "./Components/InputContainer";
 import { useNavigate } from "react-router-dom";
 
+// 반복되는 것 -> hook or components
+// hoook 에서 인풋 onblur이벤트로 유효성 검사
+// props 전달한 거 받을 때 매개변수단에서 구조분해할당이 ({})처럼 쓰는 거임.
+
 export default function SignUpPage() {
   const [passwordValue, setPasswordValue] = useState("");
   // 각 컴포넌트에서 검사해서 맞으면 자신 type 자리에 false, 아니면 true

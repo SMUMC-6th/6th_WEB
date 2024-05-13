@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getMovies } from "../Hooks/getMovies";
 
 const NowPlayingPage = () => {
-  const { movieItems, isLoading } = getMovies("now_playing");
+  const { movieItems, isLoading } = getMovies("now_playing", "ko-KR");
 
   return (
     <S.Container>

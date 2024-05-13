@@ -31,6 +31,8 @@ function MovieItem(props) {
 
   // 영어제목 가져와서 URL 뒤에 붙임
   // const movieEngTitle = getMovieEngTitle(props.id).movieEngTitle;
+
+  // 동적 라우팅 - id로
   const linkURL = `/movie/${props.id}`;
 
   // 평점은 2자리수까지만 표시하기, 너무많으니까 눈아픔
@@ -38,6 +40,7 @@ function MovieItem(props) {
   return (
     <S.Item width={scales.width} height={scales.height}>
       <S.LLink to={linkURL} state={{ data: myData }}>
+        {/* 링크 보낼때, state 속성에 데이터 속성을 가진 객체를 보낸다. */}
         <S.Image src={imageUrl} onError={imageErrorHandler}></S.Image>
       </S.LLink>
       <S.TitleVote>

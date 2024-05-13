@@ -36,9 +36,10 @@ export default function getSearchMovies(searchKeyword) {
     }
   }
 
+  // getSearchMoviesAPI(debounceSearchKeyword);
   useEffect(() => {
     getSearchMoviesAPI(debounceSearchKeyword);
-    console.log(debounceSearchKeyword, searchItems);
+    // console.log(debounceSearchKeyword, searchItems);
   }, [debounceSearchKeyword]);
 
   return { searchItems, isLoading, isError };

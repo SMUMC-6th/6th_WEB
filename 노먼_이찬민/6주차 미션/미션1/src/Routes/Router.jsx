@@ -41,7 +41,7 @@ const Router = [
         label: "upcoming",
       },
       {
-        path: "/movie/:id",
+        path: "/movie/:id", // 동적 라우팅
         element: <DetailPage />,
         label: "detail",
       },

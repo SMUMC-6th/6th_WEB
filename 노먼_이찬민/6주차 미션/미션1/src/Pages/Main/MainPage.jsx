@@ -13,9 +13,11 @@ const MainPage = () => {
   };
 
   const { searchItems, isLoading } = getSearchMovies(searchKeyword);
-  useEffect(() => {
-    setSearchResultItems(searchItems);
-  }, [searchItems]);
+
+  // 6주차 피드백 3 : useEffect 중복 사용 수정 -> hook에서만 사용. 여기서 썼던 이유가 상태를 여기서도 관리하려고 했으나, 불필요함
+  // useEffect(() => {
+  //   setSearchResultItems(searchItems);
+  // }, [searchItems]);
 
   return (
     <S.Container>
@@ -33,7 +35,7 @@ const MainPage = () => {
         {searchKeyword.length !== 0 && (
           <SearchItemsContainer
             searchKeyword={searchKeyword}
-            searchItems={searchResultItems}
+            searchItems={searchItems} // 6주차 피드백 3
           ></SearchItemsContainer>
         )}
         {isLoading && (

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-function getMovies(category) {
+// 6주차 피드백 2 : getMoives language까지 매개변수로 받아서 쿼리파라미터 조정 -> 영어 제목 가져올 수 있음
+function getMovies(category, language) {
   const [movieItems, setMovieItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,7 +19,7 @@ function getMovies(category) {
       setIsLoading(true); // 로딩 시작
       try {
         const movies = await fetch(
-          `https://api.themoviedb.org/3/movie/${category}?language=ko-KR&page=1`,
+          `https://api.themoviedb.org/3/movie/${category}?language=${language}&page=1`,
           options
         );
         const data = await movies.json();
