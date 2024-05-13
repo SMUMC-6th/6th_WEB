@@ -1,4 +1,5 @@
 import styled from "styled-components";
+// import { Headers } from "@nestjs/common";
 
 // 가장 뼈대가 되는 구조는 px로 정의하는 게 맞는거같기도..?
 
@@ -149,6 +150,60 @@ const SecondBoxCategoriesItem = styled.div`
   }
 `;
 
+const ThirdBox = styled.div`
+  width: 70vw;
+  height: 50vh;
+  margin-left: 70px;
+  margin-top: 20vh;
+
+  .HeaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+  }
+
+  .Header {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .HeaderPoint {
+    color: blue;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .LogoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Logo {
+    width: 12.5%;
+    height: 50%;
+  }
+`;
+
+const FourthBox = styled.div`
+  width: 70vw;
+  height: 50vh;
+  margin-left: 70px;
+  margin-top: 20vh;
+
+  .Category {
+  }
+
+  .Header {
+  }
+`;
+
 export {
   Container,
   FirstBox,
@@ -165,4 +220,6 @@ export {
   SecondBoxText,
   SecondBoxCategoriesContainer,
   SecondBoxCategoriesItem,
+  ThirdBox,
+  FourthBox,
 };
