@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Movie from "../../components/Movie";
+import Movie from "../../hooks/Movie";
 import { getMoviesData } from "../../hooks/getMovieData";
 import * as S from "./NowPlayingPage.style";
 import { RingLoader } from "react-spinners";

@@ -1,5 +1,5 @@
 import { RingLoader } from "react-spinners";
-import Movie from "../../components/Movie";
+import Movie from "../../hooks/Movie";
 import * as S from "./TopRatedPage.style";
 
 import { getMoviesData } from "../../hooks/getMovieData";
