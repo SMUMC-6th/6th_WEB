@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as SM from "./SearchMovie.style"
+import useFetchMovie from "../../hook/useFetchMovie";
 
 const SearchMovie = ({ search }) => {
-  const [searchResults, setSearchResults] = useState([]);
+  const {searchResults, error} = useFetchMovie(search);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(`/movie/${search.id}`, { state: { search } });  // search로 받는데 DetailPage에서 movie로 받아
+  const handleClick = (movieId) => {
+    navigate(`/movie/${search.id}`, { state: { movie: search } });  // search로 받는데 DetailPage에서 movie로 받아
   }
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const SearchMovie = ({ search }) => {
         onMouseLeave={() => setIsHovered(false)}
         style={{ cursor: 'pointer' }}>
           {searchResults.map((movie) => (
-            <SM.Box key={movie.id} onClick = {handleClick}>
+            <SM.Box key={movie.id} onClick = {handleClick} >
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 alt={movie.title}
