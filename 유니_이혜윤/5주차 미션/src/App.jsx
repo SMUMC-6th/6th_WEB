@@ -33,10 +33,10 @@ const router = createBrowserRouter([
       { path: "nowplay", element: <NowPlayingPage /> },
       { path: "toprated", element: <TopRatedPage /> },
       { path: "upcoming", element: <UpcomingPage /> },
+      { path: "movie/:id", element: <MovieDetail />},
     ],
     errorElement : <NotFound />,
   },
-  { path: "movie/:id", element: <MovieDetail />},
 ]);
 
 function App() {

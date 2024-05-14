@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useFetchMovie = (type) => {
-  const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [movieData, setMovieData] = useState([]);
   const [error, setError] = useState(null);
@@ -25,7 +24,6 @@ const useFetchMovie = (type) => {
         });
 
         if(!cancelRequest) {
-          setSearchResults(response.data.results);
           setMovieData(response.data);
           setIsLoading(false);
         }
@@ -50,7 +48,7 @@ const useFetchMovie = (type) => {
     }
   }, [type]);
 
-  return { isLoading, movieData, searchResults, error};
+  return { isLoading, movieData, error};
 };
 
 export default useFetchMovie;

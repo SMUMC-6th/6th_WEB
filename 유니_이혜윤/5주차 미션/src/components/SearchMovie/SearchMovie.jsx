@@ -1,58 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import * as SM from "./SearchMovie.style"
-import useFetchMovie from "../../hook/useFetchMovie";
+import useFetchSearchMovie from "../../hook/useFetchSearchMovie";
 
 const SearchMovie = ({ search }) => {
-  const {searchResults, error} = useFetchMovie(search);
-  const [loading, setLoading] = useState(false);
+  const { searchResults, loading, error } = useFetchSearchMovie(search);
 
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = (movieId) => {
-    navigate(`/movie/${search.id}`, { state: { movie: search } });  // search로 받는데 DetailPage에서 movie로 받아
+    console.log(movieId)
+    navigate(`/movie/${movieId}`, { state: { id:movieId } });
   }
-
-  useEffect(() => {
-    let debounceTimer;
-    const delay = 300;
-    
-    const fetchData = async () => {
-      if (!search) {
-        setSearchResults([]);
-        return;
-      }
-
-      setLoading(true);
-      setError(null);
-
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/search/movie`,
-          {
-            params: {
-              query: search,
-            },
-            headers: {
-              Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
-            },
-          }
-        );
-        setSearchResults(response.data.results);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(fetchData, delay);
-
-    return () => clearTimeout(debounceTimer);
-  }, [search]);
 
   return (
     <SM.Container>
@@ -64,7 +24,7 @@ const SearchMovie = ({ search }) => {
         onMouseLeave={() => setIsHovered(false)}
         style={{ cursor: 'pointer' }}>
           {searchResults.map((movie) => (
-            <SM.Box key={movie.id} onClick = {handleClick} >
+            <SM.Box key={movie.id} onClick = {()=>handleClick(movie.id)} >
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 alt={movie.title}
