@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { FiAlertOctagon } from "react-icons/fi";
+import theme from "../../../styles/theme";
 
 const colorChange = keyframes`
   from {
@@ -11,10 +12,7 @@ const colorChange = keyframes`
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${theme.ALIGN.COLUMN_CENTER};
 
   color: white;
 

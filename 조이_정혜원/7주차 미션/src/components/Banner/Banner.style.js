@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import "animate.css";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   background-color: #090b13;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${theme.ALIGN.ROW_CENTER};
 
   height: 350px;
 

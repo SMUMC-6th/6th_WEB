@@ -1,17 +1,16 @@
 import { styled } from "styled-components";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   height: 750px;
 
-  display: grid;
-  place-items: center;
+  ${theme.ALIGN.GRID_CENTER};
 `;
 
 const Wrapper = styled.div`
   color: #fff;
 
-  display: grid;
-  place-items: center;
+  ${theme.ALIGN.GRID_CENTER};
 
   p {
     margin-bottom: 20px;

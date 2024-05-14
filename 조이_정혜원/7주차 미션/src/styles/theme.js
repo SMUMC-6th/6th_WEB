@@ -15,6 +15,15 @@ const ALIGN = {
         justify-content: space-between;
         align-items: center;
         `,
+  ROW_SPACE_AROUND: `
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        `,
+  GRID_CENTER: `
+        display: grid;
+        place-items: center;
+        `,
 };
 
 const theme = { ALIGN };

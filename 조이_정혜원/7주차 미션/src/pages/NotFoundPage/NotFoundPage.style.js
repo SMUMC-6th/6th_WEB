@@ -1,5 +1,6 @@
 import { styled, keyframes } from "styled-components";
 import { AiFillAlert } from "react-icons/ai";
+import theme from "../../styles/theme";
 
 const changeColor = keyframes`
    from {
@@ -13,10 +14,7 @@ const changeColor = keyframes`
 const Container = styled.div`
   height: 100vh;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${theme.ALIGN.COLUMN_CENTER};
   color: white;
 
   h1 {

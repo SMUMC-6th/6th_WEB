@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   width: 100%;
@@ -8,17 +9,11 @@ const Container = styled.div`
 const Wrapper = styled.div``;
 
 const FindWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${theme.ALIGN.COLUMN_CENTER};
 `;
 
 const FindBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${theme.ALIGN.COLUMN_CENTER};
 
   height: 200px;
 
@@ -29,9 +24,7 @@ const FindBox = styled.div`
   }
 
   div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    ${theme.ALIGN.ROW_SPACE_AROUND};
     width: 200px;
   }
 
@@ -58,8 +51,7 @@ const searchImg = styled(FaSearch)`
 `;
 
 const SearchBox = styled.div`
-  display: grid;
-  place-items: center;
+  ${theme.ALIGN.GRID_CENTER};
   border: 2px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.2);
 

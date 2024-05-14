@@ -1,12 +1,11 @@
 import { styled } from "styled-components";
+import theme from "../../styles/theme";
 
 const Conatiner = styled.div`
   position: relative;
   color: white;
+  ${theme.ALIGN.ROW_CENTER};
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   img {

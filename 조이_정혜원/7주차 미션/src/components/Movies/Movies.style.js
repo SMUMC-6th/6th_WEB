@@ -23,10 +23,6 @@ const MovieContainer = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  /* @media all and (max-width: 479px) {
-    grid-template-columns: repeat(2, 1fr);
-  } */
 `;
 
 const ButtonBox = styled.div`

@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   height: 750px;
 
-  display: grid;
-  place-items: center;
+  ${theme.ALIGN.GRID_CENTER};
   img {
     width: 3%;
   }
