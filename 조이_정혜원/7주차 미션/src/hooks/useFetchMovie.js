@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { movieAxios } from "../api/axios";
 
-const useFetchMovie = (requestURL) => {
+const useFetchMovie = (requestURL, page) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false); // 보통 처음에는 false 데이터 받을 때 true로 변경
   const [error, setError] = useState(false);
-  const [movieData, setMovieData] = useState([]);
+  const [totalPage, setTotalPage] = useState(0);
 
   const controller = new AbortController();
 
@@ -14,9 +14,17 @@ const useFetchMovie = (requestURL) => {
     setError(false);
 
     try {
-      const res = await movieAxios(requestURL, { signal: controller.signal });
-      setMovieData(res.data);
+      const res = await movieAxios(
+        requestURL,
+        {
+          params: {
+            page: page,
+          },
+        },
+        { signal: controller.signal },
+      );
       setMovies(res.data.results);
+      setTotalPage(res.data.total_pages);
     } catch (err) {
       if (err.name === "AbortError") {
         alert("AbortError");
@@ -36,9 +44,9 @@ const useFetchMovie = (requestURL) => {
     return () => {
       controller.abort();
     };
-  }, [requestURL]);
+  }, [requestURL, page]);
 
-  return { movies, loading, error, movieData };
+  return { movies, loading, error, totalPage };
 };
 
 export default useFetchMovie;

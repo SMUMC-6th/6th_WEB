@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import NoImg from "../../assets/noImg.webp";
 import * as S from "./MovieDetailPage.style";
 import Credits from "../../components/Movies/Credits/Credits";
-import useFetchMovie from "../../hooks/useFetchMovie";
+import useFetctDetail from "../../hooks/useFetchDetail";
 
 const MovieDetailPage = () => {
   // const location = useLocation();
@@ -10,7 +10,7 @@ const MovieDetailPage = () => {
 
   const { id } = useParams();
 
-  const { movieData } = useFetchMovie(id);
+  const { movieData } = useFetctDetail(id);
   const { backdrop_path, poster_path, title, vote_average, overview, release_date } = movieData;
 
   const PosterURL = import.meta.env.VITE_POSTER_URL + `${poster_path}`;
