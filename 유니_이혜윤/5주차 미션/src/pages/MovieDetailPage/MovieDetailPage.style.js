@@ -3,15 +3,26 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  gap: 80px; 
+
+  overview-y: auto;
+`;
+
+const Info = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 100px;
   gap: 80px; 
 `;
 
 export const BackgroundImage = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -55,4 +66,14 @@ const DetailContainer = styled.div`
   }
 `;
 
-export {Container, ImageContainer, MainImage, DetailContainer}
+const Credit = styled.div`
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 100px;
+  }
+`;
+
+export {Container, Info, ImageContainer, MainImage, DetailContainer, Credit}
