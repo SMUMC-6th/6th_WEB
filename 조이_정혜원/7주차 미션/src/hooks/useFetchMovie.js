@@ -7,6 +7,8 @@ const useFetchMovie = (requestURL, page) => {
   const [error, setError] = useState(false);
   const [totalPage, setTotalPage] = useState(0);
 
+  const [allMovie, setAllMovie] = useState([]);
+
   const controller = new AbortController();
 
   const fetchMovieData = async () => {
@@ -25,6 +27,8 @@ const useFetchMovie = (requestURL, page) => {
       );
       setMovies(res.data.results);
       setTotalPage(res.data.total_pages);
+
+      setAllMovie((prev) => [...prev, ...res.data.results]);
     } catch (err) {
       if (err.name === "AbortError") {
         alert("AbortError");
@@ -46,7 +50,7 @@ const useFetchMovie = (requestURL, page) => {
     };
   }, [requestURL, page]);
 
-  return { movies, loading, error, totalPage };
+  return { movies, loading, error, totalPage, allMovie };
 };
 
 export default useFetchMovie;

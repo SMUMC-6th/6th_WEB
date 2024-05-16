@@ -1,12 +1,11 @@
 import requests from "../../constants/request";
-import Movies from "../../components/Movies/Movies";
-
 import * as MP from "../MainPage/MainPage.style";
+import MoviesScroll from "../../components/Movies/MoviesScroll/MoviesScroll";
 
 const NowPlayingPage = () => {
   return (
     <MP.Container>
-      <Movies requestURL={requests.nowPlaying} />
+      <MoviesScroll requestURL={requests.nowPlaying} />
     </MP.Container>
   );
 };

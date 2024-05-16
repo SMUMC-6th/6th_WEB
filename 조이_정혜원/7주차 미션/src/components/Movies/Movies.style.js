@@ -3,8 +3,8 @@ import theme from "../../styles/theme";
 import { IoChevronBackCircleOutline, IoChevronForwardCircleOutline } from "react-icons/io5";
 
 const Container = styled.div`
-  display: grid;
-  place-items: center;
+  position: relative;
+  ${theme.ALIGN.GRID_CENTER};
 
   padding: 50px 0 40px;
 `;
@@ -61,4 +61,9 @@ const Button = styled.button`
   }
 `;
 
-export { Container, MovieContainer, ButtonBox, IconBack, IconForward, Button };
+const LoadingContainer = styled.div`
+  height: 750px;
+  ${theme.ALIGN.ROW_CENTER}
+`;
+
+export { Container, MovieContainer, ButtonBox, IconBack, IconForward, Button, LoadingContainer };

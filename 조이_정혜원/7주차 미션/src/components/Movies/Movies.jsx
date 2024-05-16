@@ -11,7 +11,11 @@ const Movies = ({ requestURL }) => {
   const { movies, loading, error, totalPage } = useFetchMovie(requestURL, currentPage);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <M.LoadingContainer>
+        <Loading />
+      </M.LoadingContainer>
+    );
   }
 
   if (error) {
