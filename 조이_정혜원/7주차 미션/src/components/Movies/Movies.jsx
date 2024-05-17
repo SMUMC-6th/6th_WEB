@@ -4,13 +4,38 @@ import ErrorComponent from "../Error/ErrorComponent";
 import Loading from "../Loading/Loading";
 import * as M from "./Movies.style";
 import { useState } from "react";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { movieAxios } from "../../api/axios";
+import Skeleton from "../Loading/Skeleton/Skeleton";
 
 const Movies = ({ requestURL }) => {
+  // const { movies, totalPage, loading } = useFetchMovie(requestURL, currentPage);
+
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
 
-  const { movies, loading, error, totalPage } = useFetchMovie(requestURL, currentPage);
+  const fetchMovie = async (requestURL, page) => {
+    const res = await movieAxios(requestURL, {
+      params: {
+        page: page,
+      },
+    });
+    setTotalPage(res.data.total_pages);
+    return res.data.results;
+  };
 
-  if (loading) {
+  const {
+    isPending,
+    isError,
+    data: movies,
+    isPlaceholderData,
+  } = useQuery({
+    queryKey: ["movies", currentPage],
+    queryFn: () => fetchMovie(requestURL, currentPage),
+    placeholderData: keepPreviousData,
+  });
+
+  if (isPending) {
     return (
       <M.LoadingContainer>
         <Loading />
@@ -18,7 +43,7 @@ const Movies = ({ requestURL }) => {
     );
   }
 
-  if (error) {
+  if (isError) {
     return <ErrorComponent />;
   }
 
@@ -34,8 +59,11 @@ const Movies = ({ requestURL }) => {
           <M.IconBack disabled={currentPage === 1} />
         </M.Button>
         <p>{currentPage}</p>
-        <M.Button onClick={() => setCurrentPage((currentPage) => currentPage + 1)} disabled={currentPage === totalPage}>
-          <M.IconForward disabled={currentPage === totalPage} />
+        <M.Button
+          onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
+          disabled={isPlaceholderData || totalPage === currentPage}
+        >
+          <M.IconForward disabled={isPlaceholderData || totalPage === currentPage} />
         </M.Button>
       </M.ButtonBox>
     </M.Container>

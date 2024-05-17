@@ -45,7 +45,7 @@ const IconBack = styled(IoChevronBackCircleOutline)`
 `;
 
 const IconForward = styled(IoChevronForwardCircleOutline)`
-  color: #fff;
+  color: ${(props) => (props.disabled ? "black" : "#fff")};
   width: 17px;
   height: 17px;
 `;
