@@ -6,6 +6,7 @@ import Loading from "../../Loading/Loading";
 import { LoadingWrapper } from "./MoviesScroll.sytyle";
 import { movieAxios } from "../../../api/axios";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import Skeleton from "../../Skeleton/Skeleton";
 
 const MoviesScroll = ({ requestURL }) => {
   const pageEnd = useRef();
@@ -66,15 +67,27 @@ const MoviesScroll = ({ requestURL }) => {
 
   return (
     <M.Container>
-      <M.MovieContainer>
-        {movies.map((movie, idx) => (
-          <Movie key={idx} movie={movie} />
-        ))}
-      </M.MovieContainer>
-
-      <LoadingWrapper ref={pageEnd}>
-        <Loading />
-      </LoadingWrapper>
+      {isFetching ? (
+        <>
+          <M.MovieContainer>
+            {new Array(10).fill("").map((_, idx) => (
+              <Skeleton key={idx} />
+            ))}
+          </M.MovieContainer>
+          <Loading />
+        </>
+      ) : (
+        <>
+          <M.MovieContainer>
+            {movies.map((movie, idx) => (
+              <Movie key={idx} movie={movie} />
+            ))}
+          </M.MovieContainer>
+          <LoadingWrapper ref={pageEnd}>
+            <Loading />
+          </LoadingWrapper>
+        </>
+      )}
     </M.Container>
   );
 };
