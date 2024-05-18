@@ -21,7 +21,7 @@ const MoviesScroll = ({ requestURL }) => {
     return res.data.results;
   };
 
-  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError } = useInfiniteQuery({
+  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError, isFetchingNextPage } = useInfiniteQuery({
     queryKey: ["allMovie"],
     queryFn: fetchMovie,
     initialPageParam: 1,
@@ -67,7 +67,7 @@ const MoviesScroll = ({ requestURL }) => {
 
   return (
     <M.Container>
-      {isFetching ? (
+      {isFetchingNextPage ? (
         <>
           <M.MovieContainer>
             {new Array(10).fill("").map((_, idx) => (
