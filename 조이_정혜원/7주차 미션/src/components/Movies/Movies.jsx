@@ -1,16 +1,12 @@
 import Movie from "./Movie";
-import useFetchMovie from "../../hooks/useFetchMovie";
 import ErrorComponent from "../Error/ErrorComponent";
 import Loading from "../Loading/Loading";
 import * as M from "./Movies.style";
 import { useState } from "react";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { movieAxios } from "../../api/axios";
-import Skeleton from "../Loading/Skeleton/Skeleton";
 
 const Movies = ({ requestURL }) => {
-  // const { movies, totalPage, loading } = useFetchMovie(requestURL, currentPage);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
 

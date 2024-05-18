@@ -1,59 +1,80 @@
-import { useEffect, useRef, useState } from "react";
-import useFetchMovie from "../../../hooks/useFetchMovie";
+import { useEffect, useRef } from "react";
 import * as M from "../Movies.style";
 import ErrorComponent from "../../Error/ErrorComponent";
 import Movie from "../Movie";
-import Skeleton from "../../Loading/Skeleton/Skeleton";
 import Loading from "../../Loading/Loading";
 import { LoadingWrapper } from "./MoviesScroll.sytyle";
+import { movieAxios } from "../../../api/axios";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
 const MoviesScroll = ({ requestURL }) => {
-  const [currentPage, setCurrentPage] = useState(1);
   const pageEnd = useRef();
 
-  const loadPage = () => {
-    setCurrentPage((prev) => prev + 1);
+  const fetchMovie = async ({ pageParam }) => {
+    const res = await movieAxios(requestURL, {
+      params: {
+        page: pageParam,
+      },
+    });
+
+    return res.data.results;
   };
 
-  const { allMovie, loading, error } = useFetchMovie(requestURL, currentPage);
+  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError } = useInfiniteQuery({
+    queryKey: ["allMovie"],
+    queryFn: fetchMovie,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, pages) => {
+      if (lastPage) return pages.length + 1;
+    },
+  });
+
+  const movies = data ? [].concat(...data.pages) : [];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          loadPage();
+        if (entries[0].isIntersecting && hasNextPage) {
+          fetchNextPage();
         }
       },
       { threshold: 0.8 },
     );
 
-    if (!loading) {
-      // 로딩중이 아님 -> 데이터 받아옴
+    if (pageEnd.current) {
       observer.observe(pageEnd.current);
-    } else {
-      // 데이터 받아오는 중 일때는 비활성화
-      observer.disconnect(pageEnd.current);
     }
-  }, [loading]);
 
-  if (error) {
+    return () => {
+      if (pageEnd.current) {
+        observer.unobserve(pageEnd.current);
+      }
+    };
+  }, [isFetching]);
+
+  if (isPending) {
+    return (
+      <M.LoadingContainer>
+        <Loading />
+      </M.LoadingContainer>
+    );
+  }
+
+  if (isError) {
     return <ErrorComponent />;
   }
 
   return (
     <M.Container>
       <M.MovieContainer>
-        {allMovie.map((movie) => (
-          <Movie key={movie.id} movie={movie} />
+        {movies.map((movie, idx) => (
+          <Movie key={idx} movie={movie} />
         ))}
       </M.MovieContainer>
-      {loading ? (
-        <Skeleton />
-      ) : (
-        <LoadingWrapper ref={pageEnd}>
-          <Loading />
-        </LoadingWrapper>
-      )}
+
+      <LoadingWrapper ref={pageEnd}>
+        <Loading />
+      </LoadingWrapper>
     </M.Container>
   );
 };
