@@ -7,6 +7,8 @@ import PopularPage from "./pages/Popular/PopularPage";
 import TopRatedPage from "./pages/TopRated/TopRatedPage";
 import NowPlayingPage from "./pages/NowPlaying/NowPlayingPage";
 import UpComingPage from "./pages/UpComing/UpComingPage";
+import MovieDetailPage from "./pages/MovieDetail/MovieDatailPage";
+import NotFound from "./pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,12 @@ const router = createBrowserRouter([
         path: "/upcoming",
         element: <UpComingPage />,
       },
+      {
+        path: "/movie/:id",
+        element: <MovieDetailPage />,
+      },
     ],
+    errorElement: <NotFound />,
   },
 ]);
 

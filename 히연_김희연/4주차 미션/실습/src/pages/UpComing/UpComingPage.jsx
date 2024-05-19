@@ -1,4 +1,4 @@
-import Movie from "../../hooks/Movie";
+import Movie from "../../components/Movie/Movie";
 import { getMoviesData } from "../../hooks/getMovieData";
 import * as S from "./UpComingPage.style";
 import { RingLoader } from "react-spinners";

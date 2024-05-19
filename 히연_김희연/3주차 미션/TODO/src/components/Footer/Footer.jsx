@@ -6,6 +6,7 @@ function Footer() {
   const navigate = useNavigate();
 
   const handleChangePage = () => {
+    // trends페이지로 렌더링
     navigate("/trends");
   };
   return (
