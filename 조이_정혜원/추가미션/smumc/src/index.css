@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #0f1012;
+  overflow-x: hidden;
+  height: 100%;
+
+  font-family: "Pretendard-Light";
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(1, 255, 111, 0.5);
+  border-radius: 20px;
+  height: 30%;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(249, 249, 249, 0.1);
+}
+
+@font-face {
+  font-family: "Pretendard-Light";
+  src: url(./assets/fonts/Pretendard-Light.ttf);
+}
+
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url(./assets/fonts/Pretendard-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Pretendard-Medium";
+  src: url(./assets/fonts/Pretendard-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url(./assets/fonts/Pretendard-Regular.ttf);
+}
