@@ -1,31 +1,31 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import * as S from "./MovieDetailPage.style";
+import { getDetailData } from "../../hooks/getDetailData";
+
 const MovieDetailPage = () => {
-  const location = useLocation();
+  const { id } = useParams();
+  const { movies, loading, error } = getDetailData(id);
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
-  const {
-    backdrop_path,
-    poster_path,
-    title,
-    vote_average,
-    overview,
-    release_date,
-  } = location.state;
-
-  const PosterURL = import.meta.env.VITE_POSTER_URL + `${poster_path}`;
-  const backgroundImg = import.meta.env.VITE_POSTER_URL + `${backdrop_path}`;
+  const PosterURL = movies.poster_path
+    ? import.meta.env.VITE_POSTER_URL + movies.poster_path
+    : "";
 
   return (
-    <S.container style={{ backgroundImage: `url(${backgroundImg})` }}>
+    <S.container>
       <S.MovieInfoContainer>
-        <S.image src={poster_path ? PosterURL : NoImg} alt={title} />
+        <S.image
+          src={movies.poster_path ? PosterURL : "NoImg"}
+          alt={movies.title}
+        />
         <S.DetailContainer>
-          <S.title>{title}</S.title>
+          <S.title>{movies.title}</S.title>
           <S.paragraph>
-            평점: {"⭐️".repeat(Math.floor(vote_average))}
+            평점: {"⭐️".repeat(Math.floor(movies.vote_average))}
           </S.paragraph>
-          <S.paragraph>개봉일: {release_date}</S.paragraph>
-          <S.overview>줄거리: {overview}</S.overview>
+          <S.paragraph>개봉일: {movies.release_date}</S.paragraph>
+          <S.overview>줄거리: {movies.overview}</S.overview>
         </S.DetailContainer>
       </S.MovieInfoContainer>
     </S.container>

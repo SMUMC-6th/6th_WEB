@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Movie from "../../components/Movie/Movie";
 import { getMoviesData } from "../../hooks/getMovieData";
 import * as S from "./NowPlayingPage.style";
 import { RingLoader } from "react-spinners";
-
 const NowPlayingPage = () => {
   const { movies, loading, error } = getMoviesData("now_playing");
   const navigate = useNavigate();
@@ -27,9 +26,9 @@ const NowPlayingPage = () => {
 
   return (
     <div className="app-container">
-      {movies.map((item, idx) => {
+      {movies.map((item) => {
         return (
-          <Link to={`/movie/${idx}`} key={idx}>
+          <Link to={`/movie/${item.id}`} key={item.id}>
             <Movie
               title={item.title}
               poster_path={item.poster_path}
