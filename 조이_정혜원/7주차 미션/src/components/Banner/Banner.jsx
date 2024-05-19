@@ -26,8 +26,7 @@ const Banner = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) fetchUser(token);
-    else return;
-  }, []); // 의존성배열에 token을 추가해야하나 ?!?
+  }, []);
 
   return (
     <B.Container>
