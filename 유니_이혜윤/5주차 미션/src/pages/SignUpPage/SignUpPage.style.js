@@ -42,7 +42,7 @@ const Box = styled.div`
   }
 
   button {
-    width: 420px;
+    width: 400px;
     height: 50px;
     margin: 20px;
 
@@ -50,6 +50,10 @@ const Box = styled.div`
     border: none;
 
     cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #FEC622;
   }
 
   p {
