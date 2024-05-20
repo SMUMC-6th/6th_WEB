@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { MainPage, ProjectPage, NoticePage, MemberPage, MemberDetail } from "./pages/index";
+import { MainPage, ProjectPage, NoticePage, MemberPage } from "./pages/index";
 import AppLayout from "./layout/AppLayout";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
@@ -26,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: "members",
         element: <MemberPage />,
-      },
-      {
-        path: "members/:id",
-        element: <MemberDetail />,
       },
     ],
   },

@@ -9,5 +9,6 @@ import Part from "./Main/Part/Part";
 import Qna from "./QnA/Qna";
 import TotalProject from "./TotalProject/TotalProject";
 import ProjectDetail from "./TotalProject/ProjectDetail/ProjectDetail";
+import Member from "./Member/Member";
 
-export { Footer, Navbar, About, Info, New, Project, AnimatedComponent, Part, Qna, TotalProject, ProjectDetail };
+export { Footer, Navbar, About, Info, New, Project, AnimatedComponent, Part, Qna, TotalProject, ProjectDetail, Member };

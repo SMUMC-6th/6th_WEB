@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 const Container = styled.div`
-  margin-top: 160px;
+  margin-top: 140px;
   margin-bottom: 50px;
   color: inherit;
   height: 100%;
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   height: 100%;
 
   h1 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-family: ${theme.FONT.PRETENDARD_BOLD};
     letter-spacing: 2px;
   }
