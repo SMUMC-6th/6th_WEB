@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import theme from "../../theme";
-import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { MdOutlineDarkMode } from "react-icons/md";
+import { FaTree } from "react-icons/fa6";
 
 const Container = styled.div`
   ${theme.ALIGN.ROW_SPACE_BETWEEN}
   position: fixed;
   top: 0;
+  z-index: 9999;
 
   width: 100%;
   height: 80px;
@@ -55,10 +57,10 @@ const DarkIcon = styled(MdOutlineDarkMode)`
   }
 `;
 
-const Lighticon = styled(MdOutlineLightMode)`
-  color: #ffc629;
-  width: 20px;
-  height: 20px;
+const Lighticon = styled(FaTree)`
+  color: #117439;
+  width: 19px;
+  height: 19px;
   margin-bottom: -6px;
   margin-right: 5px;
 

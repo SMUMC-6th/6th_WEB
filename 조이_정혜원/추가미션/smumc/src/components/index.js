@@ -7,5 +7,7 @@ import AnimatedComponent from "./AnimatedComponentㄴ/AnimatedComponent";
 import Project from "./Main/Project/Project";
 import Part from "./Main/Part/Part";
 import Qna from "./QnA/Qna";
+import TotalProject from "./TotalProject/TotalProject";
+import ProjectDetail from "./TotalProject/ProjectDetail/ProjectDetail";
 
-export { Footer, Navbar, About, Info, New, Project, AnimatedComponent, Part, Qna };
+export { Footer, Navbar, About, Info, New, Project, AnimatedComponent, Part, Qna, TotalProject, ProjectDetail };

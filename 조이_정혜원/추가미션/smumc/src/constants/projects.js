@@ -381,4 +381,6 @@ const PROJECTS = [
   },
 ];
 
-export { PROJECTS };
+const PROJECTS_YEAR = ["All", 5, 4, 3];
+
+export { PROJECTS, PROJECTS_YEAR };
