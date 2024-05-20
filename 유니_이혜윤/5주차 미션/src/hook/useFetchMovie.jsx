@@ -6,6 +6,9 @@ const useFetchMovie = (type) => {
   const [movieData, setMovieData] = useState([]);
   const [error, setError] = useState(null);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
   useEffect(() => {
     const cancelRequest = false;
 
@@ -44,11 +47,18 @@ const useFetchMovie = (type) => {
     fetchMovies();
 
     return () => {
-      
     }
-  }, [type]);
+  }, [type, currentPage]);
 
-  return { isLoading, movieData, error};
+  const nextPage = () => {
+    setCurrentPage(currentPage+1);
+  }
+
+  const prevPage = () => {
+    setCurrentPage(currentPage-1);
+  }
+
+  return { isLoading, movieData, error, currentPage, totalPages, nextPage, prevPage};
 };
 
 export default useFetchMovie;

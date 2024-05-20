@@ -14,7 +14,24 @@ const Movielist = styled.div `
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   width: 100%;
-  max-width: 1500px; /* 최대 너비를 설정 */
+  max-width: 1700px; /* 최대 너비를 설정 */
+`;
+
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1f45;
+  color: white;
+  
+  button {
+    margin: 0 10px;
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
 `;
 
 const Content = styled.div `
@@ -105,4 +122,4 @@ const MovieBox = styled.div`
   }
 `;
 
-export {Container, Movielist, Content, Info, MovieOverview, MovieBox}
+export {Container, Movielist, Content, Info, MovieOverview, MovieBox, Pagination}

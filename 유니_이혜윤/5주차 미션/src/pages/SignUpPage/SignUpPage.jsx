@@ -13,9 +13,12 @@ const SignUp = () => {
     name: yup.string()
       .required('이름을 입력해주세요.')
       .matches(/^[a-zA-Z가-힣\s]*$/, '올바른 이름을 입력해주세요!'),
+    id: yup.string()
+      .required('아이디를 입력해주세요.')
+      .matches(/^[a-zA-Z0-9\s]*$/, '올바른 아이디를 입력해주세요.'),
     email: yup.string()
       .required('이메일을 입력해주세요.')
-      .email('올바른 이메일을 입력해주세요!'),
+      .email('올바른 이메일을 입력해주세요.'),
     age: yup.number()
       .typeError("나이를 입력해주세요.")
       .positive("나이는 양수여야 합니다.")
@@ -55,8 +58,11 @@ const SignUp = () => {
         <form onSubmit={handleSubmit(onValid, onInValid)}>
           <input type="text" id="userName" placeholder="이름을 입력해주세요" autoFocus 
             {...register('name')} />
-          {errors.name && <p>{errors.name.message}</p>}
+            {errors.name && <p>{errors.name.message}</p>}
 
+          <input type="text" id="userId" placeholder="아이디를 입력해주세요"
+            {...register('id')} />
+            {errors.id && <p>{errors.id.message}</p>}
 
           <input type="email" id="userEmail" placeholder="이메일을 입력해주세요"
             {...register('email')} />

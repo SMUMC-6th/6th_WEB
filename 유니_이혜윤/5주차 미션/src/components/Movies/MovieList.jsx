@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 function MovieList({movie}) {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
-
   const handleClick = () => {
     navigate(`/movie/${movie.id}`, { state: { movie } });
   }
