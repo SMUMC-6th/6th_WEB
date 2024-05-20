@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import theme from "../../theme";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const Container = styled.div`
   display: grid;
@@ -40,6 +40,11 @@ const ArrowIcon = styled(MdKeyboardArrowDown)`
   height: 20px;
 `;
 
+const ArrowIconUp = styled(MdKeyboardArrowUp)`
+  width: 20px;
+  height: 20px;
+`;
+
 const Option = styled.ul`
   overflow: hidden;
   font-size: 15px;
@@ -58,9 +63,9 @@ const Option = styled.ul`
     &:hover {
       cursor: pointer;
       background-color: ${(pros) => pros.theme.primary};
-      color: ${(pros) => (pros.theme === theme.darkTheme ? "" : "#fff")};
+      color: ${(pros) => (pros.theme === theme.darkTheme ? "inherit" : "#fff")};
     }
   }
 `;
 
-export { Container, SelectBox, Select, Option, ArrowIcon };
+export { Container, SelectBox, Select, Option, ArrowIcon, ArrowIconUp };
