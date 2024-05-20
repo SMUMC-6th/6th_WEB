@@ -17,7 +17,7 @@ const useFetchMovie = (type) => {
       setError(null);
 
       try {
-        const url = `https://api.themoviedb.org/3/movie/${type}?language=ko&page=2`;
+        const url = `https://api.themoviedb.org/3/movie/${type}?language=ko&page=${currentPage}`;
 
         const response = await axios.get(url, {
           headers: {
@@ -28,6 +28,7 @@ const useFetchMovie = (type) => {
 
         if(!cancelRequest) {
           setMovieData(response.data);
+          setTotalPages(response.data.total_pages);
           setIsLoading(false);
         }
 
@@ -51,11 +52,23 @@ const useFetchMovie = (type) => {
   }, [type, currentPage]);
 
   const nextPage = () => {
-    setCurrentPage(currentPage+1);
+    setCurrentPage((prev) => {
+      const nextPage = Math.min(prev+1, totalPages);
+      if(nextPage !== prev) {
+        window.scrollTo(0,0);  // 페이지 변경시 스크롤 위로
+      }
+      return nextPage;
+    });
   }
 
   const prevPage = () => {
-    setCurrentPage(currentPage-1);
+    setCurrentPage((prev) => {
+      const prevPage = Math.max(prev - 1, 1);
+      if(prevPage !== prev) {
+        window.scrollTo(0,0);
+      }
+      return prevPage;
+    })
   }
 
   return { isLoading, movieData, error, currentPage, totalPages, nextPage, prevPage};

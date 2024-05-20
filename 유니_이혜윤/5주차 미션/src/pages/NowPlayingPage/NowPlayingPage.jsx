@@ -1,7 +1,7 @@
-import Movies from '../../components/Movies/Movies';
+import MoviesScroll from '../../components/Movies/MoviesScroll';
 
 const NowPlayingPage = () => {
-  return <Movies type="now_playing" />;
+  return <MoviesScroll type="now_playing" />;
 }
 
 export default NowPlayingPage;

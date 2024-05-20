@@ -27,7 +27,7 @@ const Pagination = styled.div`
   button {
     margin: 0 10px;
     padding: 5px;
-    background-color: white;
+    background-color: #1f1f45;
     border: none;
     border-radius: 30px;
     cursor: pointer;
