@@ -1,12 +1,20 @@
 import styled from "styled-components";
 const Container = styled.div `
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   min-height: 100vh; 
   padding: 50px;
   background-color: #1f1f45;
   margin-top: 80px;
+`;
+
+const ListContainer = styled.div ` 
+  flex-grow: 1;  /* 남은 공간을 채우도록 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: #1f1f45;
 `;
 
 const Movielist = styled.div `
@@ -23,14 +31,18 @@ const Pagination = styled.div`
   align-items: center;
   background-color: #1f1f45;
   color: white;
+  margin-top: auto;
   
   button {
-    margin: 0 10px;
-    padding: 5px;
+    margin: 0 50px;
     background-color: #1f1f45;
     border: none;
     border-radius: 30px;
     cursor: pointer;
+  }
+
+  span {
+    padding-bottom: 4px;
   }
 `;
 
@@ -122,4 +134,4 @@ const MovieBox = styled.div`
   }
 `;
 
-export {Container, Movielist, Content, Info, MovieOverview, MovieBox, Pagination}
+export {Container, ListContainer, Movielist, Content, Info, MovieOverview, MovieBox, Pagination}

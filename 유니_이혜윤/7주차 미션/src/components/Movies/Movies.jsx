@@ -17,21 +17,21 @@ const Movies = ({ type }) => {
   }
 
   return (
-    <>
-      <MP.Container>
+    <MP.Container>
+      <MP.ListContainer>
         <MP.Movielist>
           {data.results.map(movie => (
             // 아래에서 MovieList 컴포넌트를 사용하여 각 영화를 렌더링
             <MovieList key={movie.id} movie={movie} />
           ))}
         </MP.Movielist>
-      </MP.Container>
+      </MP.ListContainer>
       <MP.Pagination>
-        <button onClick={prevPage} disabled={currentPage === 1}><MdNavigateBefore color="white"/></button>
+        <button onClick={prevPage} disabled={currentPage === 1}><MdNavigateBefore color="white" size="30px"/></button>
         <span>{currentPage}</span>
-        <button onClick={nextPage} disabled={currentPage === totalPages}><MdNavigateNext color="white"/></button>
+        <button onClick={nextPage} disabled={currentPage === totalPages}><MdNavigateNext color="white" size="30px"/></button>
       </MP.Pagination>
-    </>
+    </MP.Container>
     );
   }
 
