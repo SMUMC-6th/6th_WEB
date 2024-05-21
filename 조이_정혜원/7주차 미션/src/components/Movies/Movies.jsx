@@ -3,33 +3,22 @@ import ErrorComponent from "../Error/ErrorComponent";
 import Loading from "../Loading/Loading";
 import * as M from "./Movies.style";
 import { useState } from "react";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { movieAxios } from "../../api/axios";
+import useGetMovies from "../../hooks/queries/useGetMovies";
+import queryClient from "../../api/queryClient";
 
 const Movies = ({ requestURL }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(1);
+  const { isPending, isError, data } = useGetMovies(requestURL, currentPage);
 
-  const fetchMovie = async (requestURL, page) => {
-    const res = await movieAxios(requestURL, {
-      params: {
-        page: page,
-      },
-    });
-    setTotalPage(res.data.total_pages);
-    return res.data.results;
-  };
+  // useEffect(() => {
+  //   const nextPage = currentPage + 1;
+  //   queryClient.prefetchQuery({
+  //     queryKey: ["movies", requestURL, nextPage],
+  //     queryFn: () => useGetMovies(requestURL, nextPage),
+  //   });
+  // }, [queryClient, currentPage]);
 
-  const {
-    isPending,
-    isError,
-    data: movies,
-    isPlaceholderData,
-  } = useQuery({
-    queryKey: ["movies", currentPage],
-    queryFn: () => fetchMovie(requestURL, currentPage),
-    placeholderData: keepPreviousData,
-  });
+  // queryClient.invalidateQueries(["movies"]);
 
   if (isPending) {
     return (
@@ -46,7 +35,7 @@ const Movies = ({ requestURL }) => {
   return (
     <M.Container>
       <M.MovieContainer>
-        {movies.map((movie) => (
+        {data?.results.map((movie) => (
           <Movie key={movie.id} movie={movie} />
         ))}
       </M.MovieContainer>
@@ -55,11 +44,8 @@ const Movies = ({ requestURL }) => {
           <M.IconBack disabled={currentPage === 1} />
         </M.Button>
         <p>{currentPage}</p>
-        <M.Button
-          onClick={() => setCurrentPage((currentPage) => currentPage + 1)}
-          disabled={isPlaceholderData || totalPage === currentPage}
-        >
-          <M.IconForward disabled={isPlaceholderData || totalPage === currentPage} />
+        <M.Button onClick={() => setCurrentPage((prev) => prev + 1)} disabled={currentPage === data?.total_pages}>
+          <M.IconForward disabled={currentPage === data?.total_pages} />
         </M.Button>
       </M.ButtonBox>
     </M.Container>
