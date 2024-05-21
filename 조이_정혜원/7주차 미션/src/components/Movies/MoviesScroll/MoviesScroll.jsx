@@ -4,38 +4,19 @@ import ErrorComponent from "../../Error/ErrorComponent";
 import Movie from "../Movie";
 import Loading from "../../Loading/Loading";
 import { LoadingWrapper } from "./MoviesScroll.sytyle";
-import { movieAxios } from "../../../api/axios";
-import { useInfiniteQuery } from "@tanstack/react-query";
 import Skeleton from "../../Skeleton/Skeleton";
+import useGetInfinityMovies from "../../../hooks/queries/useGetInfinityMovies";
 
 const MoviesScroll = ({ requestURL }) => {
   const pageEnd = useRef();
 
-  const fetchMovie = async ({ pageParam }) => {
-    const res = await movieAxios(requestURL, {
-      params: {
-        page: pageParam,
-      },
-    });
-
-    return res.data.results;
-  };
-
-  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError, isFetchingNextPage } = useInfiniteQuery({
-    queryKey: ["allMovie"],
-    queryFn: fetchMovie,
-    initialPageParam: 1,
-    getNextPageParam: (lastPage, pages) => {
-      if (lastPage) return pages.length + 1;
-    },
-  });
-
-  const movies = data ? [].concat(...data.pages) : [];
+  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError, isFetchingNextPage } =
+    useGetInfinityMovies(requestURL);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && hasNextPage) {
+        if (!isFetching && entries[0].isIntersecting && hasNextPage) {
           fetchNextPage();
         }
       },
@@ -79,9 +60,7 @@ const MoviesScroll = ({ requestURL }) => {
       ) : (
         <>
           <M.MovieContainer>
-            {movies.map((movie, idx) => (
-              <Movie key={idx} movie={movie} />
-            ))}
+            {data?.map((page) => page.results.map((movie, idx) => <Movie key={idx} movie={movie} />))}
           </M.MovieContainer>
           <LoadingWrapper ref={pageEnd}>
             <Loading />
