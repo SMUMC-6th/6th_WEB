@@ -113,7 +113,7 @@ export default function SignUp() {
     } else if (value % 1 !== 0) {
       setAgeMessage("나이를 실수로 입력할 수 없습니다.");
       setAgeCheck(false);
-    } else if (value < 20) {
+    } else if (value < 19) {
       setAgeMessage("19세 이상만 사용 가능합니다!");
       setAgeCheck(false);
     } else {
@@ -123,13 +123,14 @@ export default function SignUp() {
   };
 
   const checkPw = (value) => {
-    const regExp = /^(?=.*[A-Z][a-z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{4,12}$/;
+    // 수정된 정규 표현식: 최소 하나의 소문자, 숫자, 특수문자를 포함하고 길이가 4~12자
+    const regExp = /^(?=.*[a-z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{4,12}$/;
     setPw(value);
 
     if (value.trim() === "") {
       setPwMessage("비밀번호를 입력해주세요!");
       setPwCheck(false);
-    } else if (value.length <= 4) {
+    } else if (value.length < 4) {
       setPwMessage("최소 4자리 이상 입력해주세요.");
       setPwCheck(false);
     } else if (value.length > 12) {

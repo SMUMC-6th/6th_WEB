@@ -14,8 +14,7 @@ export default function Navbar() {
   console.log(accessToken);
 
   const handleLogout = () => {
-    dispatch(logoutAction({ token: "", username: "" }));
-    localStorage.clear();
+    dispatch(logoutAction());
   };
 
   return (

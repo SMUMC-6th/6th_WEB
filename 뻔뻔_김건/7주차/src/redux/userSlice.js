@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  isLogin: false,
+  value: {
+    token: "",
+    username: "",
+  },
+};
+
 export const userSlice = createSlice({
   name: "user",
-  initialState: {
-    isLogin: false,
-    value: {
-      token: "",
-      uername: "",
-    },
-  },
+  initialState,
   reducers: {
     loginAction: (state, action) => {
       state.value = action.payload;
@@ -17,9 +19,8 @@ export const userSlice = createSlice({
       console.log(state.value.token);
     },
     logoutAction: (state) => {
-      localStorage.removeItem("accessToken", state.value.token);
-      state.isLogin = false;
-      state.value = {};
+      Object.assign(state, initialState);
+      localStorage.clear();
     },
   },
 });

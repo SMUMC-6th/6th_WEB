@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <HomeDiv>
-        <Banner>환영합니다 {name}</Banner>
+        <Banner>{name} 환영합니다</Banner>
         <Search />
       </HomeDiv>
     </HomeContainer>
