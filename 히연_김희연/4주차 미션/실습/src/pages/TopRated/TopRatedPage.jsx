@@ -1,5 +1,5 @@
 import { RingLoader } from "react-spinners";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Movie from "../../components/Movie/Movie";
 import * as S from "./TopRatedPage.style";
 
@@ -17,9 +17,9 @@ const PopularPage = () => {
   }
   return (
     <div className="app-container">
-      {movies.map((item) => {
+      {movies.map((item, idx) => {
         return (
-          <Link to={`/movie/${item.id}`} key={item.id}>
+          <Link to={`/movie/${idx}`} key={idx}>
             <Movie
               title={item.title}
               poster_path={item.poster_path}
