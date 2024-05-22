@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import * as M from "../Movies.style";
 import ErrorComponent from "../../Error/ErrorComponent";
 import Movie from "../Movie";
@@ -6,33 +6,24 @@ import Loading from "../../Loading/Loading";
 import { LoadingWrapper } from "./MoviesScroll.sytyle";
 import Skeleton from "../../Skeleton/Skeleton";
 import useGetInfinityMovies from "../../../hooks/queries/useGetInfinityMovies";
+import { useInView } from "react-intersection-observer";
+import useThrottling from "../../../hooks/useThrottling";
 
 const MoviesScroll = ({ requestURL }) => {
-  const pageEnd = useRef();
+  const { ref, inView } = useInView({
+    threshold: 0,
+    delay: 0,
+  });
 
-  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError, isFetchingNextPage } =
-    useGetInfinityMovies(requestURL);
+  const { data, fetchNextPage, hasNextPage, isPending, isFetching, isError } = useGetInfinityMovies(requestURL);
+
+  const throttlingNewPage = useThrottling(fetchNextPage, 1 * 1000);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!isFetching && entries[0].isIntersecting && hasNextPage) {
-          fetchNextPage();
-        }
-      },
-      { threshold: 0.8 },
-    );
-
-    if (pageEnd.current) {
-      observer.observe(pageEnd.current);
+    if (inView) {
+      !isFetching && hasNextPage && throttlingNewPage();
     }
-
-    return () => {
-      if (pageEnd.current) {
-        observer.unobserve(pageEnd.current);
-      }
-    };
-  }, [isFetching]);
+  }, [inView, isFetching, hasNextPage]);
 
   if (isPending) {
     return (
@@ -48,7 +39,7 @@ const MoviesScroll = ({ requestURL }) => {
 
   return (
     <M.Container>
-      {isFetchingNextPage ? (
+      {isFetching ? (
         <>
           <M.MovieContainer>
             {new Array(10).fill("").map((_, idx) => (
@@ -62,7 +53,7 @@ const MoviesScroll = ({ requestURL }) => {
           <M.MovieContainer>
             {data?.map((page) => page.results.map((movie, idx) => <Movie key={idx} movie={movie} />))}
           </M.MovieContainer>
-          <LoadingWrapper ref={pageEnd}>
+          <LoadingWrapper ref={ref}>
             <Loading />
           </LoadingWrapper>
         </>

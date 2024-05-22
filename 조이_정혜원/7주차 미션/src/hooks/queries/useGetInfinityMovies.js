@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { keepPreviousData, useInfiniteQuery } from "@tanstack/react-query";
 import { getMovies } from "../../api/post";
 
 const useGetInfinityMovies = (requestURL) => {
@@ -11,8 +11,9 @@ const useGetInfinityMovies = (requestURL) => {
       return lastPost ? allPages?.length + 1 : undefined;
     },
     select: (data) => data.pages,
-    keepPreviousData: true,
+    placeholderData: keepPreviousData,
     staleTime: 10 * 1000,
+    cacheTime: 5 * 60 * 1000,
   });
 };
 

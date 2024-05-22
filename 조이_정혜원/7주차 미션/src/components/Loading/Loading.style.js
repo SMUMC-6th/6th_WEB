@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "../../styles/theme";
 
 const Container = styled.div`
-  height: 100px;
+  height: 50px;
 
   ${theme.ALIGN.ROW_CENTER};
   img {
