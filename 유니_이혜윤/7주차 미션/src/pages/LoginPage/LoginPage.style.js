@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -10,8 +9,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin-top: 40px;
 
   p {
     font-size: 20px;
@@ -33,8 +30,8 @@ const Box = styled.div`
   }
   
   input {
-    width: 400px;
-    height: 40px;
+    width: 300px;
+    height: 50px;
     padding: 15px;
 
     border-radius: 25px;
@@ -42,8 +39,8 @@ const Box = styled.div`
   }
 
   button {
-    width: 400px;
-    height: 50px;
+    width: 300px;
+    height: 40px;
     margin: 20px;
 
     border-radius: 25px;
@@ -52,22 +49,10 @@ const Box = styled.div`
     cursor: pointer;
   }
 
-  button:hover {
-    background-color: #FEC622;
-  }
-
   p {
     font-size: 13px;
   }
 
 `;
 
-const StyledLink = styled(Link)`
-  margin-left: 15px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  transition: color 0.3s;
-`;
-
-export { Container, Box, StyledLink }
+export {Container, Box}
