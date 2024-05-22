@@ -2,21 +2,22 @@ import Movie from "./Movie";
 import ErrorComponent from "../Error/ErrorComponent";
 import Loading from "../Loading/Loading";
 import * as M from "./Movies.style";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useGetMovies from "../../hooks/queries/useGetMovies";
 import queryClient from "../../api/queryClient";
+import { getMovies } from "../../api/post";
 
 const Movies = ({ requestURL }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const { isPending, isError, data } = useGetMovies(requestURL, currentPage);
 
-  // useEffect(() => {
-  //   const nextPage = currentPage + 1;
-  //   queryClient.prefetchQuery({
-  //     queryKey: ["movies", requestURL, nextPage],
-  //     queryFn: () => useGetMovies(requestURL, nextPage),
-  //   });
-  // }, [queryClient, currentPage]);
+  useEffect(() => {
+    const nextPage = currentPage + 1;
+    queryClient.prefetchQuery({
+      queryKey: ["movies", requestURL, nextPage],
+      queryFn: () => getMovies(requestURL, nextPage),
+    });
+  }, [queryClient, currentPage]);
 
   // queryClient.invalidateQueries(["movies"]);
 
