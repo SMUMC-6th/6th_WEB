@@ -1,11 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import * as S from "./Navbar.style";
 import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { ThemeContext, MenuContext } from "../../context";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
 const Navbar = () => {
   const nav = useNavigate();
   const { nowTheme, changeClick } = useContext(ThemeContext);
+  const { handleOpen } = useContext(MenuContext);
 
   return (
     <S.Container>
@@ -17,6 +19,8 @@ const Navbar = () => {
         <NavLink to="/members">member</NavLink>
         <NavLink to="/notices">notice</NavLink>
       </S.Wrapper>
+      <S.HamBargerWrapper onClick={handleOpen} />
+      <MobileMenu />
     </S.Container>
   );
 };

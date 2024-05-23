@@ -1,10 +1,12 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { ThemeContextProvider } from "./context/ThemeContext.jsx";
+import { ThemeContextProvider, MenuContextProvider } from "./context/";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeContextProvider>
-    <App />
+    <MenuContextProvider>
+      <App />
+    </MenuContextProvider>
   </ThemeContextProvider>,
 );
