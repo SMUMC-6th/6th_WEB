@@ -20,6 +20,10 @@ const Container = styled.div`
     width: 100%;
     height: 10%;
 
+    &.active {
+      color: rgb(250, 233, 100, 0.95);
+    }
+
     &:hover {
       cursor: pointer;
       background-color: rgb(242, 245, 255, 0.9);
