@@ -3,12 +3,11 @@ import theme from "../../theme";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  width: 80%;
 `;
 
 const SelectBox = styled.section`
@@ -21,17 +20,21 @@ const Select = styled.button`
   ${theme.FONT.PRETENDARD_BOLD};
   ${theme.ALIGN.ROW_SPACE_BETWEEN};
   padding: 0 20px;
-  width: 170px;
+  width: 250px;
   height: 40px;
   border-radius: 10px;
   font-size: 15px;
   background-color: inherit;
   color: ${(props) => props.theme.textColor};
-  border: 1px solid ${(props) => props.theme.secondary};
+  border: 1.5px solid ${(props) => (props.theme === theme.darkTheme ? props.theme.secondary : props.theme.primary)};
 
   margin-bottom: 10px;
   &:hover {
     cursor: pointer;
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 200px;
   }
 `;
 
@@ -53,7 +56,7 @@ const Option = styled.ul`
   height: 100%;
   border-radius: 10px;
   color: ${(props) => props.theme.textColor};
-  border: 1px solid ${(props) => props.theme.secondary};
+  border: 1.5px solid ${(props) => (props.theme === theme.darkTheme ? props.theme.secondary : props.theme.primary)};
 
   li {
     list-style-type: none;
