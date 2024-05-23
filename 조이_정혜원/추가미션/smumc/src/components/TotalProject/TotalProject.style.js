@@ -5,7 +5,7 @@ const Container = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px 20px;
+  gap: 10px 20px;
   border-radius: 30px;
   padding: 10px 20px;
 

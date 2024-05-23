@@ -17,7 +17,8 @@ from {
 }`;
 
 const Container = styled.div`
-  display: flex;
+  ${theme.ALIGN.ROW_CENTER};
+  width: 100%;
   color: ${(props) => props.theme.textColor};
 
   img {
@@ -94,4 +95,8 @@ const Container = styled.div`
   }
 `;
 
-export { Container, changeColor, changeColorLight };
+const Img = styled.img`
+  width: 460px;
+`;
+
+export { Container, changeColor, changeColorLight, Img };

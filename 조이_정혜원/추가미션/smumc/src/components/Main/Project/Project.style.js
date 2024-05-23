@@ -28,6 +28,7 @@ const infiniteAnimation2 = keyframes`
 `;
 
 const Container = styled.div`
+  overflow-x: hidden;
   ${theme.ALIGN.COLUMN_CENTER}
   width: 100%;
   height: 55%;

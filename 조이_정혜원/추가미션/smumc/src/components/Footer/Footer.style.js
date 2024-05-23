@@ -33,6 +33,17 @@ const TextWrapper = styled.div`
     font-size: 11px;
     letter-spacing: 0.7px;
   }
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h3 {
+      margin-bottom: 4px;
+      font-size: 20px;
+    }
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -64,6 +75,11 @@ const IconWrapper = styled.div`
       height: 20px;
     }
   }
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    margin-top: 15px;
+    margin-left: 45px;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -71,6 +87,10 @@ const InfoWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 3px;
+  }
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    display: none;
   }
 `;
 

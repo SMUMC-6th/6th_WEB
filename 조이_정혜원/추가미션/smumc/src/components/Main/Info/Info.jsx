@@ -9,7 +9,7 @@ const Info = () => {
 
   return (
     <S.Container>
-      <img src={nowTheme ? Logo : LogoLight} width={"460px"} />
+      <S.Img src={nowTheme ? Logo : LogoLight} />
       <div>
         <h1>
           <b>U</b>niversity <b>M</b>akeUs <b>C</b>hallenge
