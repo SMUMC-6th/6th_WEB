@@ -26,6 +26,12 @@ const ALIGN = {
         `,
 };
 
-const theme = { ALIGN };
+const SCREEN_SIZE = {
+  MOBILE: `screen and (max-width: 480px)`,
+  TABLET: "screen and (max-width: 768px)",
+  PC: "screen and (max-width: 1024px)",
+};
+
+const theme = { ALIGN, SCREEN_SIZE };
 
 export default theme;

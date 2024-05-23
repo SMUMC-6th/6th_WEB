@@ -16,6 +16,10 @@ const Container = styled.div`
 
     animation: jackInTheBox;
     animation-duration: 2s;
+
+    @media ${theme.SCREEN_SIZE.MOBILE} {
+      font-size: 20px;
+    }
   }
 `;
 
