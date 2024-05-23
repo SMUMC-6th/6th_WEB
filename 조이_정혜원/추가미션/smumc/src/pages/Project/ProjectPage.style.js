@@ -52,6 +52,13 @@ const Select = styled.div`
       background-color: ${(props) => props.theme.primary};
     }
   }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    span {
+      font-size: 15px;
+      padding: 15px 28px;
+    }
+  }
 `;
 
 const ProJect = styled.div`
