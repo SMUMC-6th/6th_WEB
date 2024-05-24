@@ -26,6 +26,10 @@ const Container = styled.div`
     &:hover {
       color: #fff;
     }
+
+    &.active {
+      color: #fff;
+    }
   }
 
   hr {
