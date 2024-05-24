@@ -2,36 +2,31 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 const Container = styled.div`
+  ${theme.ALIGN.COLUMN_CENTER};
   width: 800px;
+  margin-bottom: 80px;
+  position: relative;
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    width: 650px;
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 350px;
+  }
 `;
 
-const Wrapper = styled.div`
-  ${theme.ALIGN.COLUMN_CENTER}
+const LinkBox = styled.div`
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+  font-size: 12px;
 
-  width: 95%;
-  height: 90px;
-
-  background-color: ${(props) => props.theme.footerColor};
-  border-radius: 15px;
-
-  margin-bottom: 10px;
-
-  h3 {
+  a {
     font-family: ${theme.FONT.PRETENDARD_BOLD};
-    font-size: 15px;
-  }
-
-  p {
-    font-size: 13px;
+    text-decoration: none;
+    color: ${(props) => (props.theme === theme.darkTheme ? "#b1bfb0" : props.theme.primary)};
   }
 `;
 
-const QuestionBox = styled.div`
-  ${theme.ALIGN.ROW_SPACE_BETWEEN}
-  width: 100%;
-  padding: 0 40px;
-`;
-
-const AnswerBox = styled.div``;
-
-export { Container, Wrapper, QuestionBox, AnswerBox };
+export { Container, LinkBox };
