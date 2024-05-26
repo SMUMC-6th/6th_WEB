@@ -29,7 +29,7 @@ const infiniteAnimation2 = keyframes`
 
 const Container = styled.div`
   overflow-x: hidden;
-  ${theme.ALIGN.COLUMN_CENTER}
+  ${theme.ALIGN.COLUMN_CENTER};
   width: 100%;
   height: 55%;
   position: relative;
@@ -52,6 +52,14 @@ const Container = styled.div`
   h4 {
     margin-bottom: 60px;
     color: ${theme.COLOR.GRAY};
+    word-break: keep-all;
+    text-align: center;
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    h4 {
+      width: 80%;
+    }
   }
 `;
 

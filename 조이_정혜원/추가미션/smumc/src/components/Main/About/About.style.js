@@ -32,14 +32,18 @@ const RImg = styled.img`
   opacity: 0.9;
 
   @media ${theme.SCREEN_SIZE.MOBILE} {
-    opacity: 0.5;
-    width: 90px;
-    height: 80px;
+    right: -35px;
+    width: 70px;
+    height: 60px;
   }
 `;
 const LImg = styled(RImg)`
   top: 150px;
   left: -60px;
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    left: -35px;
+  }
 `;
 
 const ContextWrapper = styled.div`

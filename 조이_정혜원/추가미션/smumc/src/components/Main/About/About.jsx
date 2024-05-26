@@ -7,24 +7,12 @@ import smileLight from "../../../assets/smile_light.webp";
 import { MEMBERS } from "../../../constants/members";
 import { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
-import React from "react";
-import Slider from "react-slick";
+import SliderComponent from "../../SliderComponent/SliderComponent";
 
 const About = () => {
   const allMemberCount = MEMBERS.length;
   const currMemberCount = MEMBERS.filter((m) => m.year === 6).length;
   const { nowTheme } = useContext(ThemeContext);
-
-  var settings = {
-    autoplay: true,
-    autoplaySpeed: 2000,
-    dots: false,
-    infinite: true,
-    pauseOnHover: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   return (
     <S.Container>
@@ -53,11 +41,11 @@ const About = () => {
         </div>
       </S.Wrapper>
       <S.TabWrapper>
-        <Slider {...settings}>
+        <SliderComponent dots={false}>
           <AboutBox title={"누적 활동 인원 🧑‍💻"} text={`${allMemberCount} 명`} />
           <AboutBox title={"현재 활동 회원 🏃🏻‍♀️"} text={`${currMemberCount} 명`} />
           <AboutBox title={"운영 기수 🕢"} text={"6 기"} />
-        </Slider>
+        </SliderComponent>
       </S.TabWrapper>
     </S.Container>
   );

@@ -14,6 +14,12 @@ const Container = styled.div`
   b {
     color: ${(props) => props.theme.primary};
   }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    h1 {
+      font-size: 23px;
+    }
+  }
 `;
 
 const Wrapper = styled.div`
@@ -22,7 +28,7 @@ const Wrapper = styled.div`
   color: #fff;
   border-radius: 30px;
   background-color: ${(props) => props.theme.footerColor};
-  width: 500px;
+  width: 430px;
 
   div {
     text-align: center;
@@ -41,6 +47,14 @@ const Wrapper = styled.div`
     &.selected {
       color: #fff;
       background-color: ${(props) => props.theme.primary};
+    }
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 280px;
+
+    div {
+      font-size: 15px;
     }
   }
 `;
