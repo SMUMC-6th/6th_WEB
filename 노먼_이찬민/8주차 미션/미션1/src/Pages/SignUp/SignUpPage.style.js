@@ -23,6 +23,10 @@ const FormButton = styled.button`
   width: 30%;
   height: 12%;
   border-radius: 50px;
+
+  @media (max-width: 767px) {
+    width: 220px;
+  }
 `;
 
 const Header = styled.div`
@@ -39,6 +43,10 @@ const TrailerContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
+
+  @media (max-width: 767px) {
+    /* width: 400px; */
+  }
 `;
 const TrailerLeft = styled.div`
   font-size: 14px;

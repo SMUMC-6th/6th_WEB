@@ -34,12 +34,21 @@ const SearchLabel = styled.div`
   font-weight: bolder;
   color: aliceblue;
   margin-bottom: 20px;
+
+  @media (max-width: 355px) {
+    font-size: 20px;
+  }
 `;
 
 const SearchInput = styled.input`
   width: 300px;
   height: 40px;
   border-radius: 15px;
+
+  @media (max-width: 355px) {
+    width: 220px;
+    height: 30px;
+  }
 `;
 
 const searchItemsContainer = styled.div`

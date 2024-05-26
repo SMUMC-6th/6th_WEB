@@ -7,6 +7,7 @@ const AppContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* overflow: hidden; */
 `;
 
 const OutletWrapper = styled.div`
@@ -16,6 +17,7 @@ const OutletWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  /* overflow: hidden; */
 `;
 
 export { AppContainer, OutletWrapper };

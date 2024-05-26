@@ -18,6 +18,10 @@ const InputBox = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    width: 300px;
+  }
 `;
 
 const MessageContainer = styled.div`

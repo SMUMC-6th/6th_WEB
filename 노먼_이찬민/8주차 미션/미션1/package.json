@@ -16,10 +16,12 @@
     "@tanstack/react-query": "^5.36.2",
     "@tanstack/react-query-devtools": "^5.37.1",
     "axios": "^1.7.2",
+    "framer-motion": "^11.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.4",
     "react-icons": "^5.2.1",
+    "react-responsive": "^10.0.0",
     "react-router-dom": "^6.22.3",
     "styled-components": "^6.1.8"
   },

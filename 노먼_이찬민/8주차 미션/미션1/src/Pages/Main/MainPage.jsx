@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import * as S from "./MainPage.styled";
 import getSearchMovies from "../../Hooks/getSearchMovies";
-import MovieItem from "../../components/MovieItem/MovieItem";
 import SearchItemsContainer from "./components/SearchItemsContainer";
 import useDebounce from "../../Hooks/useDebounce";
+import { useDevice } from "../../Hooks/useDevice";
 
 const MainPage = () => {
+
   const [searchKeyword, setSearchKeyword] = useState("");
   const [searchResultItems, setSearchResultItems] = useState([]);
 

@@ -32,10 +32,9 @@ export default function getSearchMovies(searchKeyword) {
     }
   }
 
-  // useEffect에 빈 의존성 안만들면 마운트 시 호출 안되서 Hook 규칙 오류 - 렌더링 시 훅 호출 수 변경 - 발생
   useEffect(() => {
     getSearchMoviesAPI(searchKeyword);
-  }, [, searchKeyword]);
+  }, [searchKeyword]);
 
   return { searchItems, isLoading, isError };
 }
