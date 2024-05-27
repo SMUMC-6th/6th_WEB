@@ -1,13 +1,14 @@
 import * as SU from './SignUpPage.style'
-import {  useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
+import axios from 'axios';
+import { useState } from 'react';
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [serverError, setServerError] = useState('');
 
   const schema = yup.object().shape({
     name: yup.string()
@@ -40,12 +41,35 @@ const SignUp = () => {
     formState: {errors},
   } = useForm({resolver: yupResolver(schema)});
 
-  const onValid = (data) => {
-    console.log("onValid called");
-    console.log("# onValid", data);
-
-    navigate('/login');
-  };
+  const onValid = async (data) => {
+    try{
+      setServerError('');
+      const response = await axios.post('http://localhost:8080/auth/signup', {
+        name: data.name,
+        email: data.email,
+        age: data.age,
+        username: data.id,
+        password: data.pw,
+        passwordCheck: data.pw2,
+      });
+  
+      if (response.status === 201) {
+        alert('회원가입이 완료되었습니다🍀')
+        navigate('/login');
+      }
+    } catch(error) {
+      if(error.response) {
+        if(error.response.status === 409){
+          setServerError('이미 존재하는 아이디입니다.');
+        } else if(error.response.status === 400){
+          setServerError('비밀번호가 일치하지 않습니다.');
+        } else {
+          setServerError('회원가입에 실패했습니다.');
+        }
+      } else {
+        console.error(error.message);
+    }
+  }};
 
   const onInValid = (errors) => {
     console.log("# onInValid", errors);
@@ -86,6 +110,7 @@ const SignUp = () => {
       </SU.Box>
     </SU.Container>
   )
-}
+};
+
 
 export default SignUp;
