@@ -7,18 +7,22 @@ import Credits from '../../components/Credits/Credits.jsx';
 
 function MovieDetail() {
   const {id} = useParams();
+  const params = useParams();
+  console.log(params.id);
 
-  const {movieData} = useFetchMovie(id);
 
-  if(!movieData) {
-    return <Loading />
-  }
-  const{backdrop_path, poster_path, title, vote_average, overview, release_date} = movieData;
+  const huiyeon = useFetchMovie(id);
+  console.log(huiyeon.data)
+
+
+
+  const{backdrop_path, poster_path, title, vote_average, overview, release_date} = huiyeon.data
 
   // const location = useLocation();
   // const movie = location.state.movie; // MovieList에서 전달한 영화 데이터에 접근
   
-
+  console.log('별'.repeat(Math.floor(vote_average)))
+  
   const renderStars = (rating) => {
     const roundedRating = Math.floor(rating); // 평점을 반올림하여 정수로 만듦
     const stars = [];

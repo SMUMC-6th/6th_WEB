@@ -7,8 +7,8 @@ const HamburgerMenu = ({setActiveStyle, isLoggedIn, toggleLogin, isOpen, setIsOp
   }
 
   return (
-    <div onMouseLeave={closeMenu}>
-      <H.SideBar isOpen={isOpen ? "show" : ""}>
+    <div>
+      <H.SideBar isOpen={isOpen} onMouseLeave={closeMenu}>
         <H.MenuList>
           <li>
             <NavLink to="/login" style={ setActiveStyle } onClick={() => {toggleLogin(); closeMenu();}}>

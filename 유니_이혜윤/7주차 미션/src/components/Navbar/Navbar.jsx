@@ -54,7 +54,7 @@ const Navbar = () => {
           <RxHamburgerMenu size='20px' color='white'/>
         </N.Hamburger>
       </N.HeaderWrap>
-      <HamburgerMenu setActiveStyle={setActiveStyle} isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} isOpen={isMenuOpen}/>
+      <HamburgerMenu setActiveStyle={setActiveStyle} isLoggedIn={isLoggedIn} toggleLogin={toggleLogin} isOpen={isMenuOpen} setIsOpen={setIsMenuOpen}/>
     </N.HeaderContainer>
   )
 }
