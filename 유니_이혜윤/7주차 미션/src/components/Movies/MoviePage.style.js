@@ -2,7 +2,7 @@ import styled from "styled-components";
 const Container = styled.div `
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: calc(100vh - 3rem); 
   padding: 50px;
   background-color: #1f1f45;
   margin-top: 80px;

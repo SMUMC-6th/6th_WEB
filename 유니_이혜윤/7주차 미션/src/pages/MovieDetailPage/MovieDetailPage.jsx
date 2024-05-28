@@ -21,20 +21,6 @@ function MovieDetail() {
 
   // const location = useLocation();
   // const movie = location.state.movie; // MovieList에서 전달한 영화 데이터에 접근
-  
-  console.log('별'.repeat(Math.floor(vote_average)))
-
-  const renderStars = (rating) => {
-    const roundedRating = Math.floor(rating); // 평점을 반올림하여 정수로 만듦
-    const stars = [];
-
-    // 반올림한 평점 수만큼 별 아이콘을 생성하여 배열에 추가
-    for (let i = 0; i < roundedRating; i++) {
-      stars.push(<FaStar key={i} />);
-    }
-
-    return stars;
-  };
 
   return (
     <MD.Container>
@@ -45,7 +31,7 @@ function MovieDetail() {
         </MD.ImageContainer>
         <MD.DetailContainer>
           <h1>{title}</h1>
-          <h4>평점 {renderStars(vote_average)}</h4>
+          <h4>평점 {"🌟".repeat(Math.floor(vote_average))}</h4>
           <h4>개봉일 {release_date}</h4>
           <h4>줄거리</h4>
           <p>{overview ? overview : "상세 줄거리 정보가 없습니다.😓"}</p>

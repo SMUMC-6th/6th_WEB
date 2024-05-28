@@ -21,6 +21,35 @@ const Container = styled.div`
     border-radius: 50%;
     opacity: 1;
   }
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+
+    p {
+      font-size: 8px;
+      margin-top: 8px;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 60px;
+    height: 60px;
+
+    p {
+      font-size: 6px;
+      margin-top: 6px;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
 `;
 
 export {Container}
