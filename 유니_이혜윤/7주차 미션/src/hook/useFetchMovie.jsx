@@ -13,11 +13,22 @@ const fetchMovies = async ({ type, page }) => {
   return data;
 };
 
-const useFetchMovie = (type) => {
+const fetchMovieDetail = async (id) => {
+  const url = `https://api.themoviedb.org/3/movie/${id}?language=ko`;
+  const {data} = await axios.get(url, {
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
+    },
+  });
+  return data;
+}
+
+const useFetchMovie = (type, id = null) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const { data, error, isLoading } = useQuery({
-    queryFn: () => fetchMovies({type, page: currentPage}),
+    queryFn: () => id? fetchMovieDetail(id) : fetchMovies({type, page: currentPage}),
     queryKey: ['movies', { type, page: currentPage }],
   });
   
