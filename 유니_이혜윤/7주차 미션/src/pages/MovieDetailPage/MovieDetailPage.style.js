@@ -32,6 +32,8 @@ const Info = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-top: 50px;
     gap: 40px;
   }
@@ -96,6 +98,10 @@ const DetailContainer = styled.div`
 
   @media (max-width: 768px) {
     flex: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+
     h1 {
       font-size: 20px;
     }
@@ -124,21 +130,33 @@ const DetailContainer = styled.div`
 `;
 
 const Credit = styled.div`
-  h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 30px;
+  }
+
+  h2 {
+    text-align: center;
     margin-top: 100px;
 
     @media (max-width: 768px) {
-      margin-top: 50px;
+      margin-top: 0;
+      width: 80%;
     }
 
     @media (max-width: 480px) {
-      margin-top: 30px;
+      margin-top: 0;
+      width: 100%;
     }
-    
   }
 `;
 

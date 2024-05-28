@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 80px;
+    width: 80%;
     height: 80px;
 
     p {
@@ -38,7 +38,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 60px;
+    width: 60%;
     height: 60px;
 
     p {
