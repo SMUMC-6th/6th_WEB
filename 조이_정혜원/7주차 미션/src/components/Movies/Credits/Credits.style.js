@@ -1,25 +1,32 @@
 import { styled } from "styled-components";
+import theme from "../../../styles/theme";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  margin: 10px;
+  width: 100%;
+  height: 500px;
 
-  width: 1000px;
-  height: 50%;
-
-  @media screen and (max-width: 768px) {
-    width: 550px;
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    flex-direction: column;
+    align-items: center;
   }
+
+  /* @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 550px;
+  } */
 `;
 
 const CreditWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  margin: 0px 30px;
-  overflow: auto;
+  margin: 20px 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  height: 100%;
 
   &::-webkit-scrollbar {
     width: 3px;
@@ -35,8 +42,12 @@ const CreditWrapper = styled.div`
     background: rgba(249, 249, 249, 0.1);
   }
 
-  @media screen and (max-width: 768px) {
+  /* @media ${theme.SCREEN_SIZE.TABLET} {
     grid-template-columns: repeat(2, 1fr);
+  } */
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 

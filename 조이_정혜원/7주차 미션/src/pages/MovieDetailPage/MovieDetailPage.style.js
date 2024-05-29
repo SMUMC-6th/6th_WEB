@@ -29,6 +29,14 @@ const Conatiner = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    flex-direction: column;
+
+    img {
+      margin-bottom: 50px;
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -52,12 +60,15 @@ const Content = styled.div`
   p {
     word-break: keep-all;
     font-size: 13px;
+    width: 90%;
   }
 `;
 
 const CreditConatiner = styled(Conatiner)`
   flex-direction: column;
   background-image: none;
+
+  margin-top: 100px;
 
   h2 {
     margin-bottom: 70px;

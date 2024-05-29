@@ -33,6 +33,23 @@ const Container = styled.div`
     font-size: 35px;
     letter-spacing: 0.9px;
   }
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    width: 200px;
+    height: 190px;
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 180px;
+    height: 160px;
+    p {
+      font-size: 14px;
+    }
+
+    h3 {
+      font-size: 29px;
+    }
+  }
 `;
 
 export { Container };

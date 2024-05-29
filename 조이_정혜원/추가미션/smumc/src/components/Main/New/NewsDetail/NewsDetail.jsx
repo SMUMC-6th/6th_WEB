@@ -1,7 +1,7 @@
 import * as S from "./NewsDetail.style";
 
 const NewsDetail = ({ isHover, news }) => {
-  const { title, description, detailImage, date } = news;
+  const { detailImage } = news;
 
   return (
     <S.Container $isHover={isHover}>

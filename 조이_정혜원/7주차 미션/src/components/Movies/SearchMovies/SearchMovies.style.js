@@ -19,19 +19,28 @@ const Container = styled.div`
 
   margin: 10px 30px;
 
-  @media screen and (max-width: 768px) {
+  @media ${theme.SCREEN_SIZE.TABLET} {
     width: 400px;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 250px;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
 const NoResultContainer = styled.div`
   display: grid;
-  width: 800px;
-  height: 420px;
+  width: 863px;
+  height: 440px;
 
-  @media screen and (max-width: 768px) {
-    width: 400px;
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    width: 463px;
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 313px;
   }
 `;
 

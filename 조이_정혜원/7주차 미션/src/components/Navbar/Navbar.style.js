@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { GiHamburgerMenu } from "react-icons/gi";
+import theme from "../../styles/theme";
 
 const Container = styled.div`
   position: fixed;
@@ -18,8 +20,8 @@ const Container = styled.div`
   justify-content: space-between;
 
   img {
-    width: 4%;
-    margin-bottom: 8px;
+    width: 50px;
+    margin-bottom: 7px;
     margin-left: 20px;
 
     &:hover {
@@ -50,6 +52,26 @@ const NavContainer = styled.div`
       color: rgb(250, 233, 100, 0.95);
     }
   }
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    display: none;
+  }
 `;
 
-export { Container, NavContainer };
+const Menu = styled(GiHamburgerMenu)`
+  display: none;
+  color: rgb(242, 245, 255, 0.8);
+  margin-right: 20px;
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    display: block;
+  }
+`;
+
+const Button = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export { Container, NavContainer, Menu, Button };

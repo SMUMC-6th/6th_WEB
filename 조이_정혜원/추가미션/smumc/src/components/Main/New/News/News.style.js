@@ -56,6 +56,22 @@ const TextWrapper = styled.div`
     border-radius: 15px;
     padding: 5px 10px;
   }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    padding: 10px;
+
+    h3 {
+      font-size: 15px;
+    }
+    div {
+      font-size: 11.5px;
+    }
+
+    p {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+  }
 `;
 
 export { Container, TextWrapper };

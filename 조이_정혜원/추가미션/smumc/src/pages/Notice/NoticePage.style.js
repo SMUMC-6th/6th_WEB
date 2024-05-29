@@ -8,12 +8,12 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
-  height: 150vh;
+  height: 100%;
 
   h1 {
     font-family: ${theme.FONT.PRETENDARD_BOLD};
     opacity: 0.9;
-    margin-bottom: 80px;
+    margin: 150px 0 80px;
   }
 `;
 

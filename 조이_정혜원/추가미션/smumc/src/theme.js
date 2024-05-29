@@ -49,6 +49,12 @@ const FONT = {
   PRETENDARD_BOLD: "Pretendard-Bold",
 };
 
-const theme = { COLOR, ALIGN, FONT, darkTheme, lightTheme };
+const SCREEN_SIZE = {
+  MOBILE: `screen and (max-width: 480px)`,
+  TABLET: "screen and (max-width: 768px)",
+  PC: "screen and (max-width: 1024px)",
+};
+
+const theme = { COLOR, ALIGN, FONT, darkTheme, lightTheme, SCREEN_SIZE };
 
 export default theme;

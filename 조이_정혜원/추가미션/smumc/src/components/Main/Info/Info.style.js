@@ -17,7 +17,8 @@ from {
 }`;
 
 const Container = styled.div`
-  display: flex;
+  ${theme.ALIGN.ROW_CENTER};
+  width: 100%;
   color: ${(props) => props.theme.textColor};
 
   img {
@@ -80,8 +81,12 @@ const Container = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media ${theme.SCREEN_SIZE.TABLET} {
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 13%;
+
     margin-top: 50px;
 
     img {
@@ -92,6 +97,26 @@ const Container = styled.div`
       margin-top: 10px;
     }
   }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    div {
+      h1 {
+        font-size: 45px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
 `;
 
-export { Container, changeColor, changeColorLight };
+const Img = styled.img`
+  width: 460px;
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 280px;
+  }
+`;
+
+export { Container, changeColor, changeColorLight, Img };

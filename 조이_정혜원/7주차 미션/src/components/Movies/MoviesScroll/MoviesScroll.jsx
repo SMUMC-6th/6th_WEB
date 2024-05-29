@@ -39,25 +39,14 @@ const MoviesScroll = ({ requestURL }) => {
 
   return (
     <M.Container>
-      {isFetching ? (
-        <>
-          <M.MovieContainer>
-            {new Array(10).fill("").map((_, idx) => (
-              <Skeleton key={idx} />
-            ))}
-          </M.MovieContainer>
-          <Loading />
-        </>
-      ) : (
-        <>
-          <M.MovieContainer>
-            {data?.map((page) => page.results.map((movie, idx) => <Movie key={idx} movie={movie} />))}
-          </M.MovieContainer>
-          <LoadingWrapper ref={ref}>
-            <Loading />
-          </LoadingWrapper>
-        </>
-      )}
+      <M.MovieContainer>
+        {data?.map((page) => page.results.map((movie, idx) => <Movie key={idx} movie={movie} />))}
+      </M.MovieContainer>
+      <M.MovieContainer ref={ref}>
+        {new Array(10).fill("").map((_, idx) => (
+          <Skeleton key={idx} />
+        ))}
+      </M.MovieContainer>
     </M.Container>
   );
 };

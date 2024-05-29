@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 
 const SelectMenu = styled.div`
   ${theme.ALIGN.ROW_CENTER};
-  margin-bottom: 70px;
+  margin-bottom: 80px;
 
   h1 {
     margin: 10px;
@@ -32,6 +32,13 @@ const SelectMenu = styled.div`
     &.selected {
       color: ${(props) => props.theme.primary};
       border-bottom: 2px solid ${(props) => props.theme.primary};
+    }
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    margin-bottom: 50px;
+    h1 {
+      font-size: 17px;
     }
   }
 `;

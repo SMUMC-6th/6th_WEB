@@ -31,6 +31,7 @@ const Container = styled.div`
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 10px;
   }
 `;
 

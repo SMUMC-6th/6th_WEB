@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import POSTER from "../../../../public/images/demodayposter.webp";
+import POSTER from "/images/demodayposter.webp";
 import * as S from "./ProjectDetail.style";
 
 const ProjectDetail = ({ proj }) => {

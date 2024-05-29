@@ -6,17 +6,18 @@ const Container = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
   position: relative;
   background-color: ${(props) => props.theme.footerColor};
-  margin: 10px;
+  margin: 20px;
   border-radius: 10px;
   width: 200px;
   height: 300px;
 
   img {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 40px;
+    border: 1.5px solid ${(props) => props.theme.bgColor};
   }
   a {
     text-decoration: none;

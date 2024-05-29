@@ -31,6 +31,14 @@ const Wrapper = styled.div`
       border-bottom: 2px solid ${(props) => props.theme.primary};
     }
   }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 300px;
+    button {
+      font-size: 15px;
+      margin: 0px 12px 30px;
+    }
+  }
 `;
 
 const TextBox = styled.div`
@@ -50,6 +58,15 @@ const TextBox = styled.div`
   line-height: 30px;
   span {
     opacity: 0.9;
+  }
+
+  @media ${theme.SCREEN_SIZE.TABLET} {
+    width: 590px;
+  }
+
+  @media ${theme.SCREEN_SIZE.MOBILE} {
+    width: 320px;
+    font-size: 14px;
   }
 `;
 
