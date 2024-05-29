@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom"; // 라우터의 링크 구현을 위해 import
+import { FaBars } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   width: 100%;
@@ -18,6 +20,13 @@ const Caption = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+
+  @media screen and (max-width: 767px) {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const PageLinkContainer = styled.div`
@@ -26,6 +35,12 @@ const PageLinkContainer = styled.div`
   gap: 20px;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1180px) {
+    width: 50%;
+  }
+
+  /* @media (max-helmet: 767px)  */
 `;
 
 const registerAndLoginBox = styled.div`
@@ -56,6 +71,56 @@ const Links = styled(Link)`
   }
 `;
 
+const SubMenuContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  display: flex;
+  gap: 30px;
+  width: 50vw;
+  /* height: 50vh; */
+  top: 10%;
+  left: 50vw;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: rgb(50, 50, 60);
+  overflow-y: auto;
+  /* overflow: hidden; */
+  /* z-index: 10000; */
+`;
+
+const SubMenuItem = styled(Link)`
+  width: 100%;
+  height: 50px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(60, 60, 80);
+  border-radius: 10px;
+
+  p:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 767) {
+    height: 80px;
+  }
+`;
+
+const HamburgerBar = styled(FaBars)`
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+`;
+
 export {
   Container,
   Caption,
@@ -63,4 +128,7 @@ export {
   registerAndLoginBox,
   PageLink,
   Links,
+  SubMenuContainer,
+  SubMenuItem,
+  HamburgerBar,
 };

@@ -22,6 +22,10 @@ const Top = styled.div`
 const TopImage = styled.img`
   width: 30%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    width: 300px;
+  }
 `;
 
 const Bottom = styled.div`
@@ -30,15 +34,18 @@ const Bottom = styled.div`
   display: flex;
   gap: 30px;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   word-break: keep-all;
-  justify-content: center;
+  /* justify-content: center;/ */
   align-items: center;
   overflow-y: auto;
   color: white;
-  /* font-size: 24px; */
   font-weight: 600;
-  padding-top: 10%;
+  /* padding-top: 10%; */
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    height: 500px;
+  }
 `;
 
 export { Container, Top, TopImage, Bottom };

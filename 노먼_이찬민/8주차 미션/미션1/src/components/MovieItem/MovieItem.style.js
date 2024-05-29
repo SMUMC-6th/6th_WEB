@@ -8,11 +8,16 @@ const Item = styled.div`
   /* border: 1px solid rgb(211, 197, 255); */
   /* width: 15%;
   height: 40%; */
-  width: ${(props) => (props.width ? props.width : 15) + "%"};
+  width: 200px;
   height: ${(props) => (props.height ? props.height : 40) + "%"};
   /* align-items: center; */
   justify-content: center;
   margin: 5px;
+
+  @media screen and (max-width: 767px) {
+    width: 300px;
+    height: 600px;
+  }
 `;
 
 const Image = styled.img`

@@ -32,6 +32,10 @@ const LoginButton = styled.button`
   height: 30%;
   border-radius: 50px;
   margin-top: 30px;
+
+  @media (max-width: 767px) {
+    width: 320px;
+  }
 `;
 
 const TrailerContainer = styled.div`
