@@ -11,11 +11,12 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  width: 50%;
+  width: 80%;
   height: 100%;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
 
   margin: 0px 30px;
 
