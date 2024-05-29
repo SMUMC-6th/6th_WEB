@@ -9,6 +9,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

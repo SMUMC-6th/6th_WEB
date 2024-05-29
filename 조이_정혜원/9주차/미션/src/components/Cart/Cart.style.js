@@ -19,20 +19,6 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
-
-  button {
-    font-weight: 500;
-    border: none;
-    padding: 10px 20px;
-    font-size: 12px;
-    letter-spacing: 1px;
-
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(255, 61, 103, 0.9);
-      color: #fff;
-    }
-  }
 `;
 
 const FooterWrapper = styled.div`

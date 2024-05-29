@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-
 import * as S from "./Music.style";
 import { decrease, increase, remove } from "../../../redux/cart/cartSlice";
 
