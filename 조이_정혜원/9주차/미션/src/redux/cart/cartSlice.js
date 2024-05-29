@@ -21,7 +21,7 @@ export const cartSlice = createSlice({
       state.cart = state.cart.filter((e) => e.id !== payload);
     },
     clear: (state) => {
-      state.cart.length = 0;
+      state.cart = [];
     },
     calculateTotals: (state) => {
       state.totalNum = state.cart.reduce((acc, e) => (acc += e.amount), 0);
