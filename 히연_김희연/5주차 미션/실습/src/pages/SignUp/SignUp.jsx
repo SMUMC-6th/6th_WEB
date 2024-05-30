@@ -23,6 +23,7 @@ export default function Sign_Up() {
     !age.error &&
     !password.error &&
     !passwordConfirm.error;
+
   const handleInputChange = (setter, value, validationFunction) => {
     const error = validationFunction(value);
     setter({ value, error, isValid: !error });
@@ -36,7 +37,7 @@ export default function Sign_Up() {
   };
 
   const validateId = (value) => {
-    const regExp = /^[A-za-z]{5,15}/g;
+    const regExp = /^[A-Za-z]{5,15}/g;
     if (value.trim() === "") return "반드시 아이디를 입력해주세요.";
     if (!regExp.test(value)) return "문자로 입력해주세요";
     return "";

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.nav`
@@ -18,12 +18,14 @@ const NavContainer = styled.div`
   gap: 20px;
 `;
 
-const NavLink = styled(Link)`
+const Link = styled(NavLink)`
   color: white;
   text-decoration: none;
-  &:hover {
+  &:hover,
+  &.active {
     transform: scale(0.95);
+    color: yellow;
   }
 `;
 
-export { Container, NavContainer, NavLink };
+export { Container, NavContainer, Link };

@@ -8,11 +8,11 @@ const Navbar = () => {
     <S.Container>
       <h1 onClick={() => navigate("/")}>UMC Movie</h1>
       <S.NavContainer>
-        <S.NavLink to="/signup">회원가입</S.NavLink>
-        <S.NavLink to="/popular">Popular</S.NavLink>
-        <S.NavLink to="/nowplaying">Now Playing</S.NavLink>
-        <S.NavLink to="/toprated">Top Rated</S.NavLink>
-        <S.NavLink to="/upcoming">Upcoming</S.NavLink>
+        <S.Link to="/signup">회원가입</S.Link>
+        <S.Link to="/popular">Popular</S.Link>
+        <S.Link to="/nowplaying">Now Playing</S.Link>
+        <S.Link to="/toprated">Top Rated</S.Link>
+        <S.Link to="/upcoming">Upcoming</S.Link>
       </S.NavContainer>
     </S.Container>
   );
