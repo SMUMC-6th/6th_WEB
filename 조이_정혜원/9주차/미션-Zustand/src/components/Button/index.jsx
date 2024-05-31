@@ -1,5 +1,4 @@
 import * as S from "./Button.style";
-import { open } from "../../redux/modal/modalSlice";
 import { useCartStore, useModalStore } from "../../store";
 
 const Button = ({ cartclear, text, no }) => {
