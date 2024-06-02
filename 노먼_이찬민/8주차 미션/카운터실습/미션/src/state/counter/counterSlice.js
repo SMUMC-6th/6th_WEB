@@ -21,6 +21,8 @@ const counterSlice = createSlice({
     //   console.log(action);
     //   state.count += action.payload; // payload는 내용(매개변수)임
     // },
+
+    // action으로는 매개변수 받아서 처리할 수 있음
     increaseUserInputNum: (state, { payload }) => {
       state.count += payload; // payload는 내용(매개변수)임
     },

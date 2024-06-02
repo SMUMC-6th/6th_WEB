@@ -3,7 +3,7 @@ import * as S from "./BoardPost.style";
 import { useState } from "react";
 
 function BoardPost(props) {
-  const { id, title, writer, writeTime, views, isHeader } = props;
+  const { id, title, writer, writeTime, views, isHeader, isHighlight } = props;
 
   const [width, setWidth] = useState(["10%", "10%", "10%", "15%", "10%"]);
   const [marginRight, setMarginRight] = useState([
@@ -13,14 +13,21 @@ function BoardPost(props) {
     "3%",
     "2%",
   ]);
+  const [borderPx, setBorderPx] = useState();
 
   useEffect(() => {
     if (isHeader) {
       setWidth(["10%", "10%", "10%", "15%", "10%"]);
-      setMarginRight(["25%", "10%", "5%", "3%", "2%"]);
+      setMarginRight(["20%", "15%", "10%", "0%", "0%"]);
     } else {
       setWidth(["5%", "50%", "20%", "20%", "5%"]);
       setMarginRight([0, 0, 0, 0, 0]);
+    }
+
+    if (isHighlight) {
+      setBorderPx("2px");
+    } else {
+      setBorderPx("1px");
     }
   }, [isHeader]);
 
@@ -33,7 +40,7 @@ function BoardPost(props) {
   // }
 
   return (
-    <S.BoardBoxPost key={id}>
+    <S.BoardBoxPost key={id} borderPx={borderPx}>
       {console.log(width, marginRight)}
       <S.BoardBoxPostItem width={width[0]} marginRight={marginRight[0]}>
         {id}

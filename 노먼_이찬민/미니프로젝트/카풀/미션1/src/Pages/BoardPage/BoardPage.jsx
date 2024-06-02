@@ -14,6 +14,8 @@ function BoardPage() {
             writer="작성자"
             writeTime="작성시간"
             views="조회수"
+            isHeader="true"
+            isHighlight="true"
           />
           <BoardPost
             id="1"
@@ -21,6 +23,7 @@ function BoardPage() {
             writer="chanmin"
             writeTime="2024-05-27"
             views="1"
+            isHighlight="true"
           />
           <BoardPost
             id="1"
@@ -28,6 +31,7 @@ function BoardPage() {
             writer="chanmin"
             writeTime="2024-05-27"
             views="1"
+            isHighlight="true"
           />
           <BoardPost
             id="1"
@@ -79,8 +83,8 @@ function BoardPage() {
             views="1"
           />
         </S.BoardBoxPostContainer>
-        <S.BoardBoxPageButton>➡️</S.BoardBoxPageButton>
       </S.BoardBox>
+      <S.BoardBoxPageButton>➡️</S.BoardBoxPageButton>
       <S.SearchBox>
         <S.SearchBoxInput></S.SearchBoxInput>
         <S.SearchBoxButton>🔍</S.SearchBoxButton>
