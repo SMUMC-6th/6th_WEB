@@ -12,7 +12,13 @@ const Container = styled.div`
 
 const Count = styled.div`
   position: absolute;
-  right: 19%;
+  right: 23%;
+  top: 2%;
+  font-size: 18px;
+  border-radius: 50%;
+  border: 3px solid rgba(159, 184, 254, 1);
+  background-color: rgba(159, 184, 254, 1);
+  color: rgba(235, 254, 244, 1);
 `;
 
 const NewCartIcon = styled(BsBagPlus)`

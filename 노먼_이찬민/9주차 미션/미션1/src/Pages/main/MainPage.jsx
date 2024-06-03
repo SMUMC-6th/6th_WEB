@@ -7,6 +7,8 @@ import {
   getTotalPrice,
   initialize,
 } from "../../state/cart/cartSlice";
+import { openModal } from "../../state/modal/modalSlice";
+import InitModal from "../../components/initModal/InitModal";
 
 function MainPage() {
   const dispatch = useDispatch();
@@ -18,16 +20,17 @@ function MainPage() {
       {items.map((item) => {
         return <MusicItem key={item.id} props={item}></MusicItem>;
       })}
-      <div>총 가격 : {useSelector((state) => state.cart.totalPrice)}</div>
-      <button
+      <S.TotalPrice>
+        총 가격 : {useSelector((state) => state.cart.totalPrice)}
+      </S.TotalPrice>
+      <S.InitButton
         onClick={() => {
-          dispatch(initialize());
-          dispatch(getTotalCount());
-          dispatch(getTotalPrice());
+          dispatch(openModal());
         }}
       >
         장바구니 초기화
-      </button>
+      </S.InitButton>
+      <InitModal></InitModal>
     </S.Container>
   );
 }

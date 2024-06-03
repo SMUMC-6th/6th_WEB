@@ -8,4 +8,17 @@ const Container = styled.div`
   background-color: rgba(202, 227, 241, 1);
 `;
 
-export { Container };
+const TotalPrice = styled.div`
+  font-size: 20px;
+  margin-bottom: 20px;
+`;
+
+const InitButton = styled.button`
+  background-color: rgba(159, 184, 254, 1);
+  border-radius: 10%;
+  width: 15%;
+  height: 50px;
+  margin-bottom: 20px;
+`;
+
+export { Container, TotalPrice, InitButton };

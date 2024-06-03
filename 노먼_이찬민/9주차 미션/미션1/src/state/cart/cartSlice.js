@@ -35,7 +35,7 @@ const cartSlice = createSlice({
   reducers: {
     // 동작(로직)들 이름 정의 ( 매개변수 state는 inital state임 )
     increment: (state, action) => {
-      // find로 가져와서 call by ref로 원본 배열에 접근 가능
+      // find(call by ref)로 가져와서 원본 배열에 접근 가능
       const increaseItem = state.items.find(
         (item) => item.id == action.payload
       );
@@ -56,20 +56,18 @@ const cartSlice = createSlice({
 
     initialize: (state) => {
       state.items = [];
+      state.totalCount = 0;
+      state.totalPrice = 0;
     },
 
     getTotalCount: (state) => {
       // reduce : 배열을 순회하며 acc를 증감시켜서 반환하는 메소드
-      const total = state.items.reduce((acc, item) => {
-        return acc + item.amount;
-      }, 0);
+      const total = calculateInitialTotalCount(state.items);
       state.totalCount = total;
     },
 
     getTotalPrice: (state) => {
-      const total = state.items.reduce((acc, item) => {
-        return acc + item.amount * item.price;
-      }, 0);
+      const total = calculateInitialTotalPrice(state.items)
       state.totalPrice = total;
     },
   },

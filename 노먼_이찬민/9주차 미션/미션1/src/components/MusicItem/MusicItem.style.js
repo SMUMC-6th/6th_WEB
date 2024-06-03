@@ -12,8 +12,8 @@ const Container = styled.div`
 `;
 
 const MusicImage = styled.div`
-  width: 10%;
-  height: 100%;
+  width: 8vw;
+  height: 8vw;
   background-image: url(${(props) => (props.imageURL ? props.imageURL : 0)});
   background-repeat: round;
 `;
