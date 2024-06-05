@@ -23,6 +23,11 @@ const Container = styled.div`
 
   img {
     margin-right: 80px;
+    width: 460px;
+
+    @media ${theme.SCREEN_SIZE.MOBILE} {
+      width: 280px;
+    }
   }
 
   div {
@@ -111,12 +116,4 @@ const Container = styled.div`
   }
 `;
 
-const Img = styled.img`
-  width: 460px;
-
-  @media ${theme.SCREEN_SIZE.MOBILE} {
-    width: 280px;
-  }
-`;
-
-export { Container, changeColor, changeColorLight, Img };
+export { Container, changeColor, changeColorLight };
