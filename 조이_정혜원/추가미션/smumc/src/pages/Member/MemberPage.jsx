@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as S from "./MemberPage.style";
 import { Member } from "../../components";
 
 const MemberPage = () => {
   const [selected, setSelected] = useState(0); // Active Member
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <S.Container>

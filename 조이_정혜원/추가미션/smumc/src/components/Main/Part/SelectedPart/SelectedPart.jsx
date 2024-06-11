@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as S from "./SelectedPart.style";
+import { motion } from "framer-motion";
 
 const SelectedPart = ({ partName }) => {
   const { part, description } = partName[0];
@@ -19,13 +20,13 @@ const SelectedPart = ({ partName }) => {
       <S.Container>
         <S.Wrapper>
           {description.map((e) => (
-            <button
+            <motion.button
               key={e.id}
               onClick={() => handleClick(e.description, e.part)}
               className={selected === e.part ? "selected" : null}
             >
               {e.part}
-            </button>
+            </motion.button>
           ))}
         </S.Wrapper>
         <S.TextBox>
