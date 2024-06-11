@@ -3,7 +3,7 @@ import * as S from "../MemberDetail/MemberDetail.style";
 import * as SS from "./Leader.style";
 import MAN from "/images/man.png";
 import WOMAN from "/images/woman.png";
-import CardAnimation from "../../AnimatedComponentㄴ/CardAnimation";
+import CardAnimation from "../../AnimatedComponent/CardAnimation";
 
 const Leader = ({ leader }) => {
   const githubURL = `https://github.com/${leader.github}`;

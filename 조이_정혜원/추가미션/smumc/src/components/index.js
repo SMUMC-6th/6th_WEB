@@ -3,7 +3,7 @@ import Navbar from "./Navbar/Navbar";
 import About from "./Main/About/About";
 import Info from "./Main/Info/Info";
 import New from "./Main/New/New";
-import AnimatedComponent from "./AnimatedComponentㄴ/AnimatedComponent";
+import AnimatedComponent from "./AnimatedComponent/AnimatedComponent";
 import Project from "./Main/Project/Project";
 import Part from "./Main/Part/Part";
 import Qna from "./QnA/Qna";

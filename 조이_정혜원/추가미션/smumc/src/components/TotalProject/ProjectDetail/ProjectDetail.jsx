@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import POSTER from "/images/demodayposter.webp";
 import * as S from "./ProjectDetail.style";
-import CardAnimation from "../../AnimatedComponentㄴ/CardAnimation";
+import CardAnimation from "../../AnimatedComponent/CardAnimation";
 
 const ProjectDetail = ({ proj }) => {
   const { id, name, github, release, description, img, member, stack } = proj;

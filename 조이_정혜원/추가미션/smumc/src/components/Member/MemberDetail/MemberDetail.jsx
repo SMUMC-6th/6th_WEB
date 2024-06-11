@@ -1,4 +1,4 @@
-import CardAnimation from "../../AnimatedComponentㄴ/CardAnimation";
+import CardAnimation from "../../AnimatedComponent/CardAnimation";
 import * as S from "./MemberDetail.style";
 import MAN from "/images/man.png";
 import WOMAN from "/images/woman.png";
