@@ -30,8 +30,18 @@ export const cartSlice = createSlice({
       state.cart = [];
     },
     calculateTotals: (state) => {
-      state.totalNum = state.cart.reduce((acc, e) => (acc += e.amount), 0);
-      state.totalPrice = state.cart.reduce((acc, e) => (acc += e.amount * e.price), 0);
+      // state.totalNum = state.cart.reduce((acc, e) => (acc += e.amount), 0);
+      // state.totalPrice = state.cart.reduce((acc, e) => (acc += e.amount * e.price), 0);
+      let totalNum = 0;
+      let totalPrice = 0;
+
+      state.cart.forEach((e) => {
+        totalNum += e.amount;
+        totalPrice += e.amount * e.price;
+      });
+
+      state.totalNum = totalNum;
+      state.totalPrice = totalPrice;
     },
   },
 });
