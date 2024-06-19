@@ -1,18 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
 import * as S from "./Cart.style";
-import { calculateTotals } from "../../redux/cart/cartSlice";
+import { calculateTotals, loadCartItems } from "../../redux/cart/cartSlice";
 import { useEffect } from "react";
 import { Music, Modal, Button } from "../";
+import { PacmanLoader } from "react-spinners";
 
 const Cart = () => {
-  const { cart, totalPrice } = useSelector((state) => state.cart);
+  const { cart, totalPrice, status } = useSelector((state) => state.cart);
   const { modal } = useSelector((state) => state.modal);
+
+  console.log(status);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(loadCartItems());
+  }, []);
+
+  useEffect(() => {
     dispatch(calculateTotals());
   }, [cart]);
+
+  if (status === "pending") {
+    return (
+      <S.Container>
+        <h3>로딩 중 입니다</h3>
+        <PacmanLoader color="#FF5276" />
+      </S.Container>
+    );
+  }
 
   return (
     <S.Container>

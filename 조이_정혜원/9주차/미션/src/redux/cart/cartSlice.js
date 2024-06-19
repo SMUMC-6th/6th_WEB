@@ -1,10 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import cartItems from "../../constants/cartItems";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const loadCartItems = createAsyncThunk("load/cartItem", async (arg, { rejectWithValue }) => {
+  try {
+    const res = await axios("http://localhost:8080/musics");
+    return res.data;
+  } catch (err) {
+    return rejectWithValue(err.response.data.message);
+  }
+});
 
 const initialState = {
-  cart: cartItems,
-  totalNum: 12,
-  totalPrice: 276000,
+  cart: [],
+  totalNum: 0,
+  totalPrice: 0,
+  status: "",
 };
 
 export const cartSlice = createSlice({
@@ -43,6 +53,21 @@ export const cartSlice = createSlice({
       state.totalNum = totalNum;
       state.totalPrice = totalPrice;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loadCartItems.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(loadCartItems.fulfilled, (state, { payload }) => {
+        state.cart.push(...payload);
+        state.status = "fulfilled";
+        // state.cart = payload;
+      })
+      .addCase(loadCartItems.rejected, (state, { payload }) => {
+        state.status = "rejected";
+        alert(payload);
+      });
   },
 });
 
