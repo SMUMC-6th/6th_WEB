@@ -1,10 +1,14 @@
 import * as S from "./ProjectPage.style";
 import { PROJECTS_YEAR } from "../../constants/projects";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TotalProject } from "../../components";
 
 const ProjectPage = () => {
   const [select, setSelected] = useState("All");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <S.Container>
       <S.Wrapper>

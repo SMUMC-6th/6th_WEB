@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { totalNum } = useSelector((state) => state.cart);
+
   return (
     <S.Container>
       <h1>

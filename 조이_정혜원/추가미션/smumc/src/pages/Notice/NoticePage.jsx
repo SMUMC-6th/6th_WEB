@@ -1,7 +1,12 @@
 import Qna from "../../components/QnA/Qna";
 import * as S from "./NoticePage.style";
+import { useEffect } from "react";
 
 const NoticePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <S.Container>
       <S.Wrapper>
