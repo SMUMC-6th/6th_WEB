@@ -9,8 +9,6 @@ const Cart = () => {
   const { cart, totalPrice, status } = useSelector((state) => state.cart);
   const { modal } = useSelector((state) => state.modal);
 
-  console.log(status);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
