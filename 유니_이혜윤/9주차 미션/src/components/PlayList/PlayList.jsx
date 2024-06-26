@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { increase, decrease, remove, clearCart } from "../../redux/cartSlice";
+import { increase, decrease, remove } from "../../redux/cartSlice";
+import { openModal } from "../../redux/modalSlice";
 import * as S from './PlayList.style'
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
@@ -19,10 +20,6 @@ export default function PlayList() {
     } else {
       dispatch(decrease(id));
     }
-  };
-
-  const handleClearCart = () => {
-    dispatch(clearCart());
   };
 
   const totalPrice = cart.reduce((total, item) => total + (item.price * item.amount), 0);
@@ -53,7 +50,7 @@ export default function PlayList() {
         <p>총 가격</p>
         <p>₩ {totalPrice}</p>
       </S.Total>
-      <S.Button onClick={handleClearCart}>장바구니 초기화</S.Button>
+      <S.Button onClick={() => { dispatch(openModal())}}>장바구니 초기화</S.Button>
     </S.Container>
   )
 

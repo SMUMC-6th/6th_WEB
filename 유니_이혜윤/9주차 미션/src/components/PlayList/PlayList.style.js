@@ -94,6 +94,10 @@ const Button = styled.button`
   color: red;
   border: 1px solid red;
   border-radius: 10px;
+
+  &:hover {
+    background-color: #F4B4B4;
+  }
 `;
 
 export { Container, List, Text, Count, Total, Divider, Button }
