@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./MainPage.style";
 import MusicItem from "../../components/MusicItem/MusicItem";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,6 +6,7 @@ import {
   getTotalCount,
   getTotalPrice,
   initialize,
+  getMusics,
 } from "../../state/cart/cartSlice";
 import { openModal } from "../../state/modal/modalSlice";
 import InitModal from "../../components/initModal/InitModal";
@@ -13,6 +14,11 @@ import InitModal from "../../components/initModal/InitModal";
 function MainPage() {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
+
+  useEffect(() => {
+    dispatch(getMusics());
+  }, [dispatch]);
+
   // console.log(items);
   return (
     <S.Container>

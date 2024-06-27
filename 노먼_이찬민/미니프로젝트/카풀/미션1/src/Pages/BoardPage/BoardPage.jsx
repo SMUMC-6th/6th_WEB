@@ -1,95 +1,64 @@
-import React from "react";
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import * as S from "./BoardPage.style";
-import BoardPost from "./components/BoardPost";
+
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+  createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
+  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
+  createData("Eclair", 262, 16.0, 24, 6.0),
+  createData("Cupcake", 305, 3.7, 67, 4.3),
+  createData("Gingerbread", 356, 16.0, 49, 3.9),
+];
 
 function BoardPage() {
   return (
-    <S.Container>
-      <S.BoardBox>
-        <S.BoardBoxHeader>문의 게시판</S.BoardBoxHeader>
-        <S.BoardBoxPostContainer>
-          <BoardPost
-            id="No"
-            title="제목"
-            writer="작성자"
-            writeTime="작성시간"
-            views="조회수"
-            isHeader="true"
-            isHighlight="true"
-          />
-          <BoardPost
-            id="1"
-            title="긴것도 테스트를 해봐야지 않겠어?"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-            isHighlight="true"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-            isHighlight="true"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-          <BoardPost
-            id="1"
-            title="test"
-            writer="chanmin"
-            writeTime="2024-05-27"
-            views="1"
-          />
-        </S.BoardBoxPostContainer>
+    <S.Container component={Paper}>
+      <div>문의 게시판</div>
+      <S.BoardBox
+        sx={{ minWidth: 200, maxWidth: 1200 }}
+        aria-label="simple table"
+      >
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
       </S.BoardBox>
-      <S.BoardBoxPageButton>➡️</S.BoardBoxPageButton>
-      <S.SearchBox>
-        <S.SearchBoxInput></S.SearchBoxInput>
-        <S.SearchBoxButton>🔍</S.SearchBoxButton>
-        <S.SearchBoxWritingButton>글쓰기</S.SearchBoxWritingButton>
-      </S.SearchBox>
     </S.Container>
   );
 }
