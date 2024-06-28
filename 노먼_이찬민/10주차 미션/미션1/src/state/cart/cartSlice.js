@@ -77,6 +77,7 @@ const cartSlice = createSlice({
       state.items = [];
       state.totalCount = 0;
       state.totalPrice = 0;
+      state.getMusicsStatus = "pending";
     });
 
     // 프로미스 성공 (fulfilled) 시점
@@ -84,10 +85,15 @@ const cartSlice = createSlice({
       state.items = action.payload;
       state.totalCount = calculateInitialTotalCount(state.items);
       state.totalPrice = calculateInitialTotalPrice(state.items);
+      state.getMusicsStatus = "fulfilled";
     });
 
     // 프로미스 실패 (rejected) 시점
     builder.addCase(getMusics.rejected, (state) => {
+      state.items = [];
+      state.totalCount = 0;
+      state.totalPrice = 0;
+      state.getMusicsStatus = "rejected";
       console.error("음악을 불러오는 데 실패하였습니다");
     });
   },
