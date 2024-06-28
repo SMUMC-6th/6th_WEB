@@ -13,7 +13,7 @@ import InitModal from "../../components/initModal/InitModal";
 function MainPage() {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.cart.items);
-  console.log(items);
+  // console.log(items);
   return (
     <S.Container>
       <h2>당신이 선택한 음반</h2>

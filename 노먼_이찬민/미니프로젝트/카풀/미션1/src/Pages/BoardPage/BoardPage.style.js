@@ -1,6 +1,14 @@
 import styled from "styled-components";
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
-const Container = styled.div`
+const Container = styled(TableContainer)`
   width: 100%;
   height: 100%;
   display: flex;
@@ -9,9 +17,9 @@ const Container = styled.div`
   align-items: center;
   overflow: hidden;
 `;
-const BoardBox = styled.div`
+const BoardBox = styled(Table)`
   width: 80%;
-  height: 80%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
