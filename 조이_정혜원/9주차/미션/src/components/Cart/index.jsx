@@ -4,6 +4,7 @@ import { calculateTotals, loadCartItems } from "../../redux/cart/cartSlice";
 import { useEffect } from "react";
 import { Music, Modal, Button } from "../";
 import { PacmanLoader } from "react-spinners";
+import { MdError } from "react-icons/md";
 
 const Cart = () => {
   const { cart, totalPrice, status } = useSelector((state) => state.cart);
@@ -24,6 +25,15 @@ const Cart = () => {
       <S.Container>
         <h3>로딩 중 입니다</h3>
         <PacmanLoader color="#FF5276" />
+      </S.Container>
+    );
+  }
+
+  if (status === "rejected") {
+    return (
+      <S.Container>
+        <MdError />
+        <h3>데이터를 불러오는데 실패했습니다 !</h3>
       </S.Container>
     );
   }
