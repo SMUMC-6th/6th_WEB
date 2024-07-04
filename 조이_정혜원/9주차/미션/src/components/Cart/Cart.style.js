@@ -15,6 +15,12 @@ const Container = styled.div`
     margin-bottom: 50px;
     letter-spacing: 0.9px;
   }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 30px;
+  }
 `;
 
 const Wrapper = styled.div`
