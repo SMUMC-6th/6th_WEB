@@ -1,5 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import cartItem from '../constants/cartItems';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const loadCartItem = createAsyncThunk('load/cartItem', async () => {
+  const response = await fetch('http://localhost:8080/musics');
+  const data = await response.json();
+  return data;
+});
 
 const InitialCount = (items) => {
   return items.reduce((acc, item) => acc + item.amount, 0);
@@ -10,9 +15,11 @@ const InitialPrice = (items) => {
 };
 
 const initialState = {
-  items: cartItem,
-  totalCount: InitialCount(cartItem) || 0,
-  totalPrice: InitialPrice(cartItem) || 0,
+  items: [],
+  totalCount: 0,
+  totalPrice: 0,
+  status: 'idle',
+  error: null,
 };
 
 const cartSlice = createSlice({
@@ -54,8 +61,24 @@ const cartSlice = createSlice({
       state.totalCount = 0;
       state.totalPrice = 0;
     }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loadCartItem.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(loadCartItem.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.items = action.payload;
+        state.totalCount = InitialCount(action.payload);
+        state.totalPrice = InitialPrice(action.payload);
+      })
+      .addCase(loadCartItem.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
   }
-})
+});
 
 export const {increase, decrease, remove, clearCart} = cartSlice.actions;
 

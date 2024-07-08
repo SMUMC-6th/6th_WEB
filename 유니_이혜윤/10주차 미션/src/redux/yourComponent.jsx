@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMusics } from './musicsSlice';
+import { fetchMusics } from './musicSlice';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 
